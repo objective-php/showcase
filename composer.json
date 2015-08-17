@@ -1,0 +1,20 @@
+{
+   	"require": {
+     		"objective-php/primitives": "dev-master",
+     		"objective-php/services-factory": "dev-master",
+     		"objective-php/events-handler": "dev-master",
+     		"objective-php/config": "dev-master",
+     		"objective-php/message": "dev-master",
+     		"objective-php/matcher": "dev-master",
+     		"objective-php/application": "dev-master"
+	},
+   	"autoload":
+	{
+	  	"psr-4":
+		{
+		  "Poc\\": "app/",
+		  "Poc\\Package\\": "app/packages",
+		  "Poc\\Action\\": "app/actions"
+		}
+	}
+}
