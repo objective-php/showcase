@@ -26,15 +26,15 @@
                 ]
             ]));
 
-            $workflow->bind('post', ['dumpConfig' => function () use ($application) {
-                var_Dump($application->getConfig()->toArray());
+            $workflow->bind('run.pre', ['dumpConfig' => function () use ($application) {
+              // var_Dump($application->getConfig()->toArray());
             }]);
 
             $workflow->bind('post', ['dumpParams' => function () use ($application) {
-                var_dump($application->getRequest()->getParameters());
+              //  var_dump($application->getRequest()->getParameters());
             }]);
 
-           // $workflow->getEventsHandler()->bind('*', [$this, 'trackEvents']);
+            //$workflow->getEventsHandler()->bind('*', [$this, 'trackEvents']);
         }
 
         public function trackEvents(EventInterface $event)

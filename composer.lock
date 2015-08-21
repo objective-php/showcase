@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "16359834387acac6a8a1bcab13df670a81d20415"
+                "reference": "6fdce2fb9b812c1e790e2303cf6d47f9409bf8e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/16359834387acac6a8a1bcab13df670a81d20415",
-                "reference": "16359834387acac6a8a1bcab13df670a81d20415",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/6fdce2fb9b812c1e790e2303cf6d47f9409bf8e2",
+                "reference": "6fdce2fb9b812c1e790e2303cf6d47f9409bf8e2",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-08-17 17:59:44"
+            "time": "2015-08-21 15:33:44"
         },
         {
             "name": "objective-php/config",
@@ -296,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/primitives.git",
-                "reference": "fb2c6f98359f096c5d84ef60f65e647888a246e4"
+                "reference": "35853f736b98cd5628811489b9a897324992f5ae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/primitives/zipball/fb2c6f98359f096c5d84ef60f65e647888a246e4",
-                "reference": "fb2c6f98359f096c5d84ef60f65e647888a246e4",
+                "url": "https://api.github.com/repos/objective-php/primitives/zipball/35853f736b98cd5628811489b9a897324992f5ae",
+                "reference": "35853f736b98cd5628811489b9a897324992f5ae",
                 "shasum": ""
             },
             "require": {
@@ -342,7 +342,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-08-15 16:43:08"
+            "time": "2015-08-17 18:32:55"
         },
         {
             "name": "objective-php/services-factory",

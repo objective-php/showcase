@@ -13,6 +13,6 @@
     $app->loadConfig('app/config');
 
 
-    echo '<h1>Welcome to ' . $app->getConfig()->app->name . '</h1>';
+    // echo '<h1>Welcome to ' . $app->getConfig()->app->name . '</h1>';
 
     $app->run();
