@@ -1,9 +1,10 @@
 <?php
     
-    namespace Poc\Package\Debug;
+    namespace Showcase\Package\Debug;
 
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\Config\Config;
+    use ObjectivePHP\Config\Loader\DirectoryLoader;
     use ObjectivePHP\Events\EventInterface;
 
     class DebugPackage
@@ -15,16 +16,8 @@
 
             $application = $event->getApplication();
 
-            $application->getConfig()->merge(new Config([
-                'app.debug' => true,
-                'app.actions' => [
-                        'Poc\\Action\\' => 'app/packages/Debug/actions'
-                ],
-                'app.views.locations' =>
-                [
-                    'app/packages/Debug/views'
-                ]
-            ]));
+            $configLoader = new DirectoryLoader();
+            $application->getConfig()->merge($configLoader->load(__DIR__ . '/config'));
 
             $workflow->bind('run.pre', ['dumpConfig' => function () use ($application) {
               // var_Dump($application->getConfig()->toArray());

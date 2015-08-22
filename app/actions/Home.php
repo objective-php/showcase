@@ -1,11 +1,13 @@
 <?php
     
-    namespace Poc\Action;
+    namespace Showcase\Action;
 
     class Home
     {
         public function __invoke()
         {
-            // nothing to do here so far
+            return [
+                'layout' => ['pageTitle' => 'Objective PHP Showcase']
+            ];
         }
     }

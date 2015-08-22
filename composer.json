@@ -6,15 +6,16 @@
      		"objective-php/config": "dev-master",
      		"objective-php/message": "dev-master",
      		"objective-php/matcher": "dev-master",
-     		"objective-php/application": "dev-master"
+     		"objective-php/application": "dev-master",
+   	   	"twbs/bootstrap": "^3.3"
 	},
    	"autoload":
 	{
 	  	"psr-4":
 		{
-		  "Poc\\": "app/",
-		  "Poc\\Package\\": "app/packages",
-		  "Poc\\Action\\": "app/actions"
+		  "Showcase\\": "app/",
+		  "Showcase\\Package\\": "packages/",
+		  "Showcase\\Action\\": "app/actions"
 		}
 	}
 }

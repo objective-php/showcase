@@ -1,0 +1,12 @@
+
+<h2>This page triggers loads of events with loads of callbacks connected to...</h2>
+<p>
+    You can play with parameters "callbacks" ans "triggers" to change the number of events triggered and/or callbacks connected.
+    <br />
+    <br />
+    <a href="?callbacks=500&triggers=100">Example with 5000 callbacks and 100 triggers</a> Don't be afraid to click this link, it should not last that long :)
+
+</p>
+<p>
+    It took <strong><?= $elapsedTime ?></strong> milliseconds to trigger <strong><?= $triggers ?></strong> events with <strong><?= $boundCallbacks ?></strong> callbacks attached, resulting in the execution of <strong><?= $ranCallbacks ?></strong> callbacks.
+</p>

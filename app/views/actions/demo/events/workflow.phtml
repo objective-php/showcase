@@ -1,0 +1,42 @@
+
+<style>
+
+    .indent {
+        padding-left: 30px
+    }
+</style>
+Below is the tree of default ObjectivePHP/Application workflow events.
+<br /><br />
+<?php
+
+
+
+list($prefix, $workflow) = each($events);
+
+displayWorkflowLevel($prefix, $workflow);
+
+function displayWorkflowLevel($prefix, $steps)
+{
+    echo '<ul />';
+    foreach($steps as $index => $step)
+    {
+        if(is_int($index))
+        {
+            if ($step == 'post')
+            {
+                echo '</ul>';
+            }
+            echo  '<li>Step #' . $index . ' <strong>' . $prefix . '.' . $step . '</strong></li>';
+            if ($step == 'pre')
+            {
+                echo '<ul>';
+            }
+        }
+        else
+        {
+            displayWorkflowLevel($prefix . '.' . $index, $step);
+        }
+    }
+
+    echo '</ul>';
+}

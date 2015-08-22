@@ -1,30 +1,38 @@
 <?php
 
     use ObjectivePHP\Primitives\Merger\MergePolicy;
-    use Poc\Package\Debug\DebugPackage;
-    use Poc\Package\Layout\LayoutPackage;
+    use Showcase\Package\Debug\DebugPackage;
 
     return [
 
-        'mergers' => [
-            'app.actions' => MergePolicy::COMBINE,
+        'mergers'    => [
+            'app.actions'         => MergePolicy::COMBINE,
             'app.views.locations' => MergePolicy::NATIVE,
         ],
-        'directives' => [
-            'app.name' => 'Objective PHP / Proof of Concept',
-            'app.actions' =>
+        'directives' =>
             [
-                'Poc\\Action\\' => 'app/actions'
-            ],
-            'app.views.locations' =>
-            [
-                'app/views'
-            ],
-            'layout.name' => 'layouts/layout',
+                'app.name'            => 'Objective PHP Framework',
+                'app.actions'         =>
+                    [
+                        'Showcase\\Action\\' => 'app/actions'
+                    ],
 
-            'packages.registered' => [
-               LayoutPackage::class,
-               DebugPackage::class
+                // views
+                'views.locations' =>
+                    [
+                        'app/views/actions'
+                    ],
+
+                // layouts
+                'layouts.locations' =>
+                    [
+                        'app/views/layouts'
+                    ],
+                'layouts.default'         => 'layout',
+
+                // packages
+                'packages.registered' => [
+                   // DebugPackage::class
+                ]
             ]
-        ]
     ];

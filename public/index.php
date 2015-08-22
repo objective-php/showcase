@@ -1,6 +1,6 @@
 <?php
 
-    use Poc\Application;
+    use Showcase\Application;
 
     require '../vendor/autoload.php';
 

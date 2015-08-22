@@ -1,6 +1,6 @@
 <?php
 
-    namespace Poc;
+    namespace Showcase;
 
     use ObjectivePHP\Application\Pattern\Rta\RtaCallbacksAggregate;
     use ObjectivePHP\Application\Pattern\Rta\RtaWorkflow;
@@ -12,7 +12,7 @@
         {
             $this->setWorkflow(new RtaWorkflow());
 
-            $this->getEventsHandler()->bind('workflow.init', new RtaCallbacksAggregate());
+            $this->getWorkflow()->bind('init', new RtaCallbacksAggregate());
 
         }
 

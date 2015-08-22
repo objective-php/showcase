@@ -1,25 +1,41 @@
 <?php
 
-namespace Poc\Action\Demo;
+namespace Showcase\Action\Demo\Events;
 
+use ObjectivePHP\Application\Action\AbstractAction;
+use ObjectivePHP\Application\Action\Param\NumericParameter;
 use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+use ObjectivePHP\Primitives\Numeric\Numeric;
 
-class Events {
+class Load extends AbstractAction {
 
-	public function __invoke(WorkflowEvent $event)
+	public function expects()
+	{
+		return
+		[
+			new NumericParameter('callbacks'),
+			new NumericParameter('triggers')
+		];
+	}
+
+	public function run(WorkflowEvent $event)
 	{
 
 		$eventsHandler = $event->getApplication()->getEventsHandler();
 
 		// prevent default renderer from triggering
-		$event->getWorkflow()->unbind('render');
+		// $event->getWorkflow()->unbind('render');
 
 		// bind 1000 callbacks
 		$callback = function($event) use(&$count) {
 			$count++;
 		};
 
-		for($i = 0; $i < 30; $i++)
+
+		$callbacks = $this->getParam('callbacks', 100);
+		$triggers = $this->getParam('triggers', 100);
+
+		for($i = 0; $i < $callbacks; $i++)
 		{
 			$eventsHandler->bind('demo.events.*', $callback);
 		}
@@ -27,15 +43,26 @@ class Events {
 
 		// trigger 100 events
 		$startedAt = microtime(true);
-		for($i=0; $i < 10; $i++)
+		for($i=0; $i < $triggers; $i++)
 		{
 			$eventsHandler->trigger('demo.events.' . $this->generateRandomEventName());
 		}
 		$stoppedAt = microtime(true);
 
-		$elapsedTime = $stoppedAt - $startedAt;
+		$elapsedTime = round($stoppedAt - $startedAt, 3) * 1000;
 
-		echo "It took " . round($elapsedTime, 3) . " seconds to trigger $count callbacks";
+		return
+		[
+			'ranCallbacks' => $count,
+			'triggers' => $triggers,
+			'boundCallbacks' => $callbacks,
+			'elapsedTime' => $elapsedTime,
+			'layout' => [
+				'pageTitle' => 'Events demo'
+			]
+		];
+
+
 	}
 
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "cc8d22662fbdf95b5d93982a54bcc927",
+    "hash": "3048d02236c399f81000927621f20c6f",
     "packages": [
         {
             "name": "objective-php/application",
@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/6fdce2fb9b812c1e790e2303cf6d47f9409bf8e2",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/8689a073d05bea6fd5e001ad5891f82d8807fb93",
                 "reference": "6fdce2fb9b812c1e790e2303cf6d47f9409bf8e2",
                 "shasum": ""
             },
@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/config.git",
-                "reference": "415d1472ebd4041c8a8c3fd62270eac1825ef119"
+                "reference": "19bda7ad0b9faa1d62cced75c3e44336b221c258"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/config/zipball/415d1472ebd4041c8a8c3fd62270eac1825ef119",
-                "reference": "415d1472ebd4041c8a8c3fd62270eac1825ef119",
+                "url": "https://api.github.com/repos/objective-php/config/zipball/19bda7ad0b9faa1d62cced75c3e44336b221c258",
+                "reference": "19bda7ad0b9faa1d62cced75c3e44336b221c258",
                 "shasum": ""
             },
             "require": {
@@ -104,7 +104,7 @@
                 "config",
                 "objective-php"
             ],
-            "time": "2015-08-17 16:21:45"
+            "time": "2015-08-22 08:25:34"
         },
         {
             "name": "objective-php/events-handler",
@@ -210,20 +210,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/message.git",
-                "reference": "6c1dee17042638c08b72a0ac17ea21aa047a76b7"
+                "reference": "1c88492c300bcdc317fd991c3218fc958f72d0a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/message/zipball/6c1dee17042638c08b72a0ac17ea21aa047a76b7",
-                "reference": "6c1dee17042638c08b72a0ac17ea21aa047a76b7",
+                "url": "https://api.github.com/repos/objective-php/message/zipball/1c88492c300bcdc317fd991c3218fc958f72d0a0",
+                "reference": "1c88492c300bcdc317fd991c3218fc958f72d0a0",
                 "shasum": ""
             },
             "require": {
-                "zendframework/zend-diactoros": "~1.0"
+                "objective-php/primitives": "dev-master"
             },
             "require-dev": {
                 "objective-php/phpunit-extension": "^1.0",
-                "objective-php/primitives": "dev-master as 1.2",
                 "phpunit/phpunit": "^4.8"
             },
             "type": "library",
@@ -243,7 +242,7 @@
                 }
             ],
             "description": "ObjectivePHP implementation for PSR-7",
-            "time": "2015-08-12 17:35:46"
+            "time": "2015-08-22 09:29:44"
         },
         {
             "name": "objective-php/phpunit-extension",
@@ -442,6 +441,57 @@
                 "response"
             ],
             "time": "2015-05-04 20:22:00"
+        },
+        {
+            "name": "twbs/bootstrap",
+            "version": "v3.3.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twbs/bootstrap.git",
+                "reference": "16b48259a62f576e52c903c476bd42b90ab22482"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/16b48259a62f576e52c903c476bd42b90ab22482",
+                "reference": "16b48259a62f576e52c903c476bd42b90ab22482",
+                "shasum": ""
+            },
+            "replace": {
+                "twitter/bootstrap": "self.version"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.3.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jacob Thornton",
+                    "email": "jacobthornton@gmail.com"
+                },
+                {
+                    "name": "Mark Otto",
+                    "email": "markdotto@gmail.com"
+                }
+            ],
+            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
+            "homepage": "http://getbootstrap.com",
+            "keywords": [
+                "JS",
+                "css",
+                "framework",
+                "front-end",
+                "less",
+                "mobile-first",
+                "responsive",
+                "web"
+            ],
+            "time": "2015-06-16 16:13:22"
         },
         {
             "name": "zendframework/zend-diactoros",

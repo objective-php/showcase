@@ -1,6 +1,6 @@
 <?php
 
-    namespace Poc\Action;
+    namespace Showcase\Action;
 
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
