@@ -1,1 +1,80 @@
-About workflow step "<?= $step ?>"
+<?php
+    use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\Application\Workflow\WorkflowInterface;
+
+
+    $event = Vars::get('event');
+    $callbacks = Vars::collection('callbacks');
+?>
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Event details</div>
+        <div class="panel-body">
+            <p>
+                Find here all callbacks attached to the <code><?= $event ?></code> event.
+            </p>
+        </div>
+
+        <!-- Table -->
+        <table class="table table-striped">
+            <thead>
+            <th>Event bound</th>
+            <th>Alias</th>
+            <th>Type</th>
+            <th>Callback</th>
+            </thead>
+            <tbody>
+            <?php
+                foreach($callbacks as $callback)
+                {
+                    echo '<tr>';
+                    echo '<td>' . $callback['event'] . '</td>';
+                    echo '<td>' . $callback['alias'] . '</td>';
+                    echo '<td>' . ucwords($callback['type']) . '</td>';
+                    echo '<td>' . display_callback($callback['type'], $callback['callback']) . '</td>';
+                    echo '</tr>';
+                }
+            ?>
+            </tbody>
+        </table>
+    </div>
+
+    <br>
+
+    <a href="/demo/events/workflow">Back to workflow overview</a>
+<?php
+
+function display_callback($type, $callback)
+{
+    switch($type)
+    {
+
+        case 'invokable class':
+            return sprintf('<code>%s</code>', $callback);
+        break;
+
+        case 'invokable object':
+            return sprintf('<code>%s::__invoke()</code>', get_class($callback));
+        break;
+
+        case 'action':
+            return sprintf('<code>%s::run()</code>', get_class($callback));
+        break;
+
+        case 'closure':
+            /* @var $callback Closure */
+            $info = new ReflectionFunction($callback);
+
+            $filename = ltrim(str_replace(getcwd(), '', $info->getFileName()), '/');
+            $startLine = $info->getStartLine();
+
+            return sprintf('Closure defined in <code>%s:%d</code>', $filename, $startLine);
+        break;
+
+        default:
+            return $callback;
+
+    }
+}
+
