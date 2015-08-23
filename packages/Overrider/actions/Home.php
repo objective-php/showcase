@@ -8,6 +8,8 @@
     {
         public function __invoke(WorkflowEvent $event)
         {
-            echo '<h2>We\'ve been through DebugPackage</h2>';
+            return [
+                'page.title' => 'Overridden page title'
+            ];
         }
     }

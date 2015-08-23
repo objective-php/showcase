@@ -15,7 +15,10 @@
 		{
 		  "Showcase\\": "app/",
 		  "Showcase\\Package\\": "packages/",
-		  "Showcase\\Action\\": "app/actions"
+		  "Showcase\\Action\\": [
+				"app/actions",
+				"app/packages/Debug/actions"
+		  ]
 		}
 	}
 }

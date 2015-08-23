@@ -2,15 +2,15 @@
 
     namespace Showcase;
 
-    use ObjectivePHP\Application\Pattern\Rta\RtaCallbacksAggregate;
-    use ObjectivePHP\Application\Pattern\Rta\RtaWorkflow;
     use ObjectivePHP\Application\AbstractApplication;
+    use ObjectivePHP\Application\WebAppWorkflow;
+    use ObjectivePHP\Application\Task\RtaCallbacksAggregate;
 
     class Application extends AbstractApplication
     {
         public function init()
         {
-            $this->setWorkflow(new RtaWorkflow());
+            $this->setWorkflow(new WebAppWorkflow());
 
             $this->getWorkflow()->bind('init', new RtaCallbacksAggregate());
 

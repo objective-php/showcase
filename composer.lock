@@ -16,7 +16,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/8689a073d05bea6fd5e001ad5891f82d8807fb93",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/335fe292600dc70268febebd66859a7dc58e91f8",
                 "reference": "6fdce2fb9b812c1e790e2303cf6d47f9409bf8e2",
                 "shasum": ""
             },
@@ -64,12 +64,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/config.git",
-                "reference": "19bda7ad0b9faa1d62cced75c3e44336b221c258"
+                "reference": "12847c790f3cdb78871f2229e1a909fc2903a73f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/config/zipball/19bda7ad0b9faa1d62cced75c3e44336b221c258",
-                "reference": "19bda7ad0b9faa1d62cced75c3e44336b221c258",
+                "url": "https://api.github.com/repos/objective-php/config/zipball/12847c790f3cdb78871f2229e1a909fc2903a73f",
+                "reference": "12847c790f3cdb78871f2229e1a909fc2903a73f",
                 "shasum": ""
             },
             "require": {
@@ -104,7 +104,7 @@
                 "config",
                 "objective-php"
             ],
-            "time": "2015-08-22 08:25:34"
+            "time": "2015-08-23 11:28:56"
         },
         {
             "name": "objective-php/events-handler",
@@ -214,7 +214,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/message/zipball/1c88492c300bcdc317fd991c3218fc958f72d0a0",
+                "url": "https://api.github.com/repos/objective-php/message/zipball/38595fc140e856e303b64d18023898dfc789ac1e",
                 "reference": "1c88492c300bcdc317fd991c3218fc958f72d0a0",
                 "shasum": ""
             },
@@ -295,12 +295,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/primitives.git",
-                "reference": "35853f736b98cd5628811489b9a897324992f5ae"
+                "reference": "46c9a50d30e2eff50193915b8b3bd057c8fbecb0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/primitives/zipball/35853f736b98cd5628811489b9a897324992f5ae",
-                "reference": "35853f736b98cd5628811489b9a897324992f5ae",
+                "url": "https://api.github.com/repos/objective-php/primitives/zipball/46c9a50d30e2eff50193915b8b3bd057c8fbecb0",
+                "reference": "46c9a50d30e2eff50193915b8b3bd057c8fbecb0",
                 "shasum": ""
             },
             "require": {
@@ -341,7 +341,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-08-17 18:32:55"
+            "time": "2015-08-22 13:31:21"
         },
         {
             "name": "objective-php/services-factory",

@@ -1,6 +1,7 @@
 <?php
     use ObjectivePHP\Application\View\Helper\Vars;
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,11 +66,13 @@
 
 <div class="container theme-showcase" role="main">
 
-    <div class="page-header">
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
         <h1>
             <?= Vars::get('page.title') ?>
             <?= Vars::string('page.subtitle')->prepend('<small>')->append('</small>') ?>
         </h1>
+        <p></p>
     </div>
 
     <div>

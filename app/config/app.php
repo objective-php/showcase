@@ -1,13 +1,14 @@
 <?php
 
     use ObjectivePHP\Primitives\Merger\MergePolicy;
+    use Showcase\Package\Overrider\OverriderPackage;
     use Showcase\Package\Debug\DebugPackage;
 
     return [
 
         'mergers'    => [
             'app.actions'         => MergePolicy::COMBINE,
-            'app.views.locations' => MergePolicy::NATIVE,
+            'views.locations'     => MergePolicy::NATIVE,
         ],
         'directives' =>
             [
@@ -32,7 +33,8 @@
 
                 // packages
                 'packages.registered' => [
-                   // DebugPackage::class
+                  //  DebugPackage::class
+                  OverriderPackage::class
                 ]
             ]
     ];

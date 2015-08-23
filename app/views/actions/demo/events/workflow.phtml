@@ -1,42 +1,79 @@
+<?php
+use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\Application\Workflow\WorkflowInterface;
 
-<style>
+?>
 
-    .indent {
-        padding-left: 30px
-    }
-</style>
 Below is the tree of default ObjectivePHP/Application workflow events.
 <br /><br />
 <?php
 
+$workflow =  Vars::get('workflow');
+?>
+
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Workflow steps</div>
+        <div class="panel-body">
+            <p>
+                The steps below are the actual steps of the current workflow. This is a fully dynamic table, generated
+                from the actual workflow running the page.
+            </p>
+        </div>
+
+        <!-- Table -->
+        <table class="table">
+            <thead>
+                <th>Step</th>
+                <th>Event</th>
+                <th>Description</th>
+            </thead>
+            <tbody>
+            <?php
+                $index = 1;
+                display_workflow($workflow, $workflow->getName(), $index);
+            ?>
+            </tbody>
+    </table>
+</div>
+
+<?php
 
 
-list($prefix, $workflow) = each($events);
-
-displayWorkflowLevel($prefix, $workflow);
-
-function displayWorkflowLevel($prefix, $steps)
-{
-    echo '<ul />';
-    foreach($steps as $index => $step)
+    /**
+     * @param $workflow
+     */
+    function display_workflow($workflow, $prefix, &$index)
     {
-        if(is_int($index))
+        if($workflow->doesAutoTriggerPrePostEvents())
         {
-            if ($step == 'post')
+            display_event($index++, implode('.', [$prefix, 'pre']), 'Auto-triggered "pre" event');
+        }
+
+        foreach($workflow->getSteps() as $step)
+        {
+            if ($step instanceof WorkflowInterface)
             {
-                echo '</ul>';
+                display_workflow($step, $prefix . '.' . $step->getName(), $index);
             }
-            echo  '<li>Step #' . $index . ' <strong>' . $prefix . '.' . $step . '</strong></li>';
-            if ($step == 'pre')
+            else
             {
-                echo '<ul>';
+                display_event($index++, implode('.', [$prefix, $step->getName()]), $step->getDescription());
             }
         }
-        else
+        if($workflow->doesAutoTriggerPrePostEvents())
         {
-            displayWorkflowLevel($prefix . '.' . $index, $step);
+            display_event($index++, implode('.', [$prefix, 'post']), 'Auto-triggered "post" event');
         }
     }
 
-    echo '</ul>';
-}
+    function display_event($index, $event, $description)
+    {
+        echo '<tr>';
+        echo '<td>' . $index . '</td>';
+        echo '<td>' . $event . '</td>';
+        echo '<td>' . $description . '</td>';
+        echo '</tr>';
+    }
+
+

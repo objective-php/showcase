@@ -2,12 +2,15 @@
     
     namespace Showcase\Action;
 
+    use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+
     class Home
     {
-        public function __invoke()
+        public function __invoke(WorkflowEvent $event)
         {
+
             return [
-                'layout' => ['pageTitle' => 'Objective PHP Showcase']
+                'page.title' => 'Objective PHP Showcase'
             ];
         }
     }

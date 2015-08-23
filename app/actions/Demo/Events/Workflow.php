@@ -5,8 +5,9 @@
     
     use ObjectivePHP\Application\Action\AbstractAction;
     use ObjectivePHP\Application\Action\Param\StringParameter;
-    use ObjectivePHP\Application\Pattern\Rta\RtaWorkflow;
+    use ObjectivePHP\Application\WebAppWorkflow;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+    use ObjectivePHP\Application\Workflow\Step\Step;
     use ObjectivePHP\Application\Workflow\Step\StepInterface;
     use ObjectivePHP\Application\Workflow\WorkflowInterface;
 
@@ -41,16 +42,16 @@
         {
 
 
-            $nativeWorkflow = new RtaWorkflow();
+            $workflow = $event->getApplication()->getWorkflow();
 
-            $this->generateWorkflowEventsTree($events, $nativeWorkflow, 0);
-
-
+            // $this->generateWorkflowEventsTree($events, $nativeWorkflow, 0);
+            // $this->generateWorkflowEventsList($ev, $workflow, 0);
 
             return
                 [
-                    'layout' => ['pageTitle' => 'Workflow steps'],
-                    'events' => $events
+                    'page.title' => 'Workflow steps',
+                    'page.subtitle' => 'Dynamically displays workflow steps',
+                    'workflow' => $workflow
                 ];
         }
 

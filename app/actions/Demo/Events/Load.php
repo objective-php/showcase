@@ -53,13 +53,11 @@ class Load extends AbstractAction {
 
 		return
 		[
-			'ranCallbacks' => $count,
-			'triggers' => $triggers,
-			'boundCallbacks' => $callbacks,
-			'elapsedTime' => $elapsedTime,
-			'layout' => [
-				'pageTitle' => 'Events demo'
-			]
+			'callbacks.ran' => $count,
+			'events.triggered' => $triggers,
+			'callbacks.bound' => $callbacks,
+			'time.elapsed' => $elapsedTime,
+			'page.title' => 'Events demo'
 		];
 
 
