@@ -4,7 +4,27 @@
 
 
     $event = Vars::get('event');
-    $callbacks = Vars::collection('callbacks');
+    $callbacks = Vars::get('callbacks');
+
+    // no callbacks
+    if(!$callbacks)
+    {
+        ?>
+
+        <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Event details</div>
+            <div class="panel-body">
+                <p>
+                    There is no callback attached to the <code><?= $event ?></code> event.
+                </p>
+            </div>
+        </div>
+
+        <?php
+        // display back link anyway
+        goto links;
+    }
 ?>
 
     <div class="panel panel-default">
@@ -40,6 +60,9 @@
         </table>
     </div>
 
+<?php
+links:
+?>
     <br>
 
     <a href="/demo/events/workflow">Back to workflow overview</a>

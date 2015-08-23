@@ -49,13 +49,14 @@
             $this->setViewName('demo/events/workflow.step');
 
 
-            $this->getApplication()->getWorkflow()->bind('*', function(WorkflowEvent $e) { });
+            $this->getApplication()->getWorkflow()->bind('packages.*', function(WorkflowEvent $e) { });
 
             $event = $this->getParam('step')->replace('_', '.');
 
             $listeners = $this->getEventsHandler()->getListeners((string) $event);
 
             $callbacks = [];
+
             foreach($listeners as $eventMask => $boundCallbacks)
             {
                 foreach($boundCallbacks as $alias => $callback)
