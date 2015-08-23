@@ -1,5 +1,6 @@
 <?php
 
+    use ObjectivePHP\Matcher\Matcher;
     use ObjectivePHP\Primitives\Merger\MergePolicy;
     use Showcase\Package\Overrider\OverriderPackage;
     use Showcase\Package\Debug\DebugPackage;
@@ -35,6 +36,14 @@
                 'packages.registered' => [
                   //  DebugPackage::class
                   OverriderPackage::class
+                ],
+
+                'services' =>
+                [
+                    [
+                        'id' => 'matcher',
+                        'class' => Matcher::class
+                    ]
                 ]
             ]
     ];

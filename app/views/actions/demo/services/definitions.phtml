@@ -1,0 +1,32 @@
+<?php
+
+    use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\ServicesFactory\Specs\ClassServiceSpecs;
+    use ObjectivePHP\ServicesFactory\Specs\PrefabServiceSpecs;
+
+
+    Vars::set('page.title', 'Services definitions');
+    Vars::set('page.subtitle', 'Show declared services list');
+
+
+    echo '<dl>';
+    foreach(Vars::get('services') as $serviceSpec)
+    {
+
+        if($serviceSpec instanceof PrefabServiceSpecs)
+        {
+            if(is_object($serviceSpec->getInstance()))
+            {
+                $type = 'Object of ' . get_class($serviceSpec->getInstance());
+            }
+            else $type = gettype($serviceSpec->getInstance());
+        }
+        elseif($serviceSpec instanceof ClassServiceSpecs)
+        {
+            $type = 'Object of ' . $serviceSpec->getClass();
+        }
+
+        echo '<dt>' . $serviceSpec->getId() . ' </dt>';
+        echo '<dd>' . $type . '</dd>';
+    }
+    echo '</dl>';
