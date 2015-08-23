@@ -35,7 +35,7 @@
                 // packages
                 'packages.registered' => [
                   //  DebugPackage::class
-                  OverriderPackage::class
+                  // OverriderPackage::class
                 ],
 
                 'services' =>
