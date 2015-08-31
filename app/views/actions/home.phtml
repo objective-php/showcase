@@ -1,11 +1,25 @@
 <?php
     // change layout
+    use ObjectivePHP\Html\Tag\Tag;
+
     $config->layouts->layout = 'home';
 ?>
 
-<div class="page-header">
-<h1>What will you find here?</h1>
-</div>
+
+<?php
+
+    /*
+     * Tag helper calls below will produce this html code:
+     *
+     * <div class="page-header">
+     *      <h1>What will you find here?</h1>
+     *  </div>
+     */
+
+    echo Tag::div(Tag::h1('What will you find here?'), 'page-header');
+
+?>
+
 <p>
     This project provides developers with demos of the Objective PHP framework and components.
 </p>

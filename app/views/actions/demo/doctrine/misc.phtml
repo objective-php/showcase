@@ -1,0 +1,23 @@
+<?php
+
+    use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\Html\Tag\Tag;
+
+    Vars::set('page.title', 'Doctrine simple demo');
+    Vars::set('page.subtitle', 'Using MySQL employees sample database');
+
+    echo '<ul>';
+    foreach(Vars::collection('results') as $result)
+    {
+        echo Tag::li(Tag::h3($result->getFirstname() . ' ' . $result->getLastName()));
+        echo '<ul>' .
+         Tag::dt('Gender') .
+         Tag::dd($result->getGender() == 'M' ? 'Male' : 'Female') .
+         Tag::dt('Birth Date') .
+         Tag::dd($result->getBirthDate()->format('d/m/Y')) .
+         Tag::dt('Hire Date') .
+         Tag::dd($result->getHireDate()->format('d/m/Y')) .
+         '</ul>';
+
+    }
+    echo '</ul>';

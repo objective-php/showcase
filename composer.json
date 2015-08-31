@@ -7,7 +7,10 @@
      		"objective-php/message": "dev-master",
      		"objective-php/matcher": "dev-master",
      		"objective-php/application": "dev-master",
-   	   	"twbs/bootstrap": "^3.3"
+     		"objective-php/doctrine-package": "dev-master",
+            "doctrine/orm": ">=2.5",
+	  		"objective-php/html": "dev-master",
+   	   		"twbs/bootstrap": "^3.3"
 	},
    	"autoload":
 	{
@@ -19,6 +22,9 @@
 				"app/actions",
 				"app/packages/Debug/actions"
 		  ]
-		}
+		},
+      "psr-0": {
+        "": "app/src/"
+      }
 	}
 }

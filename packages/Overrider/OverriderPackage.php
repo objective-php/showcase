@@ -23,6 +23,10 @@
                 'views.locations' =>
                 [
                     __DIR__ . '/views'
+                ],
+                'services' =>
+                [
+                    ['id' => 'overrider', 'instance' => new OverriderPackage()]
                 ]
             ]);
 

@@ -3,13 +3,15 @@
     use ObjectivePHP\Matcher\Matcher;
     use ObjectivePHP\Primitives\Merger\MergePolicy;
     use Showcase\Package\Overrider\OverriderPackage;
+    use ObjectivePHP\DoctrinePackage\DoctrinePackage;
     use Showcase\Package\Debug\DebugPackage;
 
     return [
 
         'mergers'    => [
-            'app.actions'         => MergePolicy::COMBINE,
+            'app.actions'         => MergePolicy::NATIVE,
             'views.locations'     => MergePolicy::NATIVE,
+            'services'            => MergePolicy::NATIVE,
         ],
         'directives' =>
             [
@@ -34,9 +36,12 @@
 
                 // packages
                 'packages.registered' => [
-                  //  DebugPackage::class
-                  // OverriderPackage::class
+                  // DebugPackage::class,
+                  // OverriderPackage::class,
+                  DoctrinePackage::class
                 ],
+
+                'doctrine.em.default.entities.locations' => 'app/src/Entity',
 
                 'services' =>
                 [
