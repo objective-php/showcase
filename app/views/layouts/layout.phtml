@@ -10,7 +10,6 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <!-- <link rel="icon" href="../../favicon.ico"> -->
 
     <title><?= $config->app->name ?></title>
 
@@ -42,7 +41,29 @@
             <?= Vars::string('page.subtitle')->prepend('<small>')->append('</small>') ?>
         </h1>
     </div>
+    <div class="bs-example">
+        <p>
+        <a class="btn btn-primary" role="button" data-toggle="collapse" href="#action-source" aria-expanded="false"
+           aria-controls="action-source">
+            Show Action
+        </a>
 
+        <a class="btn btn-primary" role="button" data-toggle="collapse" href="#view-source"
+                aria-expanded="false" aria-controls="view-source">
+            Show View
+        </a>
+    </p>
+        <div class="collapse" id="action-source">
+            <div class="well">
+                :action-source
+            </div>
+        </div>
+        <div class="collapse" id="view-source">
+            <div class="well">
+                :view-source
+            </div>
+        </div>
+    </div>
     <div>
         <?= $content ?>
     </div>

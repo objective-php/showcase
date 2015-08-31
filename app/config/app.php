@@ -5,6 +5,7 @@
     use Showcase\Package\Overrider\OverriderPackage;
     use ObjectivePHP\DoctrinePackage\DoctrinePackage;
     use Showcase\Package\Debug\DebugPackage;
+    use Showcase\Package\ShowSource\ShowSourcePackage;
 
     return [
 
@@ -38,7 +39,8 @@
                 'packages.registered' => [
                   // DebugPackage::class,
                   // OverriderPackage::class,
-                  DoctrinePackage::class
+                  DoctrinePackage::class,
+                  ShowSourcePackage::class
                 ],
 
                 'doctrine.em.default.entities.locations' => 'app/src/Entity',

@@ -7,7 +7,7 @@
     Vars::set('page.subtitle', 'Using MySQL employees sample database');
 
     echo '<ul>';
-    foreach(Vars::collection('results') as $result)
+    Vars::collection('results')->each(function($result)
     {
         echo Tag::li(Tag::h3($result->getFirstname() . ' ' . $result->getLastName()));
         echo '<ul>' .
@@ -19,5 +19,5 @@
          Tag::dd($result->getHireDate()->format('d/m/Y')) .
          '</ul>';
 
-    }
+    });
     echo '</ul>';
