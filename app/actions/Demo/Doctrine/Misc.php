@@ -16,9 +16,9 @@
             /* @var $em EntityManager */
             $em = $this->getServicesFactory()->get('doctrine.em.default');
 
-            $results = $em->getRepository(Employee::class)->findBy([], [], 10, rand(0,300000));
+            $employees = $em->getRepository(Employee::class)->findBy([], [], 10, rand(0,300000));
 
-            return compact('results');
+            return compact('employees');
         }
 
     }

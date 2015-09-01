@@ -16,7 +16,7 @@ $app->setEnv('dev');
 
 $app->loadConfig('app/config');
 
-$app->getWorkflow()->bind('init', function (WorkflowEvent $event) {
+$app->getWorkflow()->bind('packages.post', function (WorkflowEvent $event) {
     $event->getApplication()->getWorkflow()->unbind('route.*');
     $event->getApplication()->getWorkflow()->unbind('response.*');
 });

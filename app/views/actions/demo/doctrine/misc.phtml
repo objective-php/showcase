@@ -1,23 +1,45 @@
 <?php
 
+    use Doctrine\Common\Util\Debug;
+    use ObjectivePHP\Application\View\Helper\Currency;
+    use ObjectivePHP\Application\View\Helper\Date;
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Html\Tag\Tag;
+    use ObjectivePHP\Primitives\Collection\Collection;
 
     Vars::set('page.title', 'Doctrine simple demo');
     Vars::set('page.subtitle', 'Using MySQL employees sample database');
 
-    echo '<ul>';
-    Vars::collection('results')->each(function($result)
+    Vars::collection('employees')->each(function($employee)
     {
-        echo Tag::li(Tag::h3($result->getFirstname() . ' ' . $result->getLastName()));
-        echo '<ul>' .
+        echo Tag::h2($employee['first_name'] . ' ' . $employee['last_name']);
+
+        echo
          Tag::dt('Gender') .
-         Tag::dd($result->getGender() == 'M' ? 'Male' : 'Female') .
+         Tag::dd($employee['gender'] == 'M' ? 'Male' : 'Female') .
          Tag::dt('Birth Date') .
-         Tag::dd($result->getBirthDate()->format('d/m/Y')) .
+         Tag::dd($employee['birth_date']->format('d/m/Y')) .
          Tag::dt('Hire Date') .
-         Tag::dd($result->getHireDate()->format('d/m/Y')) .
-         '</ul>';
+
+
+         Tag::dd($employee['hire_date']->format('d/m/Y'));
+
+        if(count($employee['salaries']))
+        {
+            echo Tag::h2('Salaries');
+            echo Tag::ul();
+            foreach($employee['salaries'] as$salary)
+            {
+                echo Tag::li(
+                    'From ' . Date::format($salary['from'])
+                    . ' to ' . Date::format($salary['to']) . ': '
+                    . Currency::format($salary['amount'])
+                );
+
+            };
+            echo Tag::ul()->close();
+        }
+
+        echo Tag::hr();
 
     });
-    echo '</ul>';

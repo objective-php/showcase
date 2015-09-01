@@ -2,18 +2,20 @@
 
     namespace Entity;
 
+    use Doctrine\Common\Collections\ArrayCollection;
+
 
     /**
      * @Entity
      * @Table(name="employees")
      */
-    class Employee
+    class Employee extends AbstractEntity
     {
         /**
          * @Id
-         * @Column(type="integer")
+         * @Column(type="integer", name="emp_no")
          */
-        protected $emp_no;
+        protected $employeeNo;
 
         /**
          * @Column(type="date", name="birth_date")
@@ -41,21 +43,33 @@
         protected $hireDate;
 
         /**
-         * @return mixed
+         * @OneToMany(targetEntity="Entity\Salary", mappedBy="employee")
+         * @OrderBy({"from" = "ASC"})
+         * @var ArrayCollection
          */
-        public function getEmpNo()
+        protected $salaries;
+
+        public function __construct()
         {
-            return $this->emp_no;
+            $this->salaries = new ArrayCollection();
         }
 
         /**
-         * @param mixed $emp_no
+         * @return mixed
+         */
+        public function getEmployeeNo()
+        {
+            return $this->employeeNo;
+        }
+
+        /**
+         * @param mixed $employeeNo
          *
          * @return $this
          */
-        public function setEmpNo($emp_no)
+        public function setEmployeeNo($employeeNo)
         {
-            $this->emp_no = $emp_no;
+            $this->employeeNo = $employeeNo;
 
             return $this;
         }
