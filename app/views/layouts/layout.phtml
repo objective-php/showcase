@@ -41,26 +41,28 @@
             <?= Vars::string('page.subtitle')->prepend('<small>')->append('</small>') ?>
         </h1>
     </div>
-    <div class="bs-example">
-        <p>
-        <a class="btn btn-primary" role="button" data-toggle="collapse" href="#action-source" aria-expanded="false"
-           aria-controls="action-source">
-            Show Action
-        </a>
 
-        <a class="btn btn-primary" role="button" data-toggle="collapse" href="#view-source"
-                aria-expanded="false" aria-controls="view-source">
-            Show View
-        </a>
-    </p>
-        <div class="collapse" id="action-source">
-            <div class="well">
-                :action-source
+    <div class="bs-example panel" id="source-buttons">
+        <p>
+            <a class="btn btn-primary" href="#action-source" data-parent="#source-viewers">
+                Show Action
+            </a>
+
+            <a class="btn btn-primary" href="#view-source" data-parent="#source-viewers">
+                Show View
+            </a>
+        </p>
+        <div id="source-viewers">
+
+            <div class="source-viewer collapse" id="action-source">
+                <div class="well">
+                    :action-source
+                </div>
             </div>
-        </div>
-        <div class="collapse" id="view-source">
-            <div class="well">
-                :view-source
+            <div class="source-viewer collapse" id="view-source">
+                <div class="well">
+                    :view-source
+                </div>
             </div>
         </div>
     </div>
@@ -76,6 +78,17 @@
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="/bootstrap/js/bootstrap.min.js"></script>
-
+<script>
+    $(document).ready(function () {
+        $('#source-buttons  a').each(function (index, button) {
+            $(button).on('click', function(event){
+                target = $(event.currentTarget.hash);
+                $($(event.currentTarget).data('parent')).find('.source-viewer').not('#' + target.attr('id')).hide();
+                target.toggle();
+                return false;
+            });
+        });
+    });
+</script>
 </body>
 </html>
