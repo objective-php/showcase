@@ -1,0 +1,43 @@
+<?php
+
+    use Doctrine\Common\Util\Debug;
+    use ObjectivePHP\Application\View\Helper\Currency;
+    use ObjectivePHP\Application\View\Helper\Date;
+    use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\Html\Tag\Tag;
+    use ObjectivePHP\Primitives\Collection\Collection;
+
+    Vars::set('page.title', 'Doctrine Parameter');
+    Vars::set('page.subtitle', 'Restores an entity from a query parameter');
+
+    $employee = Vars::get('employee');
+
+
+    echo Tag::h2($employee['first_name'] . ' ' . $employee['last_name']);
+
+    echo
+     Tag::dt('Gender') .
+     Tag::dd($employee['gender'] == 'M' ? 'Male' : 'Female') .
+     Tag::dt('Birth Date') .
+     Tag::dd($employee['birth_date']->format('d/m/Y')) .
+     Tag::dt('Hire Date') .
+
+
+     Tag::dd($employee['hire_date']->format('d/m/Y'));
+
+    if(count($employee['salaries']))
+    {
+        echo Tag::h2('Salaries');
+        echo Tag::ul();
+        foreach($employee['salaries'] as$salary)
+        {
+            echo Tag::li(
+                'From ' . Date::format($salary['from'])
+                . ' to ' . Date::format($salary['to']) . ': '
+                . Currency::format($salary['amount'])
+            );
+
+        };
+        echo Tag::ul()->close();
+    }
+
