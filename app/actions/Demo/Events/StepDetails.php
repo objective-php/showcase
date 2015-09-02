@@ -19,7 +19,7 @@
         public function expects()
         {
             return [
-                (new StringParameter([0 => 'step']))->setMandatory()
+                (new StringParameter(0, 'step'))->setMandatory()
             ];
         }
 

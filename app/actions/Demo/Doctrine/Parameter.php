@@ -14,7 +14,9 @@
         public function expects()
         {
             return [
-                (new EntityParameter(0, true))->setEntity(Employee::class)
+                (new EntityParameter(0, 'employee'))
+                    ->setEntity(Employee::class)
+                    ->setMandatory()
             ];
         }
 
@@ -24,10 +26,11 @@
         }
 
         /**
+         * @codeAssist
          * @return Employee
          */
         protected function getEmployee()
         {
-           return $this->getParam(0);
+           return $this->getParam('employee');
         }
     }

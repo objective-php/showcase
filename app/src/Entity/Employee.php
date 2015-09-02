@@ -49,6 +49,13 @@
          */
         protected $salaries;
 
+        /**
+         * @OneToMany(targetEntity="Entity\Title", mappedBy="employee")
+         * @OrderBy({"from" = "ASC"})
+         * @var ArrayCollection
+         */
+        protected $titles;
+
         public function __construct()
         {
             $this->salaries = new ArrayCollection();

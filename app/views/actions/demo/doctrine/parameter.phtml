@@ -13,7 +13,9 @@
     $employee = Vars::get('employee');
 
 
+    echo Tag::small(Tag::a('back to employee list')->addAttribute('href', '/demo/doctrine/misc'));
     echo Tag::h2($employee['first_name'] . ' ' . $employee['last_name']);
+
 
     echo
      Tag::dt('Gender') .
@@ -25,18 +27,31 @@
 
      Tag::dd($employee['hire_date']->format('d/m/Y'));
 
+    if(count($employee['titles']))
+    {
+        echo Tag::h2('Titles');
+        echo Tag::ul();
+        foreach($employee['titles'] as $title)
+        {
+            $output = 'From ' . Date::format($title['from']);
+            if ($title['to']) $output .= ' to ' . Date::format($title['to']);
+            $output .= ': ' . $title['title'];
+            echo Tag::li($output);
+
+        };
+        echo Tag::ul()->close();
+    }
+
     if(count($employee['salaries']))
     {
         echo Tag::h2('Salaries');
         echo Tag::ul();
-        foreach($employee['salaries'] as$salary)
+        foreach($employee['salaries'] as $salary)
         {
-            echo Tag::li(
-                'From ' . Date::format($salary['from'])
-                . ' to ' . Date::format($salary['to']) . ': '
-                . Currency::format($salary['amount'])
-            );
-
+            $output = 'From ' . Date::format($salary['from']);
+            if ($salary['to']) $output .= ' to ' . Date::format($salary['to']);
+            $output .= ': ' . Currency::format($salary['amount']);
+            echo Tag::li($output);
         };
         echo Tag::ul()->close();
     }
