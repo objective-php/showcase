@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "366c0deabe5deba38d0be206f7cf409e",
+    "hash": "cc9c457b11fd1fa969d08bc0816f5d0f",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -612,12 +612,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "8969faad8dc6c4e7ead778c0aa68e20af5a3cfeb"
+                "reference": "60f9110c4b0c615a9095ef5cdc43a4d1f39b6b71"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/8969faad8dc6c4e7ead778c0aa68e20af5a3cfeb",
-                "reference": "8969faad8dc6c4e7ead778c0aa68e20af5a3cfeb",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/60f9110c4b0c615a9095ef5cdc43a4d1f39b6b71",
+                "reference": "60f9110c4b0c615a9095ef5cdc43a4d1f39b6b71",
                 "shasum": ""
             },
             "require": {
@@ -656,7 +656,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-08-23 21:02:27"
+            "time": "2015-09-02 16:11:58"
         },
         {
             "name": "objective-php/config",
@@ -712,27 +712,27 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "b1966e1f6d9290142df1b97783ed87e5851e6a0b"
+                "reference": "a3a7480aed38552d1df8aefc42aa5e6327cdf394"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/b1966e1f6d9290142df1b97783ed87e5851e6a0b",
-                "reference": "b1966e1f6d9290142df1b97783ed87e5851e6a0b",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/a3a7480aed38552d1df8aefc42aa5e6327cdf394",
+                "reference": "a3a7480aed38552d1df8aefc42aa5e6327cdf394",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
                 "doctrine/orm": ">=2.5",
                 "objective-php/application": "dev-master",
                 "objective-php/config": "dev-master",
                 "objective-php/events-handler": "dev-master",
                 "objective-php/matcher": "dev-master",
                 "objective-php/message": "dev-master",
-                "objective-php/phpunit-extension": "1.0",
                 "objective-php/primitives": "dev-master",
                 "objective-php/services-factory": "dev-master",
+                "php": ">=5.6.0"
+            },
+            "require-dev": {
+                "objective-php/phpunit-extension": "1.0",
                 "phpunit/phpunit": "4.*"
             },
             "suggest": {
@@ -761,7 +761,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2015-08-30 08:40:21"
+            "time": "2015-09-01 16:34:08"
         },
         {
             "name": "objective-php/events-handler",
@@ -769,12 +769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/events-handler.git",
-                "reference": "faee098aea352d593d85f4594a6ba46ef99eb6d8"
+                "reference": "93088e4453b0335b11c8ba5c5ca29e2e4a3b3ef9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/faee098aea352d593d85f4594a6ba46ef99eb6d8",
-                "reference": "faee098aea352d593d85f4594a6ba46ef99eb6d8",
+                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/93088e4453b0335b11c8ba5c5ca29e2e4a3b3ef9",
+                "reference": "93088e4453b0335b11c8ba5c5ca29e2e4a3b3ef9",
                 "shasum": ""
             },
             "require": {
@@ -813,7 +813,7 @@
                 "events handler",
                 "objective php"
             ],
-            "time": "2015-08-16 16:49:27"
+            "time": "2015-09-02 21:24:47"
         },
         {
             "name": "objective-php/html",
@@ -821,12 +821,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/html.git",
-                "reference": "81217153553109cf1a484acb9194367039644874"
+                "reference": "4bb566d326afd609d33174443a35d6d93a092238"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/html/zipball/81217153553109cf1a484acb9194367039644874",
-                "reference": "81217153553109cf1a484acb9194367039644874",
+                "url": "https://api.github.com/repos/objective-php/html/zipball/4bb566d326afd609d33174443a35d6d93a092238",
+                "reference": "4bb566d326afd609d33174443a35d6d93a092238",
                 "shasum": ""
             },
             "require": {
@@ -860,7 +860,7 @@
                 "html",
                 "objective php"
             ],
-            "time": "2015-08-29 22:44:42"
+            "time": "2015-09-01 12:52:28"
         },
         {
             "name": "objective-php/matcher",

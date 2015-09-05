@@ -6,6 +6,7 @@
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\Html\Tag\Tag;
     use ObjectivePHP\Primitives\String\String;
+    use ObjectivePHP\ServicesFactory\Reference;
 
     class ShowSourcePackage
     {
@@ -26,6 +27,13 @@
 
             $output = String::cast($previousResults->last());
             $actionClass = $application->getWorkflow()->getStep('route')->getEarlierEvent('resolve')->getResults()['action-resolver'];
+
+            // handle action which are services reference
+            if($actionClass instanceof Reference)
+            {
+                $action = $application->getServicesFactory()->get($actionClass->getId());
+                $actionClass= get_class($action);
+            }
 
             $actionFile = (new \ReflectionClass($actionClass))->getFileName();
             $actionSource = String::cast(show_source($actionFile, true));
