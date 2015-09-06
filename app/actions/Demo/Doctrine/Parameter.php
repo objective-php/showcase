@@ -5,11 +5,16 @@
     
     use Entity\Employee;
     use ObjectivePHP\Application\Action\AbstractAction;
-    use ObjectivePHP\Application\Action\Param\StringParameter;
+    use ObjectivePHP\Application\Action\Parameter\ActionParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\DoctrinePackage\Parameter\EntityParameter;
     use Service\HumanResources;
 
+    /**
+     * Class Parameter
+     *
+     * @package Showcase\Action\Demo\Doctrine
+     */
     class Parameter extends AbstractAction
     {
         /**
@@ -20,10 +25,10 @@
         public function expects()
         {
             return [
-                (new EntityParameter(0, 'employee'))
+                (new EntityParameter('employee', 0))
                     ->setEntity(Employee::class)
                     ->setMandatory()
-                    ->setMessage('Le paramètre :param est manquant')
+                    ->setMessage(ActionParameter::IS_MISSING, 'Le paramètre :param est manquant')
             ];
         }
 

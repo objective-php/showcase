@@ -612,12 +612,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "60f9110c4b0c615a9095ef5cdc43a4d1f39b6b71"
+                "reference": "0c727890b72a2a1bcd4a1bd2a17c2d55ad9d027a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/60f9110c4b0c615a9095ef5cdc43a4d1f39b6b71",
-                "reference": "60f9110c4b0c615a9095ef5cdc43a4d1f39b6b71",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/0c727890b72a2a1bcd4a1bd2a17c2d55ad9d027a",
+                "reference": "0c727890b72a2a1bcd4a1bd2a17c2d55ad9d027a",
                 "shasum": ""
             },
             "require": {
@@ -633,7 +633,7 @@
                 "objective-php/phpunit-extension": "1.0",
                 "phpunit/phpunit": "4.*"
             },
-            "type": "component",
+            "type": "framework",
             "autoload": {
                 "psr-4": {
                     "ObjectivePHP\\Application\\": "src/"
@@ -650,13 +650,13 @@
                     "role": "lead"
                 }
             ],
-            "description": "Objective PHP application framework",
+            "description": "Objective PHP applicative framework",
             "homepage": "https://github.com/objective-php/application",
             "keywords": [
                 "framework",
                 "objective php"
             ],
-            "time": "2015-09-02 16:11:58"
+            "time": "2015-09-06 15:31:46"
         },
         {
             "name": "objective-php/config",
@@ -712,12 +712,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "a3a7480aed38552d1df8aefc42aa5e6327cdf394"
+                "reference": "c0326d7ed64f44f2315e96259470ba2a2007e999"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/a3a7480aed38552d1df8aefc42aa5e6327cdf394",
-                "reference": "a3a7480aed38552d1df8aefc42aa5e6327cdf394",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/c0326d7ed64f44f2315e96259470ba2a2007e999",
+                "reference": "c0326d7ed64f44f2315e96259470ba2a2007e999",
                 "shasum": ""
             },
             "require": {
@@ -761,7 +761,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2015-09-01 16:34:08"
+            "time": "2015-09-06 15:13:57"
         },
         {
             "name": "objective-php/events-handler",

@@ -18,7 +18,6 @@
             $this->getWorkflow()->bind('init', new RtaCallbacksAggregate());
 
             // bind application listeners
-            $this->getEventsHandler()->bind(ServicesFactory::EVENT_INSTANCE_BUILT . '.action.*', ActionDependenciesInjector::class);
 
         }
 

@@ -29,6 +29,11 @@
          */
         public function getHumanResources()
         {
+            if(is_null($this->humanResources))
+            {
+                $this->humanResources = $this->getService('services.human-resources');
+            }
+
             return $this->humanResources;
         }
 
