@@ -4,6 +4,7 @@
 
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\Config\Loader\DirectoryLoader;
+    use ObjectivePHP\Events\Callback\AliasedCallback;
     use ObjectivePHP\Events\EventInterface;
 
     class DebugPackage
@@ -21,14 +22,14 @@
             $application->getConfig()->merge($config);
 
 
-            $workflow->bind('packages.post', ['dumpConfig' => function () use ($application)
+            $workflow->bind('packages.post', new AliasedCallback('dumpConfig', function () use ($application)
             {
                 var_dump($application->getConfig()->toArray());
-            }]);
+            }));
 
-            $workflow->bind('post', ['dumpParams' => function () use ($application) {
+            $workflow->bind('post', new AliasedCallback('dumpParams', function () use ($application) {
                // var_dump($application->getRequest()->getParameters());
-            }]);
+            }));
 
             $workflow->getEventsHandler()->bind('*', [$this, 'trackEvents']);
         }

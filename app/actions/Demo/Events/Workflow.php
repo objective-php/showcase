@@ -25,38 +25,8 @@
                 [
                     'page.title'    => 'Workflow steps',
                     'page.subtitle' => 'Dynamically displays workflow steps',
-                    'workflow'      => $workflow
+                    'workflowTree'      => $workflow
                 ];
         }
-
-        protected function generateWorkflowEventsTree(&$tree, WorkflowInterface $workflow, $lastStepIndex)
-        {
-            $tree[$workflow->getName()] = [];
-            $tree                       = &$tree[$workflow->getName()];
-
-            if ($workflow->doesAutoTriggerPrePostEvents())
-            {
-                $tree[++$lastStepIndex] = 'pre';
-            }
-            foreach ($workflow->getSteps() as $step)
-            {
-                if ($step instanceof WorkflowInterface)
-                {
-                    $lastStepIndex = $this->generateWorkflowEventsTree($tree, $step, $lastStepIndex);
-                }
-                elseif ($step instanceof StepInterface)
-                {
-                    $tree[++$lastStepIndex] = $step->getName();
-                }
-            }
-
-            if ($workflow->doesAutoTriggerPrePostEvents())
-            {
-                $tree[++$lastStepIndex] = 'post';
-            }
-
-            return $lastStepIndex;
-        }
-
 
     }

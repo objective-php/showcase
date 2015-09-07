@@ -1,14 +1,13 @@
 <?php
-use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Application\Workflow\WorkflowInterface;
-
 ?>
 
-Below is the tree of default ObjectivePHP/Application workflow events.
-<br /><br />
+    Below is the tree of default ObjectivePHP/Application workflow events.
+    <br/><br/>
 <?php
 
-$workflow =  Vars::get('workflow');
+    $workflow = Vars::get('workflowTree');
 ?>
 
     <div class="panel panel-default">
@@ -24,9 +23,9 @@ $workflow =  Vars::get('workflow');
         <!-- Table -->
         <table class="table table-striped">
             <thead>
-                <th>Step</th>
-                <th>Event</th>
-                <th>Description</th>
+            <th>Step</th>
+            <th>Event</th>
+            <th>Description</th>
             </thead>
             <tbody>
             <?php
@@ -34,8 +33,8 @@ $workflow =  Vars::get('workflow');
                 display_workflow($workflow, $workflow->getName(), $index);
             ?>
             </tbody>
-    </table>
-</div>
+        </table>
+    </div>
 
 <?php
 
@@ -45,12 +44,12 @@ $workflow =  Vars::get('workflow');
      */
     function display_workflow($workflow, $prefix, &$index)
     {
-        if($workflow->doesAutoTriggerPrePostEvents())
+        if ($workflow->doesAutoTriggerPrePostEvents())
         {
             display_event($index++, implode('.', [$prefix, 'pre']), 'Auto-triggered "pre" event');
         }
 
-        foreach($workflow->getSteps() as $step)
+        foreach ($workflow->getSteps() as $step)
         {
             if ($step instanceof WorkflowInterface)
             {
@@ -61,7 +60,7 @@ $workflow =  Vars::get('workflow');
                 display_event($index++, implode('.', [$prefix, $step->getName()]), $step->getDescription());
             }
         }
-        if($workflow->doesAutoTriggerPrePostEvents())
+        if ($workflow->doesAutoTriggerPrePostEvents())
         {
             display_event($index++, implode('.', [$prefix, 'post']), 'Auto-triggered "post" event');
         }
@@ -75,5 +74,4 @@ $workflow =  Vars::get('workflow');
         echo '<td>' . $description . '</td>';
         echo '</tr>';
     }
-
 

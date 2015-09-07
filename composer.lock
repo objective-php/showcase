@@ -769,12 +769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/events-handler.git",
-                "reference": "93088e4453b0335b11c8ba5c5ca29e2e4a3b3ef9"
+                "reference": "87f7af6f4313d3d0ff692108bd9cd12fb0bb06ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/93088e4453b0335b11c8ba5c5ca29e2e4a3b3ef9",
-                "reference": "93088e4453b0335b11c8ba5c5ca29e2e4a3b3ef9",
+                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/87f7af6f4313d3d0ff692108bd9cd12fb0bb06ba",
+                "reference": "87f7af6f4313d3d0ff692108bd9cd12fb0bb06ba",
                 "shasum": ""
             },
             "require": {
@@ -813,7 +813,7 @@
                 "events handler",
                 "objective php"
             ],
-            "time": "2015-09-02 21:24:47"
+            "time": "2015-09-07 22:37:33"
         },
         {
             "name": "objective-php/html",
@@ -868,12 +868,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/matcher.git",
-                "reference": "84adadd2bbb09f05254cb57668d128cde1dc79ac"
+                "reference": "16bc7aa28eb481757df22a126159836c6d3c06c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/matcher/zipball/84adadd2bbb09f05254cb57668d128cde1dc79ac",
-                "reference": "84adadd2bbb09f05254cb57668d128cde1dc79ac",
+                "url": "https://api.github.com/repos/objective-php/matcher/zipball/16bc7aa28eb481757df22a126159836c6d3c06c7",
+                "reference": "16bc7aa28eb481757df22a126159836c6d3c06c7",
                 "shasum": ""
             },
             "require": {
@@ -906,7 +906,7 @@
                 "matcher",
                 "objective php"
             ],
-            "time": "2015-08-03 19:12:03"
+            "time": "2015-09-07 22:41:18"
         },
         {
             "name": "objective-php/message",

@@ -4,7 +4,7 @@
 
     use ObjectivePHP\Application\AbstractApplication;
     use ObjectivePHP\Application\WebAppWorkflow;
-    use ObjectivePHP\Application\Task\RtaCallbacksAggregate;
+    use ObjectivePHP\Application\Task\RtaCallbacksBinder;
 
     class Application extends AbstractApplication
     {
@@ -13,7 +13,7 @@
             $this->setWorkflow(new WebAppWorkflow());
 
             // bind main workflow listeners
-            $this->getWorkflow()->bind('init', new RtaCallbacksAggregate());
+            $this->getWorkflow()->bind('init', new RtaCallbacksBinder());
 
             // bind application listeners
 

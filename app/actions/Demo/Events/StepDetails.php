@@ -12,6 +12,8 @@
     use ObjectivePHP\Application\Action\AbstractAction;
     use ObjectivePHP\Application\Action\Parameter\StringParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+    use ObjectivePHP\Events\Callback\AbstractCallback;
+    use ObjectivePHP\ServicesFactory\Reference;
 
     class StepDetails extends AbstractAction
     {
@@ -37,6 +39,13 @@
             {
                 foreach ($boundCallbacks as $alias => $callback)
                 {
+                    if ($callback instanceof Reference)
+                    {
+                        $type = 'service';
+                        $callback = $this->getApplication()->getServicesFactory()->get($callback->getId());
+
+                    }
+
                     if (is_string($callback))
                     {
                         if (class_exists($callback))

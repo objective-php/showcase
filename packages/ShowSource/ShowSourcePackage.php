@@ -4,6 +4,8 @@
 
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+    use ObjectivePHP\Events\Event;
+    use ObjectivePHP\Events\EventsHandler;
     use ObjectivePHP\Html\Tag\Tag;
     use ObjectivePHP\Primitives\String\String;
     use ObjectivePHP\ServicesFactory\Reference;
@@ -12,20 +14,19 @@
     {
         public function __invoke(WorkflowEvent $event)
         {
-            $workflow = $event->getApplication()->getWorkflow();
+            $workflow = $event->getApplication()->getWorkflow()->getRoot();
 
-
-            $workflow->bind('response.post', [$this, 'showSource']);
-
+            $workflow->bind('response.generate', [$this, 'showSource']);
 
         }
 
         public function showSource(WorkflowEvent $event)
         {
             $application = $event->getApplication();
-            $previousResults = $application->getWorkflow()->getStep('response')->getEarlierEvent('generate')->getResults();
 
-            $output = String::cast($previousResults->last());
+            $event->getApplication()->getResponse()->getBody()->rewind();
+            $output = String::cast($event->getApplication()->getResponse()->getBody()->getContents());
+
             $actionClass = $application->getWorkflow()->getStep('route')->getEarlierEvent('resolve')->getResults()['action-resolver'];
 
             // handle action which are services reference
@@ -36,6 +37,7 @@
             }
 
             $actionFile = (new \ReflectionClass($actionClass))->getFileName();
+
             $actionSource = String::cast(show_source($actionFile, true));
             $actionSource->replace('/^<code>|<\/code>$/', '', String::REGEXP);
 
@@ -47,7 +49,8 @@
             $viewSource->replace('/^<code>|<\/code>$/', '', String::REGEXP);
             $output->setVariable('view-source', Tag::div($viewSource));
 
-            echo $output;
+            $event->getApplication()->getResponse()->getBody()->rewind();
+            $event->getApplication()->getResponse()->getBody()->write($output);
         }
 
     }
