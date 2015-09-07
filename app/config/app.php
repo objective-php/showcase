@@ -36,7 +36,7 @@
                 'layouts.default'         => 'layout',
 
                 // packages
-                'packages.registered' => [
+                 'packages.registered' => [
                   // DebugPackage::class,
                   // OverriderPackage::class,
                   DoctrinePackage::class,

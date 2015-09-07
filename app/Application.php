@@ -2,11 +2,9 @@
 
     namespace Showcase;
 
-    use Listener\ActionDependenciesInjector;
     use ObjectivePHP\Application\AbstractApplication;
     use ObjectivePHP\Application\WebAppWorkflow;
     use ObjectivePHP\Application\Task\RtaCallbacksAggregate;
-    use ObjectivePHP\ServicesFactory\ServicesFactory;
 
     class Application extends AbstractApplication
     {

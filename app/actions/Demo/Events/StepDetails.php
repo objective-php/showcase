@@ -10,7 +10,7 @@
     
     
     use ObjectivePHP\Application\Action\AbstractAction;
-    use ObjectivePHP\Application\Action\Param\StringParameter;
+    use ObjectivePHP\Application\Action\Parameter\StringParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
     class StepDetails extends AbstractAction
@@ -19,12 +19,13 @@
         public function expects()
         {
             return [
-                (new StringParameter(0, 'step'))->setMandatory()
+                (new StringParameter('step', 0))->setMandatory()
             ];
         }
 
         public function run(WorkflowEvent $event)
         {
+
             // replace '_' with '.' because '.' are automatically modified when present in $_GET key
             $event = $this->getStepName()->replace('_', '.');
 

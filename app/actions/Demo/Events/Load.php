@@ -3,9 +3,8 @@
 namespace Showcase\Action\Demo\Events;
 
 use ObjectivePHP\Application\Action\AbstractAction;
-use ObjectivePHP\Application\Action\Param\NumericParameter;
+use ObjectivePHP\Application\Action\Parameter\NumericParameter;
 use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
-use ObjectivePHP\Primitives\Numeric\Numeric;
 
 class Load extends AbstractAction {
 
