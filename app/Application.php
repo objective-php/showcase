@@ -15,8 +15,6 @@
             // bind main workflow listeners
             $this->getWorkflow()->bind('init', new RtaCallbacksBinder());
 
-            // bind application listeners
-
         }
 
     }

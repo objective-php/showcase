@@ -10,11 +10,16 @@
     use ObjectivePHP\Application\Workflow\WorkflowInterface;
     use ObjectivePHP\Events\EventInterface;
 
+    /**
+     * Class Workflow
+     *
+     * @package Showcase\Action\Demo\Events
+     */
     class Workflow extends AbstractAction
     {
 
         /**
-         *
+         * Run the action
          */
         public function run(WorkflowEvent $event)
         {

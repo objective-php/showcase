@@ -6,8 +6,8 @@
     Below is the tree of default ObjectivePHP/Application workflow events.
     <br/><br/>
 <?php
-
     $workflow = Vars::get('workflowTree');
+
 ?>
 
     <div class="panel panel-default">
@@ -49,11 +49,13 @@
             display_event($index++, implode('.', [$prefix, 'pre']), 'Auto-triggered "pre" event');
         }
 
-        foreach ($workflow->getSteps() as $step)
+        foreach ($workflow->getSteps()->toArray() as $step)
         {
             if ($step instanceof WorkflowInterface)
             {
                 display_workflow($step, $prefix . '.' . $step->getName(), $index);
+
+
             }
             else
             {
@@ -74,4 +76,3 @@
         echo '<td>' . $description . '</td>';
         echo '</tr>';
     }
-
