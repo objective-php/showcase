@@ -18,11 +18,11 @@
     class StepDetails extends AbstractAction
     {
 
-        public function expects()
+        public function init()
         {
-            return [
+            $this->setParameterProcessor(
                 (new StringParameter('step', 0))->setMandatory()
-            ];
+            );
         }
 
         public function run(WorkflowEvent $event)
