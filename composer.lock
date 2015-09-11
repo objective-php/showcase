@@ -612,12 +612,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "0c727890b72a2a1bcd4a1bd2a17c2d55ad9d027a"
+                "reference": "c3a8c1df089d5cc37bc2e301969802b66b3db3aa"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/0c727890b72a2a1bcd4a1bd2a17c2d55ad9d027a",
-                "reference": "0c727890b72a2a1bcd4a1bd2a17c2d55ad9d027a",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/c3a8c1df089d5cc37bc2e301969802b66b3db3aa",
+                "reference": "c3a8c1df089d5cc37bc2e301969802b66b3db3aa",
                 "shasum": ""
             },
             "require": {
@@ -656,7 +656,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-09-06 15:31:46"
+            "time": "2015-09-10 21:07:54"
         },
         {
             "name": "objective-php/config",
@@ -769,12 +769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/events-handler.git",
-                "reference": "87f7af6f4313d3d0ff692108bd9cd12fb0bb06ba"
+                "reference": "f92344691387dc99ac91e2c2eaed8fb7ac1ead23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/87f7af6f4313d3d0ff692108bd9cd12fb0bb06ba",
-                "reference": "87f7af6f4313d3d0ff692108bd9cd12fb0bb06ba",
+                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/f92344691387dc99ac91e2c2eaed8fb7ac1ead23",
+                "reference": "f92344691387dc99ac91e2c2eaed8fb7ac1ead23",
                 "shasum": ""
             },
             "require": {
@@ -813,7 +813,7 @@
                 "events handler",
                 "objective php"
             ],
-            "time": "2015-09-07 22:37:33"
+            "time": "2015-09-08 22:00:08"
         },
         {
             "name": "objective-php/html",
@@ -821,12 +821,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/html.git",
-                "reference": "4bb566d326afd609d33174443a35d6d93a092238"
+                "reference": "9038c4d6276e101e0741d8acbd984efbe4faedc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/html/zipball/4bb566d326afd609d33174443a35d6d93a092238",
-                "reference": "4bb566d326afd609d33174443a35d6d93a092238",
+                "url": "https://api.github.com/repos/objective-php/html/zipball/9038c4d6276e101e0741d8acbd984efbe4faedc7",
+                "reference": "9038c4d6276e101e0741d8acbd984efbe4faedc7",
                 "shasum": ""
             },
             "require": {
@@ -860,7 +860,7 @@
                 "html",
                 "objective php"
             ],
-            "time": "2015-09-01 12:52:28"
+            "time": "2015-09-08 22:04:14"
         },
         {
             "name": "objective-php/matcher",
@@ -868,12 +868,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/matcher.git",
-                "reference": "16bc7aa28eb481757df22a126159836c6d3c06c7"
+                "reference": "321d27bcb933f62d2784e7e49411e4bc7fab3433"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/matcher/zipball/16bc7aa28eb481757df22a126159836c6d3c06c7",
-                "reference": "16bc7aa28eb481757df22a126159836c6d3c06c7",
+                "url": "https://api.github.com/repos/objective-php/matcher/zipball/321d27bcb933f62d2784e7e49411e4bc7fab3433",
+                "reference": "321d27bcb933f62d2784e7e49411e4bc7fab3433",
                 "shasum": ""
             },
             "require": {
@@ -906,7 +906,7 @@
                 "matcher",
                 "objective php"
             ],
-            "time": "2015-09-07 22:41:18"
+            "time": "2015-09-07 23:45:46"
         },
         {
             "name": "objective-php/message",
@@ -914,12 +914,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/message.git",
-                "reference": "38595fc140e856e303b64d18023898dfc789ac1e"
+                "reference": "af4c1660ebfa4b7a0eee6603dd9064ecb64d6d51"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/message/zipball/38595fc140e856e303b64d18023898dfc789ac1e",
-                "reference": "38595fc140e856e303b64d18023898dfc789ac1e",
+                "url": "https://api.github.com/repos/objective-php/message/zipball/af4c1660ebfa4b7a0eee6603dd9064ecb64d6d51",
+                "reference": "af4c1660ebfa4b7a0eee6603dd9064ecb64d6d51",
                 "shasum": ""
             },
             "require": {
@@ -947,7 +947,7 @@
                 }
             ],
             "description": "ObjectivePHP implementation for PSR-7",
-            "time": "2015-08-22 11:33:02"
+            "time": "2015-09-07 23:34:09"
         },
         {
             "name": "objective-php/phpunit-extension",
@@ -1000,12 +1000,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/primitives.git",
-                "reference": "02a6af91c924ea336a918bb8369e31bb69765442"
+                "reference": "a578f0b07931f551f4ee74ad9bc6657a9113b5a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/primitives/zipball/02a6af91c924ea336a918bb8369e31bb69765442",
-                "reference": "02a6af91c924ea336a918bb8369e31bb69765442",
+                "url": "https://api.github.com/repos/objective-php/primitives/zipball/a578f0b07931f551f4ee74ad9bc6657a9113b5a8",
+                "reference": "a578f0b07931f551f4ee74ad9bc6657a9113b5a8",
                 "shasum": ""
             },
             "require": {
@@ -1046,7 +1046,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-08-29 22:04:55"
+            "time": "2015-09-08 22:03:11"
         },
         {
             "name": "objective-php/services-factory",
@@ -1149,16 +1149,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.7.3",
+            "version": "v2.7.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "d6cf02fe73634c96677e428f840704bfbcaec29e"
+                "reference": "9ff9032151186bd66ecee727d728f1319f52d1d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/d6cf02fe73634c96677e428f840704bfbcaec29e",
-                "reference": "d6cf02fe73634c96677e428f840704bfbcaec29e",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/9ff9032151186bd66ecee727d728f1319f52d1d8",
+                "reference": "9ff9032151186bd66ecee727d728f1319f52d1d8",
                 "shasum": ""
             },
             "require": {
@@ -1202,7 +1202,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-07-28 15:18:12"
+            "time": "2015-09-03 11:40:38"
         },
         {
             "name": "twbs/bootstrap",

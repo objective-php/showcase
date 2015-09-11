@@ -7,7 +7,7 @@
     use ObjectivePHP\Application\Action\AbstractAction;
     use ObjectivePHP\Application\Action\Parameter\ActionParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
-    use ObjectivePHP\DoctrinePackage\Parameter\EntityParameter;
+    use ObjectivePHP\DoctrinePackage\Parameter\EntityParameterProcessor;
     use Service\HumanResources;
 
     /**
@@ -22,14 +22,16 @@
          */
         protected $humanResources;
 
-        public function expects()
+        public function init()
         {
-            return [
-                (new EntityParameter('employee', 0))
+
+            $this->setParameterProcessor(
+                (new EntityParameterProcessor('employee', 0))
                     ->setEntity(Employee::class)
                     ->setMandatory()
                     ->setMessage(ActionParameter::IS_MISSING, 'Le paramètre :param est manquant')
-            ];
+            );
+
         }
 
         public function run(WorkflowEvent $event)

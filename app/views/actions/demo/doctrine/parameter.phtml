@@ -16,7 +16,6 @@
     echo Tag::small(Tag::a('back to employee list')->addAttribute('href', '/demo/doctrine/misc'));
     echo Tag::h2($employee['first_name'] . ' ' . $employee['last_name']);
 
-
     echo
      Tag::dt('Gender') .
      Tag::dd($employee['gender'] == 'M' ? 'Male' : 'Female') .
