@@ -2,7 +2,15 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
             <a class="navbar-brand" href="/"><?= $config->app->name ?></a>
+
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
@@ -17,8 +25,8 @@
                         <li class="dropdown-header">Services</li>
                         <li><a href="/demo/services/definitions">Definitions</a></li>
                         <li class="dropdown-header">Doctrine</li>
-                        <li><a href="/demo/doctrine/parameter?<?= rand(1001, 300000) ?>">Parameter</a></li>
-                        <li><a href="/demo/doctrine/misc">Misc</a></li>
+                        <li><a href="/demo/doctrine/listing">Listing</a></li>
+                        <li><a href="/demo/doctrine/entity-parameter?<?= rand(1001, 30000) ?>">Entity Parameter</a></li>
                     </ul>
                 </li>
                 <!--
