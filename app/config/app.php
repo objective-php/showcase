@@ -8,49 +8,40 @@
     use Showcase\Package\ShowSource\ShowSourcePackage;
 
     return [
-
-        'mergers'    => [
-            'app.actions'         => MergePolicy::NATIVE,
-            'views.locations'     => MergePolicy::NATIVE,
-            'services'            => MergePolicy::NATIVE,
-        ],
-        'directives' =>
-            [
-                'app.name'            => 'Objective PHP Framework',
-                'app.actions'         =>
-                    [
-                        'Showcase\\Action\\' => 'app/actions'
-                    ],
-
-                // views
-                'views.locations' =>
-                    [
-                        'app/views/actions'
-                    ],
-
-                // layouts
-                'layouts.locations' =>
-                    [
-                        'app/views/layouts'
-                    ],
-                'layouts.default'         => 'layout',
-
-                // packages
-                 'packages.registered' => [
-                  // DebugPackage::class,
-                  // OverriderPackage::class,
-                   DoctrinePackage::class,
-                   ShowSourcePackage::class
+            'app.name'            => 'Objective PHP Framework',
+            'actions.namespaces'  =>
+                [
+                    'Showcase\\Action'
                 ],
 
-                'doctrine.em.default.entities.locations' => 'app/src/Entity',
-
-                'services' =>
+            // views
+            'views.locations' =>
                 [
-                    [
-                        'id' => 'matcher',
-                        'class' => Matcher::class
-                    ]
+                    'app/views/actions'
+                ],
+
+            // layouts
+            'layouts.locations' =>
+                [
+                    'app/views/layouts'
+                ],
+            'layouts.default'         => 'layout',
+
+            // packages
+             'packages.registered' => [
+               DebugPackage::class,
+               OverriderPackage::class,
+               DoctrinePackage::class,
+              // ShowSourcePackage::class
+            ],
+
+            'doctrine.em.default.entities.locations' => 'app/src/Entity',
+
+            'services' =>
+            [
+                [
+                    'id' => 'matcher',
+                    'class' => Matcher::class
                 ]
             ]
     ];

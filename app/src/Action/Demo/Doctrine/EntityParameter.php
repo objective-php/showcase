@@ -3,19 +3,19 @@
     namespace Showcase\Action\Demo\Doctrine;
     
     
-    use Entity\Employee;
+    use Showcase\Entity\Employee;
     use ObjectivePHP\Application\Action\AbstractAction;
     use ObjectivePHP\Application\Action\Parameter\ActionParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\DoctrinePackage\Parameter\EntityParameterProcessor;
-    use Service\HumanResources;
+    use Showcase\Service\HumanResources;
 
     /**
      * Class Parameter
      *
      * @package Showcase\Action\Demo\Doctrine
      */
-    class Parameter extends AbstractAction
+    class EntityParameter extends AbstractAction
     {
         /**
          * @var HumanResources

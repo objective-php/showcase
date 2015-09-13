@@ -1,9 +1,9 @@
 <?php
 
 
-    use Gateway\HumanResourcesGateway;
+    use Showcase\Gateway\HumanResourcesGateway;
     use ObjectivePHP\ServicesFactory\Reference;
-    use Service\HumanResources;
+    use Showcase\Service\HumanResources;
 
     use ObjectivePHP\ServicesFactory;
 

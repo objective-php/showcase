@@ -16,15 +16,7 @@
 	{
 	  	"psr-4":
 		{
-		  "Showcase\\": "app/",
-		  "Showcase\\Package\\": "packages/",
-		  "Showcase\\Action\\": [
-				"app/actions",
-				"app/packages/Debug/actions"
-		  ]
-		},
-      "psr-0": {
-        "": "app/src/"
-      }
+		  "Showcase\\": "app/src"
+		}
 	}
 }

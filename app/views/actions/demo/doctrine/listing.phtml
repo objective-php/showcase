@@ -12,7 +12,7 @@
 
     Vars::collection('employees')->each(function($employee)
     {
-        echo Tag::h2(Tag::a($employee['first_name'] . ' ' . $employee['last_name'])->addAttribute('href', '/demo/doctrine/parameter?' . $employee['employee_no']));
+        echo Tag::h2(Tag::a($employee['first_name'] . ' ' . $employee['last_name'])->addAttribute('href', '/demo/doctrine/entity-parameter?' . $employee['employee_no']));
 
         echo
          Tag::dt('Gender') .

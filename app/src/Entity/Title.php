@@ -1,8 +1,8 @@
 <?php
 
-    namespace Entity;
+    namespace Showcase\Entity;
 
-    use Entity\Employee;
+    use Showcase\Entity\Employee;
 
     /**
      * @Entity
@@ -18,7 +18,7 @@
         protected $id;
 
         /**
-         * @ManyToOne(targetEntity="Entity\Employee", inversedBy="titles")
+         * @ManyToOne(targetEntity="Showcase\Entity\Employee", inversedBy="titles")
          * @JoinColumn(name="emp_no", referencedColumnName="emp_no")
          *
          * @var Employee
@@ -56,7 +56,7 @@
         }
 
         /**
-         * @return \Entity\Employee
+         * @return Showcase\Entity\Employee
          */
         public function getEmployee()
         {
@@ -64,7 +64,7 @@
         }
 
         /**
-         * @param \Entity\Employee $employee
+         * @param Showcase\Entity\Employee $employee
          *
          * @return $this
          */

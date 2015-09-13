@@ -1,6 +1,6 @@
 <?php
 
-    namespace Entity;
+    namespace Showcase\Entity;
 
     use Doctrine\Common\Collections\ArrayCollection;
 
@@ -43,14 +43,14 @@
         protected $hireDate;
 
         /**
-         * @OneToMany(targetEntity="Entity\Salary", mappedBy="employee")
+         * @OneToMany(targetEntity="Showcase\Entity\Salary", mappedBy="employee")
          * @OrderBy({"from" = "ASC"})
          * @var ArrayCollection
          */
         protected $salaries;
 
         /**
-         * @OneToMany(targetEntity="Entity\Title", mappedBy="employee")
+         * @OneToMany(targetEntity="Showcase\Entity\Title", mappedBy="employee")
          * @OrderBy({"from" = "ASC"})
          * @var ArrayCollection
          */

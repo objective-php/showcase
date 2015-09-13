@@ -1,6 +1,6 @@
 <?php
 
-    namespace Entity;
+    namespace Showcase\Entity;
 
     /**
      * @Entity
@@ -19,7 +19,7 @@
         protected $id;
 
         /**
-         * @ManyToOne(targetEntity="Entity\Employee", inversedBy="salaries")
+         * @ManyToOne(targetEntity="Showcase\Entity\Employee", inversedBy="salaries")
          * @JoinColumn(name="emp_no", referencedColumnName="emp_no")
          */
         protected $employee;

@@ -1,5 +1,5 @@
 <?php
-    namespace Entity;
+    namespace Showcase\Entity;
     
     use ObjectivePHP\Primitives\String\String;
 

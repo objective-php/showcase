@@ -2,23 +2,28 @@
 
     namespace Showcase\Action\Demo\Doctrine;
 
-    use Entity\Employee;
     use ObjectivePHP\Application\Action\AbstractAction;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+    use Showcase\Service\HumanResources;
 
-    use Doctrine\ORM\EntityManager;
-    use Service\HumanResources;
-
-    class Misc extends AbstractAction
+    /**
+     * Class Listing
+     *
+     * @package Showcase\Action\Demo\Doctrine
+     */
+    class Listing extends AbstractAction
     {
         /**
          * @var HumanResources
          */
         protected $humanResources;
 
-        public function run(WorkflowEvent $event)
+        /**
+         * @param WorkflowEvent $event
+         *
+         * @return array
+         */public function run(WorkflowEvent $event)
         {
-
             $employees = $this->getHumanResources()->getRandomEmployees(10);
 
             return compact('employees');
@@ -29,7 +34,7 @@
          */
         public function getHumanResources()
         {
-            if(is_null($this->humanResources))
+            if (is_null($this->humanResources))
             {
                 $this->humanResources = $this->getService('services.human-resources');
             }

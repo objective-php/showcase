@@ -2,11 +2,11 @@
 
     use Showcase\Application;
 
-    require '../vendor/autoload.php';
+    $autoloader = require '../vendor/autoload.php';
 
     chdir(__DIR__ . '/..');
 
-    $app = new Application();
+    $app = new Application($autoloader);
 
     $app->setEnv('dev');
 

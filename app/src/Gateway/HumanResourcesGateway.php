@@ -1,11 +1,16 @@
 <?php
 
-    namespace Gateway;
+    namespace Showcase\Gateway;
     
     
     use Doctrine\ORM\EntityManager;
-    use Entity\Employee;
+    use Showcase\Entity\Employee;
 
+    /**
+     * Class HumanResourcesGateway
+     *
+     * @package Showcase\Gateway
+     */
     class HumanResourcesGateway
     {
         /**
@@ -13,6 +18,9 @@
          */
         protected $entityManager;
 
+        /**
+         * @param EntityManager $entityManager
+         */
         public function __construct(EntityManager $entityManager)
         {
             $this->setEntityManager($entityManager);

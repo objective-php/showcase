@@ -1,10 +1,15 @@
 <?php
 
-    namespace Service;
+    namespace Showcase\Service;
     
     
-    use Gateway\HumanResourcesGateway;
+    use Showcase\Gateway\HumanResourcesGateway;
 
+    /**
+     * Class HumanResources
+     *
+     * @package Showcase\Service
+     */
     class HumanResources
     {
         /**
@@ -21,7 +26,7 @@
         /**
          * @param $employeeId
          *
-         * @return \Entity\Employee
+         * @return \Showcase\Entity\Employee
          */
         public function getEmployee($employeeId)
         {
