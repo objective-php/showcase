@@ -31,8 +31,8 @@
              'packages.registered' => [
                DebugPackage::class,
                OverriderPackage::class,
-               DoctrinePackage::class,
-              // ShowSourcePackage::class
+               // DoctrinePackage::class,
+               ShowSourcePackage::class
             ],
 
             'doctrine.em.default.entities.locations' => 'app/src/Entity',
