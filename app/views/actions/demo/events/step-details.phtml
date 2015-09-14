@@ -1,73 +1,56 @@
 <?php
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Application\Workflow\WorkflowInterface;
-
+    use ObjectivePHP\Html\Tag\Tag;
 
     $event = Vars::get('event');
     $callbacks = Vars::get('callbacks');
 
+    Tag::a('Back to workflow overview', "/demo/events/workflow")->br()->br();
+
+    Tag::div()->addClass("panel", "panel-default");
+    Tag::div("Event details", "panel-heading");
+
+
     // no callbacks
     if(!$callbacks)
     {
-        ?>
 
-        <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Event details</div>
-            <div class="panel-body">
-                <p>
-                    There is no callback attached to the <code><?= $event ?></code> event.
-                </p>
-            </div>
-        </div>
+        Tag::div(Tag::p("There is no callback attached to the <code>$event</code> event."), "panel-body");
 
-        <?php
-        // display back link anyway
-        goto links;
     }
-?>
+    else
+    {
+        Tag::div(Tag::p("Find here all callbacks attached to the <code>$event</code> event."), "panel-body");
 
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Event details</div>
-        <div class="panel-body">
-            <p>
-                Find here all callbacks attached to the <code><?= $event ?></code> event.
-            </p>
-        </div>
 
-        <!-- Table -->
-        <table class="table table-striped">
-            <thead>
-            <th>Event bound</th>
-            <th>Alias</th>
-            <th>Type</th>
-            <th>Callback</th>
-            </thead>
-            <tbody>
-            <?php
+        Tag::table()->addClass("table", "table-striped");
+            Tag::thead();
+                Tag::tr();
+                    Tag::th('Event bound');
+                    Tag::th('Alias');
+                    Tag::th('Type');
+                    Tag::th('Callback');
+                Tag::tr()->close();
+            Tag::thead()->close();
+            Tag::tbody();
 
-                foreach($callbacks as $callback)
-                {
-                    echo '<tr>';
-                    echo '<td>' . $callback['event'] . '</td>';
-                    echo '<td>' . $callback['alias'] . '</td>';
-                    echo '<td>' . ucwords($callback['type']) . '</td>';
-                    echo '<td>' . display_callback($callback['type'], $callback['callback']) . '</td>';
-                    echo '</tr>';
-                }
-            ?>
-            </tbody>
-        </table>
-    </div>
+            foreach ($callbacks as $callback)
+            {
+                Tag::tr();
+                Tag::td($callback['event']);
+                Tag::td($callback['alias']);
+                Tag::td(Tag::strong(ucwords($callback['type'])));
+                Tag::td(display_callback($callback['type'], $callback['callback']));
+                Tag::tr()->close();
+            }
 
-<?php
-links:
-?>
-    <br>
+        Tag::tbody()->close();
+        Tag::table()->close();
 
-    <a href="/demo/events/workflow">Back to workflow overview</a>
-<?php
+    }
+
+    Tag::div()->close();
 
 function display_callback($type, $callback)
 {
@@ -75,19 +58,19 @@ function display_callback($type, $callback)
     {
 
         case 'invokable class':
-            return sprintf('<code>%s</code>', $callback);
+            return sprintf(Tag::code('%s'), $callback);
         break;
 
         case 'invokable object':
-            return sprintf('<code>%s::__invoke()</code>', get_class($callback));
+            return sprintf(Tag::code('%s::__invoke()'), get_class($callback));
         break;
 
         case 'action':
-            return sprintf('<code>%s::run()</code>', get_class($callback));
+            return sprintf(Tag::code('%s::run()'), get_class($callback));
         break;
 
         case 'method':
-            return sprintf('<code>%s::%s()</code>', get_class($callback[0]), $callback[1]);
+            return sprintf(Tag::code('%s::%s()'), get_class($callback[0]), $callback[1]);
 
         case 'closure':
             /* @var $callback Closure */
@@ -96,7 +79,7 @@ function display_callback($type, $callback)
             $filename = ltrim(str_replace(getcwd(), '', $info->getFileName()), '/');
             $startLine = $info->getStartLine();
 
-            return sprintf('Closure defined in <code>%s:%d</code>', $filename, $startLine);
+            return sprintf('Closure defined in ' . Tag::code('%s:%d'), $filename, $startLine);
         break;
 
         default:
