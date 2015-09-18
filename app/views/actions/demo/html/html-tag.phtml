@@ -1,0 +1,149 @@
+<?php
+
+    use ObjectivePHP\Html\Markdown\Md;
+    use ObjectivePHP\Html\Tag\Tag;
+    use ObjectivePHP\Application\View\Helper\Vars;
+
+    Vars::set('page.title', 'Producing Html');
+    Vars::set('page.subtitle', 'Generating HTML made easier and safer with ' .Tag::code('Html\Tag'));
+
+
+    // BASICS
+    Tag::h2('Basics');
+    Tag::p("We do like phtml! First because Objective PHP is meant for coders, not for integrators, second because phtml files
+    can be cached using OpCache, thus offer amazing performance compared to template engines.");
+    Tag::p('For this reason, we created some small but smart components to help producing HTML output without writing actual HTML code...');
+    Tag::p('Check examples below to discover the ' . Tag::code(Tag::class) . ' component.');
+
+    // Tag class
+    Tag::h2('The Tag class');
+    Tag::p('The ' . Tag::code(Tag::class) . ' class helps creating HTML tags using PHP code. It is a generic class used
+    to handle all HTML tag you would generate.');
+
+
+    Tag::h3('Basic usage');
+    Tag::pre(Tag::code('
+
+// instantiate the Tag with some content
+$tag = new Tag(\'Hello\');
+
+// dump the tag (default is \'div\')
+echo $tag;
+
+// prints \'&lt;div&gt;Hello&lt;/div&gt;\'
+'
+    , 'php'));
+
+    Tag::h3('Dynamically setting contents');
+    Tag::pre(Tag::code('
+// instantiate the Tag without content
+$tag = new Tag;
+
+// set the content
+$tag->setContent(\'Hello\')
+
+// dump the tag
+echo $tag; // prints \'&lt;div&gt;Hello&lt;/div&gt;\'
+', 'php'));
+
+
+    Tag::h3('Creating non-div tags');
+    Tag::pre(Tag::code('
+// instantiate the Tag with some content
+$tag = new Tag(\'Hello\');
+$tag->setTag(\'p\');
+
+// dump the tag
+echo $tag;
+
+// prints \'&lt;p&gt;Hello&lt;/p&gt;\'
+', 'php'));
+
+    Tag::h3('Using factory and shorthands');
+    Tag::pre(Tag::code('
+// instantiate the Tag with some content
+$tag = Tag::factory(\'p\', \'Hello\');
+
+// dump the tag
+echo $tag;
+
+// prints \'&lt;p&gt;Hello&lt;/p&gt;\'
+
+// same as above using a shortcut:
+$tag = Tag::p(\'Hello\');
+
+', 'php'));
+
+    Tag::h3('Passing a Tag as another Tag\'s contents');
+    Tag::pre(Tag::code('
+// instantiate the Tag with some content
+$tag = Tag::div(Tag::p(\'Hello\'));
+
+// dump the tag
+echo $tag;
+
+// prints \'&lt;div&gt;&lt;p&gt;Hello&lt;/p&gt;&lt;/div&gt;\'
+', 'php'));
+
+    Tag::h3('Automatic output');
+    Tag::pre(Tag::code('
+// instantiate the Tag with some content
+Tag::div(\'Hello\');
+
+// prints \'&lt;div&gt;Hello&lt;/div&gt;\'
+//
+// Note: Output is automatically triggered when the Tag instance is destroyed
+
+', 'php'));
+
+    Tag::h3('Setting attributes');
+    Tag::pre(Tag::code('
+// instantiate the Tag with some content
+$tag = Tag::div(\'Hello\', \'some-class\', \'other classes\');
+
+// Tag attributes are stored in an ObjectivePHP\Primitives\Collection object
+$classes = $tag->getAttribute(\'class\'))->toArray();
+
+// $classes = [\'some-class\', \'other\', \'classes\']
+
+// attributes can be set using the ArrayAccess interface
+$classes[\'attr\'] = \'value\'; // Same as $classes->addAttribute(\'attr\', \'value\');
+
+echo $tag;
+
+// prints \'&lt;div class="some-class other classes" attr="value"&gt;Hello&lt;/div&gt;\'
+
+', 'php'));
+
+    Tag::h3('Content-less tags behaviour');
+    Tag::pre(Tag::code('
+// instantiate the Tag without content
+Tag::div()[\'class\'] = \'any\';
+
+// prints \'&lt;div class="any"&gt;\'
+
+// other output statements...
+
+Tag::div()->close();
+
+// prints \'&lt;/div&gt;\'
+
+', 'php'));
+
+
+    Tag::h3('Multiple usage of a single Tag instance');
+    Tag::pre(Tag::code('
+// instantiate the Tag with some content
+$template = Tag::div()[\'class\'] = \'any\';
+
+$template->dump(\'Hello\');
+// prints \'&lt;div class="any"&gt;Hello&lt;/div&gt;\'
+
+$template->dump(\'World\');
+// prints \'&lt;div class="any"&gt;World&lt;/div&gt;\'
+
+
+// Note: if a content would have been set prior to calling \'dump()\', it is preserved
+// so that \'echo $template;\' would still output the Tag as expected
+
+', 'php'));

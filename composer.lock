@@ -607,6 +607,45 @@
             "time": "2015-08-31 12:59:39"
         },
         {
+            "name": "erusev/parsedown",
+            "version": "1.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown.git",
+                "reference": "0e89e3714bda18973184d30646306bb0a482bd96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/0e89e3714bda18973184d30646306bb0a482bd96",
+                "reference": "0e89e3714bda18973184d30646306bb0a482bd96",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Parsedown": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "Parser for Markdown.",
+            "homepage": "http://parsedown.org",
+            "keywords": [
+                "markdown",
+                "parser"
+            ],
+            "time": "2015-08-03 09:24:05"
+        },
+        {
             "name": "objective-php/application",
             "version": "dev-master",
             "source": {
@@ -712,12 +751,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "427e3395c5c336c5bd868704c3729ced667b6784"
+                "reference": "52adebce9e892146f0fbf46ad770007736b53f01"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/427e3395c5c336c5bd868704c3729ced667b6784",
-                "reference": "427e3395c5c336c5bd868704c3729ced667b6784",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/52adebce9e892146f0fbf46ad770007736b53f01",
+                "reference": "52adebce9e892146f0fbf46ad770007736b53f01",
                 "shasum": ""
             },
             "require": {
@@ -761,7 +800,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2015-09-11 15:48:01"
+            "time": "2015-09-13 21:56:26"
         },
         {
             "name": "objective-php/events-handler",
@@ -821,20 +860,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/html.git",
-                "reference": "9038c4d6276e101e0741d8acbd984efbe4faedc7"
+                "reference": "bbe40ebcbd305171441a4800be09c0e843a90ae5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/html/zipball/9038c4d6276e101e0741d8acbd984efbe4faedc7",
-                "reference": "9038c4d6276e101e0741d8acbd984efbe4faedc7",
+                "url": "https://api.github.com/repos/objective-php/html/zipball/bbe40ebcbd305171441a4800be09c0e843a90ae5",
+                "reference": "bbe40ebcbd305171441a4800be09c0e843a90ae5",
                 "shasum": ""
             },
             "require": {
+                "erusev/parsedown": "~1.5",
+                "objective-php/primitives": "dev-master",
                 "php": ">=5.6.0"
             },
             "require-dev": {
                 "objective-php/phpunit-extension": "1.0",
-                "objective-php/primitives": "dev-master",
                 "phpunit/phpunit": "4.*"
             },
             "type": "library",
@@ -860,7 +900,7 @@
                 "html",
                 "objective php"
             ],
-            "time": "2015-09-08 22:04:14"
+            "time": "2015-09-15 15:24:20"
         },
         {
             "name": "objective-php/matcher",
@@ -1152,12 +1192,12 @@
             "version": "v2.7.4",
             "source": {
                 "type": "git",
-                "url": "git@github.com:symfony/Console.git",
+                "url": "https://github.com/symfony/Console.git",
                 "reference": "9ff9032151186bd66ecee727d728f1319f52d1d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/f1f7376766394f409b9b33a57a5675a52f8aad93",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/9ff9032151186bd66ecee727d728f1319f52d1d8",
                 "reference": "9ff9032151186bd66ecee727d728f1319f52d1d8",
                 "shasum": ""
             },

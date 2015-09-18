@@ -41,13 +41,13 @@
             $actionSource = String::cast(show_source($actionFile, true));
             $actionSource->replace('/^<code>|<\/code>$/', '', String::REGEXP);
 
-            $output->setVariable('action-source', Tag::div($actionSource));
+            $output->setVariable('action-source', Tag::pre($actionSource));
 
             $viewScript = Vars::get('view.path');
 
             $viewSource = String::cast(show_source($viewScript, true));
             $viewSource->replace('/^<code>|<\/code>$/', '', String::REGEXP);
-            $output->setVariable('view-source', Tag::div($viewSource));
+            $output->setVariable('view-source', Tag::pre($viewSource));
 
             $event->getApplication()->getResponse()->getBody()->rewind();
             $event->getApplication()->getResponse()->getBody()->write($output);
