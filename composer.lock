@@ -285,16 +285,16 @@
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "628c2256b646ae2417d44e063bce8aec5199d48d"
+                "reference": "01dbcbc5cd0a913d751418e635434a18a2f2a75c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/628c2256b646ae2417d44e063bce8aec5199d48d",
-                "reference": "628c2256b646ae2417d44e063bce8aec5199d48d",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/01dbcbc5cd0a913d751418e635434a18a2f2a75c",
+                "reference": "01dbcbc5cd0a913d751418e635434a18a2f2a75c",
                 "shasum": ""
             },
             "require": {
@@ -352,7 +352,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2015-01-12 21:52:47"
+            "time": "2015-09-16 16:29:33"
         },
         {
             "name": "doctrine/inflector",
@@ -646,17 +646,61 @@
             "time": "2015-08-03 09:24:05"
         },
         {
+            "name": "erusev/parsedown-extra",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/erusev/parsedown-extra.git",
+                "reference": "11a44e076d02ffcc4021713398a60cd73f78b6f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/11a44e076d02ffcc4021713398a60cd73f78b6f5",
+                "reference": "11a44e076d02ffcc4021713398a60cd73f78b6f5",
+                "shasum": ""
+            },
+            "require": {
+                "erusev/parsedown": "~1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ParsedownExtra": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emanuil Rusev",
+                    "email": "hello@erusev.com",
+                    "homepage": "http://erusev.com"
+                }
+            ],
+            "description": "An extension of Parsedown that adds support for Markdown Extra.",
+            "homepage": "https://github.com/erusev/parsedown-extra",
+            "keywords": [
+                "markdown",
+                "markdown extra",
+                "parsedown",
+                "parser"
+            ],
+            "time": "2015-01-25 14:52:34"
+        },
+        {
             "name": "objective-php/application",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "0451cf5e10f90f5c9f49c22bf14c0fb4b00f8958"
+                "reference": "f1f00330e195171a7bc0e8da3e64461fe62c8ced"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/0451cf5e10f90f5c9f49c22bf14c0fb4b00f8958",
-                "reference": "0451cf5e10f90f5c9f49c22bf14c0fb4b00f8958",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/f1f00330e195171a7bc0e8da3e64461fe62c8ced",
+                "reference": "f1f00330e195171a7bc0e8da3e64461fe62c8ced",
                 "shasum": ""
             },
             "require": {
@@ -695,7 +739,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-09-13 10:31:07"
+            "time": "2015-09-18 16:40:02"
         },
         {
             "name": "objective-php/config",
@@ -860,16 +904,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/html.git",
-                "reference": "bbe40ebcbd305171441a4800be09c0e843a90ae5"
+                "reference": "d03d6bda144326fa61db9d36daa4a3b618d07801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/html/zipball/bbe40ebcbd305171441a4800be09c0e843a90ae5",
-                "reference": "bbe40ebcbd305171441a4800be09c0e843a90ae5",
+                "url": "https://api.github.com/repos/objective-php/html/zipball/d03d6bda144326fa61db9d36daa4a3b618d07801",
+                "reference": "d03d6bda144326fa61db9d36daa4a3b618d07801",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown": "~1.5",
+                "erusev/parsedown-extra": "~0.7",
                 "objective-php/primitives": "dev-master",
                 "php": ">=5.6.0"
             },
@@ -900,7 +945,7 @@
                 "html",
                 "objective php"
             ],
-            "time": "2015-09-15 15:24:20"
+            "time": "2015-09-18 16:55:42"
         },
         {
             "name": "objective-php/matcher",
