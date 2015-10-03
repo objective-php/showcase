@@ -23,9 +23,9 @@ You can then open http://localhost:8001 to access live demo of Objective PHP Fra
 
 ## Add support for Doctrine demos
 
-If you want to be able to run the Doctrine related demos, you'll need a copy of our DB (which is largely based on [http://dev.mysql.com/doc/employee/en/employees-introduction.html](MySQL "employees") database).
+If you want to be able to run the Doctrine related demos, you'll need a copy of our DB (which is largely based on [MySQL "employees"](http://dev.mysql.com/doc/employee/en/employees-introduction.html) database).
 
-You can download our copy of this database from [http://objective-php.org/employees.sql.gz](objective-php.org).
+You can download our copy of this database from [objective-php.org](http://objective-php.org/employees.sql.gz).
 
 After importing the "employees" (default name) database, you can either create a "demo" user with no password and access to "employees" database, or alter the default configuration located in "app/config/doctrine.php":
 
