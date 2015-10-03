@@ -10,12 +10,12 @@
     
     
     use ObjectivePHP\Application\Action\AbstractAction;
+    use ObjectivePHP\Application\Action\DefaultAction;
     use ObjectivePHP\Application\Action\Parameter\StringParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
-    use ObjectivePHP\Events\Callback\AbstractCallback;
     use ObjectivePHP\ServicesFactory\Reference;
 
-    class StepDetails extends AbstractAction
+    class StepDetails extends DefaultAction
     {
 
         public function init()
@@ -41,7 +41,7 @@
                 {
                     if ($callback instanceof Reference)
                     {
-                        $type = 'service';
+                        $type     = 'service';
                         $callback = $this->getApplication()->getServicesFactory()->get($callback->getId());
 
                     }
@@ -99,6 +99,6 @@
          */
         protected function getStepName()
         {
-           return $this->getParam('step');
+            return $this->getParam('step');
         }
     }

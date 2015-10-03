@@ -3,10 +3,15 @@
     namespace Showcase\Action\Demo\Html;
     
     
-    use ObjectivePHP\Application\Action\AbstractAction;
+    use ObjectivePHP\Application\Action\DefaultAction;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
-    class HtmlTag extends AbstractAction
+    /**
+     * Class HtmlTag
+     *
+     * @package Showcase\Action\Demo\Html
+     */
+    class HtmlTag extends DefaultAction
     {
         /**
          * @param WorkflowEvent $event

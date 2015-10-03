@@ -4,14 +4,20 @@
 
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
-    use ObjectivePHP\Events\Event;
-    use ObjectivePHP\Events\EventsHandler;
     use ObjectivePHP\Html\Tag\Tag;
     use ObjectivePHP\Primitives\String\String;
     use ObjectivePHP\ServicesFactory\Reference;
 
+    /**
+     * Class ShowSourcePackage
+     *
+     * @package Showcase\Package\ShowSource
+     */
     class ShowSourcePackage
     {
+        /**
+         * @param WorkflowEvent $event
+         */
         public function __invoke(WorkflowEvent $event)
         {
             $workflow = $event->getApplication()->getWorkflow()->getRoot();
@@ -20,6 +26,11 @@
 
         }
 
+        /**
+         * @param WorkflowEvent $event
+         *
+         * @throws \ObjectivePHP\ServicesFactory\Exception
+         */
         public function showSource(WorkflowEvent $event)
         {
             $application = $event->getApplication();
@@ -27,13 +38,14 @@
             $event->getApplication()->getResponse()->getBody()->rewind();
             $output = String::cast($event->getApplication()->getResponse()->getBody()->getContents());
 
-            $actionClass = $application->getWorkflow()->getStep('route')->getEarlierEvent('resolve')->getResults()['action-resolver'];
+            $actionClass = $application->getWorkflow()->getStep('route')->getEarlierEvent('resolve')
+                                       ->getResults()['action-resolver'];
 
             // handle action which are services reference
-            if($actionClass instanceof Reference)
+            if ($actionClass instanceof Reference)
             {
-                $action = $application->getServicesFactory()->get($actionClass->getId());
-                $actionClass= get_class($action);
+                $action      = $application->getServicesFactory()->get($actionClass->getId());
+                $actionClass = get_class($action);
             }
 
             $actionFile = (new \ReflectionClass($actionClass))->getFileName();

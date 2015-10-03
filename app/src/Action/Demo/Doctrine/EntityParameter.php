@@ -3,11 +3,11 @@
     namespace Showcase\Action\Demo\Doctrine;
     
     
-    use Showcase\Entity\Employee;
-    use ObjectivePHP\Application\Action\AbstractAction;
+    use ObjectivePHP\Application\Action\DefaultAction;
     use ObjectivePHP\Application\Action\Parameter\ActionParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\DoctrinePackage\Parameter\EntityParameterProcessor;
+    use Showcase\Entity\Employee;
     use Showcase\Service\HumanResources;
 
     /**
@@ -15,7 +15,7 @@
      *
      * @package Showcase\Action\Demo\Doctrine
      */
-    class EntityParameter extends AbstractAction
+    class EntityParameter extends DefaultAction
     {
         /**
          * @var HumanResources
@@ -45,6 +45,6 @@
          */
         protected function getEmployee()
         {
-           return $this->getParam('employee');
+            return $this->getParam('employee');
         }
     }

@@ -15,17 +15,19 @@
                 ],
 
             // views
+            /*
             'views.locations' =>
                 [
                     'app/views/actions'
                 ],
-
+            */
             // layouts
             'layouts.locations' =>
                 [
-                    'app/views/layouts'
+                    // 'app/views/layouts'
+                    'app/layouts'
                 ],
-            'layouts.default'         => 'layout',
+            'layouts.default'   => 'layout',
 
             // packages
              'packages.registered' => [

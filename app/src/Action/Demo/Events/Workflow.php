@@ -4,6 +4,7 @@
     
     
     use ObjectivePHP\Application\Action\AbstractAction;
+    use ObjectivePHP\Application\Action\DefaultAction;
     use ObjectivePHP\Application\Action\Param\StringParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\Application\Workflow\Step\StepInterface;
@@ -15,7 +16,7 @@
      *
      * @package Showcase\Action\Demo\Events
      */
-    class Workflow extends AbstractAction
+    class Workflow extends DefaultAction
     {
 
         /**

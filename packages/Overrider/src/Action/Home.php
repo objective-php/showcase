@@ -2,6 +2,7 @@
 
     namespace Showcase\Package\Overrider\Action;
 
+    use ObjectivePHP\Application\Action\DefaultAction;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
     /**
@@ -9,14 +10,14 @@
      *
      * @package Showcase\Package\Overrider\Action
      */
-    class Home
+    class Home extends \Showcase\Action\Home
     {
         /**
          * @param WorkflowEvent $event
          *
          * @return array
          */
-        public function __invoke(WorkflowEvent $event)
+        public function run(WorkflowEvent $event)
         {
             return [
                 'page.title'    => $event->getApplication()->getConfig()->app->name,

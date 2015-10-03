@@ -3,6 +3,7 @@
     namespace Showcase\Action\Demo\Doctrine;
 
     use ObjectivePHP\Application\Action\AbstractAction;
+    use ObjectivePHP\Application\Action\DefaultAction;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use Showcase\Service\HumanResources;
 
@@ -11,7 +12,7 @@
      *
      * @package Showcase\Action\Demo\Doctrine
      */
-    class Listing extends AbstractAction
+    class Listing extends DefaultAction
     {
         /**
          * @var HumanResources
