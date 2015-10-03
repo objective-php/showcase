@@ -31,8 +31,8 @@
 
             // packages
              'packages.registered' => [
-               DebugPackage::class,
-                OverriderPackage::class,
+               // DebugPackage::class,
+               // OverriderPackage::class,
                DoctrinePackage::class,
                ShowSourcePackage::class
             ],

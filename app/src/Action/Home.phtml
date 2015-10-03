@@ -16,13 +16,14 @@
      *  </div>
      */
 
-    echo Tag::div(Tag::h1('What will you find here?'), 'page-header');
+    Tag::div(Tag::h1('What will you find here?'), 'page-header');
 
-?>
 
-<p>
-    This project provides developers with demos of the Objective PHP framework and components.
-</p>
-<p>
-    To access the demos, use the <?= Tag::i('Demos') ?> menu entry on top of this page.
-</p>
+
+    Tag::p('This project provides developers with demos of the Objective PHP framework and components.');
+    Tag::p('To access the demos, use the ' . Tag::i('Demos') . ' menu entry on top of this page.');
+
+    Tag::div(Tag::h1('Want to go further?'));
+    Tag::p('The best thing to do is to get the code and play around with it by yourself :)');
+    Tag::p('You can get this entire website source code form Github at ' . Tag::a('objective-php/showcase', 'http://github.com/objective-php/showcase') . '.');
+    Tag::p('Other Objective PHP repositories are accessible from our ' . Tag::a('organization page', 'http://github.com/objective-php') . '.');
