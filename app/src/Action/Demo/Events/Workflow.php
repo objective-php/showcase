@@ -3,13 +3,8 @@
     namespace Showcase\Action\Demo\Events;
     
     
-    use ObjectivePHP\Application\Action\AbstractAction;
     use ObjectivePHP\Application\Action\DefaultAction;
-    use ObjectivePHP\Application\Action\Param\StringParameter;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
-    use ObjectivePHP\Application\Workflow\Step\StepInterface;
-    use ObjectivePHP\Application\Workflow\WorkflowInterface;
-    use ObjectivePHP\Events\EventInterface;
 
     /**
      * Class Workflow
@@ -31,7 +26,7 @@
                 [
                     'page.title'    => 'Workflow steps',
                     'page.subtitle' => 'Dynamically displays workflow steps',
-                    'workflowTree'      => $workflow
+                    'workflowTree'  => $workflow
                 ];
         }
 

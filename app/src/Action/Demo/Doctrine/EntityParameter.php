@@ -4,7 +4,7 @@
     
     
     use ObjectivePHP\Application\Action\DefaultAction;
-    use ObjectivePHP\Application\Action\Parameter\ActionParameter;
+    use ObjectivePHP\Application\Action\Parameter\AbstractParameterProcessor;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\DoctrinePackage\Parameter\EntityParameterProcessor;
     use Showcase\Entity\Employee;
@@ -29,7 +29,7 @@
                 (new EntityParameterProcessor('employee', 0))
                     ->setEntity(Employee::class)
                     ->setMandatory()
-                    ->setMessage(ActionParameter::IS_MISSING, 'Le paramètre :param est manquant')
+                    ->setMessage(AbstractParameterProcessor::IS_MISSING, 'Le paramètre :param est manquant')
             );
 
         }

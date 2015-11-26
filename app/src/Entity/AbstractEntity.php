@@ -1,7 +1,7 @@
 <?php
     namespace Showcase\Entity;
     
-    use ObjectivePHP\Primitives\String\String;
+    use ObjectivePHP\Primitives\String\Str;
 
     class AbstractEntity implements \ArrayAccess
     {
@@ -22,7 +22,7 @@
          */
         public function offsetExists($offset)
         {
-            $property = lcfirst(String::cast($offset)->split('_')->each(function (&$part)
+            $property = lcfirst(Str::cast($offset)->split('_')->each(function (&$part)
             {
                 $part = ucfirst($part);
             })->join(''));
@@ -44,7 +44,7 @@
          */
         public function offsetGet($offset)
         {
-            $getter = 'get' . String::cast($offset)->split('_')->each(function(&$part) { $part = ucfirst($part);})->join('');
+            $getter = 'get' . Str::cast($offset)->split('_')->each(function(&$part) { $part = ucfirst($part);})->join('');
             if(method_exists($this, $getter))
             {
                 return $this->$getter();
@@ -70,7 +70,7 @@
          */
         public function offsetSet($offset, $value)
         {
-            $setter = 'set' . String::cast($offset)->split('_')->each(function (&$part)
+            $setter = 'set' . Str::cast($offset)->split('_')->each(function (&$part)
                 {
                     $part = ucfirst($part);
                 })->join('')
@@ -98,7 +98,7 @@
          */
         public function offsetUnset($offset)
         {
-            $setter = 'set' . String::cast($offset)->split('_')->each(function (&$part)
+            $setter = 'set' . Str::cast($offset)->split('_')->each(function (&$part)
                 {
                     $part = ucfirst($part);
                 })->join('')

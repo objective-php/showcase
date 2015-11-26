@@ -2,7 +2,7 @@
 
 
     use Showcase\Gateway\HumanResourcesGateway;
-    use ObjectivePHP\ServicesFactory\Reference;
+    use ObjectivePHP\ServicesFactory\ServiceReference;
     use Showcase\Service\HumanResources;
 
     use ObjectivePHP\ServicesFactory;
@@ -12,12 +12,12 @@
             [
                 'id'     => 'services.human-resources',
                 'class'  => HumanResources::class,
-                'params' => [new ServicesFactory\Reference('gateway.human-resources')]
+                'params' => [new ServiceReference('gateway.human-resources')]
             ],
             [
                 'id'     => 'gateway.human-resources',
                 'class'  => HumanResourcesGateway::class,
-                'params' => [new Reference('doctrine.em.default')],
+                'params' => [new ServiceReference('doctrine.em.default')],
 
                 'description' => 'Gateway to fetch employees, salaries, and titles'
             ]

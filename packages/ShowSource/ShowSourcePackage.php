@@ -5,7 +5,7 @@
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\Html\Tag\Tag;
-    use ObjectivePHP\Primitives\String\String;
+    use ObjectivePHP\Primitives\String\Str;
     use ObjectivePHP\ServicesFactory\Reference;
 
     /**
@@ -36,7 +36,7 @@
             $application = $event->getApplication();
 
             $event->getApplication()->getResponse()->getBody()->rewind();
-            $output = String::cast($event->getApplication()->getResponse()->getBody()->getContents());
+            $output = Str::cast($event->getApplication()->getResponse()->getBody()->getContents());
 
             $actionClass = $application->getWorkflow()->getStep('route')->getEarlierEvent('resolve')
                                        ->getResults()['action-resolver'];
@@ -50,15 +50,15 @@
 
             $actionFile = (new \ReflectionClass($actionClass))->getFileName();
 
-            $actionSource = String::cast(show_source($actionFile, true));
-            $actionSource->replace('/^<code>|<\/code>$/', '', String::REGEXP);
+            $actionSource = Str::cast(show_source($actionFile, true));
+            $actionSource->replace('/^<code>|<\/code>$/', '', Str::REGEXP);
 
             $output->setVariable('action-source', Tag::pre($actionSource));
 
             $viewScript = Vars::get('view.path');
 
-            $viewSource = String::cast(show_source($viewScript, true));
-            $viewSource->replace('/^<code>|<\/code>$/', '', String::REGEXP);
+            $viewSource = Str::cast(show_source($viewScript, true));
+            $viewSource->replace('/^<code>|<\/code>$/', '', Str::REGEXP);
             $output->setVariable('view-source', Tag::pre($viewSource));
 
             $event->getApplication()->getResponse()->getBody()->rewind();

@@ -11,7 +11,7 @@
     
     use ObjectivePHP\Application\Action\AbstractAction;
     use ObjectivePHP\Application\Action\DefaultAction;
-    use ObjectivePHP\Application\Action\Parameter\StringParameter;
+    use ObjectivePHP\Application\Action\Parameter\StringParameterProcessor;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\ServicesFactory\Reference;
 
@@ -21,7 +21,7 @@
         public function init()
         {
             $this->setParameterProcessor(
-                (new StringParameter('step', 0))->setMandatory()
+                (new StringParameterProcessor('step', 0))->setMandatory()
             );
         }
 

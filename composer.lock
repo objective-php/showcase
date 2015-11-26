@@ -5,6 +5,7 @@
         "This file is @generated automatically"
     ],
     "hash": "a9d040501426e5a53e83c632fb01d441",
+    "content-hash": "b34a37f728ab73c37e6b2494814b6087",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -76,16 +77,16 @@
         },
         {
             "name": "doctrine/cache",
-            "version": "v1.4.2",
+            "version": "v1.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca"
+                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/8c434000f420ade76a07c64cbe08ca47e5c101ca",
-                "reference": "8c434000f420ade76a07c64cbe08ca47e5c101ca",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
+                "reference": "2b9cec5a5e722010cbebc91713d4c11eaa064d5e",
                 "shasum": ""
             },
             "require": {
@@ -106,8 +107,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Doctrine\\Common\\Cache\\": "lib/"
+                "psr-4": {
+                    "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -142,7 +143,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2015-08-31 12:36:41"
+            "time": "2015-11-02 18:35:48"
         },
         {
             "name": "doctrine/collections",
@@ -356,16 +357,16 @@
         },
         {
             "name": "doctrine/inflector",
-            "version": "v1.0.1",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/inflector.git",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604"
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/inflector/zipball/0bcb2e79d8571787f18b7eb036ed3d004908e604",
-                "reference": "0bcb2e79d8571787f18b7eb036ed3d004908e604",
+                "url": "https://api.github.com/repos/doctrine/inflector/zipball/90b2128806bfde671b6952ab8bea493942c1fdae",
+                "reference": "90b2128806bfde671b6952ab8bea493942c1fdae",
                 "shasum": ""
             },
             "require": {
@@ -377,7 +378,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -419,7 +420,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2014-12-20 21:24:13"
+            "time": "2015-11-06 14:35:42"
         },
         {
             "name": "doctrine/instantiator",
@@ -531,16 +532,16 @@
         },
         {
             "name": "doctrine/orm",
-            "version": "v2.5.1",
+            "version": "v2.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/doctrine2.git",
-                "reference": "e6a83bedbe67579cb0bfb688e982e617943a2945"
+                "reference": "464b5fdbfbbeb4a65465ac173c4c5d90960f41ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/e6a83bedbe67579cb0bfb688e982e617943a2945",
-                "reference": "e6a83bedbe67579cb0bfb688e982e617943a2945",
+                "url": "https://api.github.com/repos/doctrine/doctrine2/zipball/464b5fdbfbbeb4a65465ac173c4c5d90960f41ff",
+                "reference": "464b5fdbfbbeb4a65465ac173c4c5d90960f41ff",
                 "shasum": ""
             },
             "require": {
@@ -551,12 +552,12 @@
                 "doctrine/instantiator": "~1.0.1",
                 "ext-pdo": "*",
                 "php": ">=5.4",
-                "symfony/console": "~2.5"
+                "symfony/console": "~2.5|~3.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~4.0",
                 "satooshi/php-coveralls": "dev-master",
-                "symfony/yaml": "~2.1"
+                "symfony/yaml": "~2.3|~3.0"
             },
             "suggest": {
                 "symfony/yaml": "If you want to use YAML Metadata Mapping Driver"
@@ -604,20 +605,20 @@
                 "database",
                 "orm"
             ],
-            "time": "2015-08-31 12:59:39"
+            "time": "2015-11-23 12:44:25"
         },
         {
             "name": "erusev/parsedown",
-            "version": "1.5.4",
+            "version": "1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown.git",
-                "reference": "0e89e3714bda18973184d30646306bb0a482bd96"
+                "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown/zipball/0e89e3714bda18973184d30646306bb0a482bd96",
-                "reference": "0e89e3714bda18973184d30646306bb0a482bd96",
+                "url": "https://api.github.com/repos/erusev/parsedown/zipball/3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
+                "reference": "3ebbd730b5c2cf5ce78bc1bf64071407fc6674b7",
                 "shasum": ""
             },
             "type": "library",
@@ -643,20 +644,20 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-08-03 09:24:05"
+            "time": "2015-10-04 16:44:32"
         },
         {
             "name": "erusev/parsedown-extra",
-            "version": "0.7.0",
+            "version": "0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/erusev/parsedown-extra.git",
-                "reference": "11a44e076d02ffcc4021713398a60cd73f78b6f5"
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/11a44e076d02ffcc4021713398a60cd73f78b6f5",
-                "reference": "11a44e076d02ffcc4021713398a60cd73f78b6f5",
+                "url": "https://api.github.com/repos/erusev/parsedown-extra/zipball/0db5cce7354e4b76f155d092ab5eb3981c21258c",
+                "reference": "0db5cce7354e4b76f155d092ab5eb3981c21258c",
                 "shasum": ""
             },
             "require": {
@@ -687,7 +688,7 @@
                 "parsedown",
                 "parser"
             ],
-            "time": "2015-01-25 14:52:34"
+            "time": "2015-11-01 10:19:22"
         },
         {
             "name": "objective-php/application",
@@ -695,12 +696,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "f1f00330e195171a7bc0e8da3e64461fe62c8ced"
+                "reference": "61eebdac814ffe4be5f196f044eb7d336ed30787"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/f1f00330e195171a7bc0e8da3e64461fe62c8ced",
-                "reference": "f1f00330e195171a7bc0e8da3e64461fe62c8ced",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/61eebdac814ffe4be5f196f044eb7d336ed30787",
+                "reference": "61eebdac814ffe4be5f196f044eb7d336ed30787",
                 "shasum": ""
             },
             "require": {
@@ -739,7 +740,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-09-18 16:40:02"
+            "time": "2015-11-26 11:22:22"
         },
         {
             "name": "objective-php/config",
@@ -747,12 +748,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/config.git",
-                "reference": "ffd425c62e3fc839e2ca337c963351b13e89552c"
+                "reference": "c61354d1210aef2753c11a356a75aa1b848377bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/config/zipball/ffd425c62e3fc839e2ca337c963351b13e89552c",
-                "reference": "ffd425c62e3fc839e2ca337c963351b13e89552c",
+                "url": "https://api.github.com/repos/objective-php/config/zipball/c61354d1210aef2753c11a356a75aa1b848377bb",
+                "reference": "c61354d1210aef2753c11a356a75aa1b848377bb",
                 "shasum": ""
             },
             "require": {
@@ -787,7 +788,7 @@
                 "config",
                 "objective-php"
             ],
-            "time": "2015-09-13 11:00:48"
+            "time": "2015-11-25 16:05:08"
         },
         {
             "name": "objective-php/doctrine-package",
@@ -795,12 +796,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "52adebce9e892146f0fbf46ad770007736b53f01"
+                "reference": "5dd58102815636edd24634a63c0525d54b13c6e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/52adebce9e892146f0fbf46ad770007736b53f01",
-                "reference": "52adebce9e892146f0fbf46ad770007736b53f01",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/5dd58102815636edd24634a63c0525d54b13c6e8",
+                "reference": "5dd58102815636edd24634a63c0525d54b13c6e8",
                 "shasum": ""
             },
             "require": {
@@ -844,7 +845,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2015-09-13 21:56:26"
+            "time": "2015-11-25 16:09:13"
         },
         {
             "name": "objective-php/events-handler",
@@ -852,12 +853,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/events-handler.git",
-                "reference": "f92344691387dc99ac91e2c2eaed8fb7ac1ead23"
+                "reference": "37e95719d6d437a03027e221ad98f8e344b59fa3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/f92344691387dc99ac91e2c2eaed8fb7ac1ead23",
-                "reference": "f92344691387dc99ac91e2c2eaed8fb7ac1ead23",
+                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/37e95719d6d437a03027e221ad98f8e344b59fa3",
+                "reference": "37e95719d6d437a03027e221ad98f8e344b59fa3",
                 "shasum": ""
             },
             "require": {
@@ -896,7 +897,7 @@
                 "events handler",
                 "objective php"
             ],
-            "time": "2015-09-08 22:00:08"
+            "time": "2015-11-26 10:22:27"
         },
         {
             "name": "objective-php/html",
@@ -904,12 +905,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/html.git",
-                "reference": "d03d6bda144326fa61db9d36daa4a3b618d07801"
+                "reference": "7038aa44e1eeee85e52227e1f22484a044ebf604"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/html/zipball/d03d6bda144326fa61db9d36daa4a3b618d07801",
-                "reference": "d03d6bda144326fa61db9d36daa4a3b618d07801",
+                "url": "https://api.github.com/repos/objective-php/html/zipball/7038aa44e1eeee85e52227e1f22484a044ebf604",
+                "reference": "7038aa44e1eeee85e52227e1f22484a044ebf604",
                 "shasum": ""
             },
             "require": {
@@ -945,7 +946,7 @@
                 "html",
                 "objective php"
             ],
-            "time": "2015-09-18 16:55:42"
+            "time": "2015-11-26 11:28:12"
         },
         {
             "name": "objective-php/matcher",
@@ -953,12 +954,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/matcher.git",
-                "reference": "321d27bcb933f62d2784e7e49411e4bc7fab3433"
+                "reference": "df818982e9c12e5742fe5ad3fdb8e67ade3eb9b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/matcher/zipball/321d27bcb933f62d2784e7e49411e4bc7fab3433",
-                "reference": "321d27bcb933f62d2784e7e49411e4bc7fab3433",
+                "url": "https://api.github.com/repos/objective-php/matcher/zipball/df818982e9c12e5742fe5ad3fdb8e67ade3eb9b0",
+                "reference": "df818982e9c12e5742fe5ad3fdb8e67ade3eb9b0",
                 "shasum": ""
             },
             "require": {
@@ -991,7 +992,7 @@
                 "matcher",
                 "objective php"
             ],
-            "time": "2015-09-07 23:45:46"
+            "time": "2015-09-20 15:17:38"
         },
         {
             "name": "objective-php/message",
@@ -999,12 +1000,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/message.git",
-                "reference": "e60e36c9b9713270c88319916b9b81a5603ebdab"
+                "reference": "393d43c5d56a2d76575c250417beac69e8917198"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/message/zipball/e60e36c9b9713270c88319916b9b81a5603ebdab",
-                "reference": "e60e36c9b9713270c88319916b9b81a5603ebdab",
+                "url": "https://api.github.com/repos/objective-php/message/zipball/393d43c5d56a2d76575c250417beac69e8917198",
+                "reference": "393d43c5d56a2d76575c250417beac69e8917198",
                 "shasum": ""
             },
             "require": {
@@ -1032,7 +1033,7 @@
                 }
             ],
             "description": "ObjectivePHP implementation for PSR-7",
-            "time": "2015-09-11 13:54:51"
+            "time": "2015-10-19 15:20:38"
         },
         {
             "name": "objective-php/phpunit-extension",
@@ -1085,12 +1086,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/primitives.git",
-                "reference": "d2fecbd5b3df337f2b8d6e6f755cb63ffd40b72c"
+                "reference": "e71e1a48d921da7db51ac54bc0042a694875714c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/primitives/zipball/d2fecbd5b3df337f2b8d6e6f755cb63ffd40b72c",
-                "reference": "d2fecbd5b3df337f2b8d6e6f755cb63ffd40b72c",
+                "url": "https://api.github.com/repos/objective-php/primitives/zipball/e71e1a48d921da7db51ac54bc0042a694875714c",
+                "reference": "e71e1a48d921da7db51ac54bc0042a694875714c",
                 "shasum": ""
             },
             "require": {
@@ -1131,7 +1132,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-09-13 10:42:51"
+            "time": "2015-11-25 16:00:57"
         },
         {
             "name": "objective-php/services-factory",
@@ -1139,12 +1140,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/services-factory.git",
-                "reference": "f5b99bee6b5985312c10a16b6bab897e1df5c92e"
+                "reference": "a41dd846fb149cf7c83933e1010cc97b4632f9d9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/f5b99bee6b5985312c10a16b6bab897e1df5c92e",
-                "reference": "f5b99bee6b5985312c10a16b6bab897e1df5c92e",
+                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/a41dd846fb149cf7c83933e1010cc97b4632f9d9",
+                "reference": "a41dd846fb149cf7c83933e1010cc97b4632f9d9",
                 "shasum": ""
             },
             "require": {
@@ -1181,7 +1182,7 @@
                 "objective php",
                 "services"
             ],
-            "time": "2015-08-17 17:33:03"
+            "time": "2015-11-26 11:23:53"
         },
         {
             "name": "psr/http-message",
@@ -1234,16 +1235,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v2.7.4",
+            "version": "v2.7.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Console.git",
-                "reference": "9ff9032151186bd66ecee727d728f1319f52d1d8"
+                "url": "https://github.com/symfony/console.git",
+                "reference": "16bb1cb86df43c90931df65f529e7ebd79636750"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/9ff9032151186bd66ecee727d728f1319f52d1d8",
-                "reference": "9ff9032151186bd66ecee727d728f1319f52d1d8",
+                "url": "https://api.github.com/repos/symfony/console/zipball/16bb1cb86df43c90931df65f529e7ebd79636750",
+                "reference": "16bb1cb86df43c90931df65f529e7ebd79636750",
                 "shasum": ""
             },
             "require": {
@@ -1252,7 +1253,6 @@
             "require-dev": {
                 "psr/log": "~1.0",
                 "symfony/event-dispatcher": "~2.1",
-                "symfony/phpunit-bridge": "~2.7",
                 "symfony/process": "~2.1"
             },
             "suggest": {
@@ -1269,7 +1269,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Console\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1287,20 +1290,20 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-03 11:40:38"
+            "time": "2015-11-18 09:54:26"
         },
         {
             "name": "twbs/bootstrap",
-            "version": "v3.3.5",
+            "version": "v3.3.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "16b48259a62f576e52c903c476bd42b90ab22482"
+                "reference": "81df608a40bf0629a1dc08e584849bb1e43e0b7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/16b48259a62f576e52c903c476bd42b90ab22482",
-                "reference": "16b48259a62f576e52c903c476bd42b90ab22482",
+                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/81df608a40bf0629a1dc08e584849bb1e43e0b7a",
+                "reference": "81df608a40bf0629a1dc08e584849bb1e43e0b7a",
                 "shasum": ""
             },
             "replace": {
@@ -1338,20 +1341,20 @@
                 "responsive",
                 "web"
             ],
-            "time": "2015-06-16 16:13:22"
+            "time": "2015-11-24 19:37:05"
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.1.3",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "e2f5c12916c74da384058d0dfbc7fbc0b03d1181"
+                "reference": "edfda00b9831630c19c411f85f50a47bb66af457"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/e2f5c12916c74da384058d0dfbc7fbc0b03d1181",
-                "reference": "e2f5c12916c74da384058d0dfbc7fbc0b03d1181",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/edfda00b9831630c19c411f85f50a47bb66af457",
+                "reference": "edfda00b9831630c19c411f85f50a47bb66af457",
                 "shasum": ""
             },
             "require": {
@@ -1368,8 +1371,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0-dev",
-                    "dev-develop": "1.1-dev"
+                    "dev-master": "1.2-dev",
+                    "dev-develop": "1.3-dev"
                 }
             },
             "autoload": {
@@ -1388,7 +1391,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2015-08-10 20:04:20"
+            "time": "2015-11-24 19:16:22"
         }
     ],
     "packages-dev": [],
