@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "a9d040501426e5a53e83c632fb01d441",
-    "content-hash": "b34a37f728ab73c37e6b2494814b6087",
+    "hash": "50f7e61b45d02d1df0d3815672589877",
+    "content-hash": "2af73027559d43cc8a3fdd2c2beb8788",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -696,25 +696,22 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "61eebdac814ffe4be5f196f044eb7d336ed30787"
+                "reference": "ba71035c14ee67d397723d0f4648ab864892c52f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/61eebdac814ffe4be5f196f044eb7d336ed30787",
-                "reference": "61eebdac814ffe4be5f196f044eb7d336ed30787",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/ba71035c14ee67d397723d0f4648ab864892c52f",
+                "reference": "ba71035c14ee67d397723d0f4648ab864892c52f",
                 "shasum": ""
             },
             "require": {
-                "objective-php/config": "dev-master",
+                "objective-php/components": "dev-master",
                 "objective-php/events-handler": "dev-master",
-                "objective-php/matcher": "dev-master",
                 "objective-php/message": "dev-master",
-                "objective-php/primitives": "dev-master",
                 "objective-php/services-factory": "dev-master",
-                "php": ">=5.6.0"
+                "php": ">=7.0"
             },
             "require-dev": {
-                "objective-php/phpunit-extension": "1.0",
                 "phpunit/phpunit": "4.*"
             },
             "type": "framework",
@@ -740,35 +737,38 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-11-26 11:22:22"
+            "time": "2015-11-27 11:22:10"
         },
         {
-            "name": "objective-php/config",
+            "name": "objective-php/components",
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/objective-php/config.git",
-                "reference": "c61354d1210aef2753c11a356a75aa1b848377bb"
+                "url": "https://github.com/objective-php/components.git",
+                "reference": "16f66deefb825a4cb56d8928e5e3f47672f1833c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/config/zipball/c61354d1210aef2753c11a356a75aa1b848377bb",
-                "reference": "c61354d1210aef2753c11a356a75aa1b848377bb",
+                "url": "https://api.github.com/repos/objective-php/components/zipball/16f66deefb825a4cb56d8928e5e3f47672f1833c",
+                "reference": "16f66deefb825a4cb56d8928e5e3f47672f1833c",
                 "shasum": ""
             },
             "require": {
-                "objective-php/matcher": "dev-master",
-                "objective-php/primitives": "dev-master",
-                "php": ">=5.6.0"
+                "php": ">=7.0"
+            },
+            "replace": {
+                "objective-php/config": "*",
+                "objective-php/matcher": "*",
+                "objective-php/phpunit-extension": "*",
+                "objective-php/primitives": "*"
             },
             "require-dev": {
-                "objective-php/phpunit-extension": "1.0",
                 "phpunit/phpunit": "4.*"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "ObjectivePHP\\Config\\": "src/"
+                    "ObjectivePHP\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -780,15 +780,20 @@
                     "name": "Gauthier 'Rusty' Delamarre",
                     "email": "gauthier@objective-php.org",
                     "role": "lead"
+                },
+                {
+                    "name": "Jérôme 'Neofox' Schaeffer",
+                    "email": "jerome@objective-php.org",
+                    "role": "dev"
                 }
             ],
-            "description": "Config component for ObjectivePHP",
-            "homepage": "https://github.com/objective-php/config",
+            "description": "Objective PHP Components",
+            "homepage": "https://github.com/objective-php/components",
             "keywords": [
-                "config",
-                "objective-php"
+                "objective php",
+                "primitives"
             ],
-            "time": "2015-11-25 16:05:08"
+            "time": "2015-11-27 11:16:46"
         },
         {
             "name": "objective-php/doctrine-package",
@@ -796,27 +801,24 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "5dd58102815636edd24634a63c0525d54b13c6e8"
+                "reference": "748202465fea073159b5b7064ce4367d7f208769"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/5dd58102815636edd24634a63c0525d54b13c6e8",
-                "reference": "5dd58102815636edd24634a63c0525d54b13c6e8",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/748202465fea073159b5b7064ce4367d7f208769",
+                "reference": "748202465fea073159b5b7064ce4367d7f208769",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": ">=2.5",
                 "objective-php/application": "dev-master",
-                "objective-php/config": "dev-master",
+                "objective-php/components": "dev-master",
                 "objective-php/events-handler": "dev-master",
-                "objective-php/matcher": "dev-master",
                 "objective-php/message": "dev-master",
-                "objective-php/primitives": "dev-master",
                 "objective-php/services-factory": "dev-master",
-                "php": ">=5.6.0"
+                "php": ">=7.0"
             },
             "require-dev": {
-                "objective-php/phpunit-extension": "1.0",
                 "phpunit/phpunit": "4.*"
             },
             "suggest": {
@@ -845,7 +847,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2015-11-25 16:09:13"
+            "time": "2015-11-27 11:29:40"
         },
         {
             "name": "objective-php/events-handler",
@@ -853,25 +855,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/events-handler.git",
-                "reference": "37e95719d6d437a03027e221ad98f8e344b59fa3"
+                "reference": "a3fd6be58f142d6a88d047379852f42776f85c9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/37e95719d6d437a03027e221ad98f8e344b59fa3",
-                "reference": "37e95719d6d437a03027e221ad98f8e344b59fa3",
+                "url": "https://api.github.com/repos/objective-php/events-handler/zipball/a3fd6be58f142d6a88d047379852f42776f85c9a",
+                "reference": "a3fd6be58f142d6a88d047379852f42776f85c9a",
                 "shasum": ""
             },
             "require": {
-                "objective-php/matcher": "dev-master",
-                "objective-php/primitives": "dev-master",
-                "php": ">=5.6.0"
+                "objective-php/components": "dev-master",
+                "php": ">=7.0"
             },
             "require-dev": {
-                "objective-php/phpunit-extension": "1.0",
                 "phpunit/phpunit": "4.*"
-            },
-            "suggest": {
-                "objective-php/services-factory": "~0.9"
             },
             "type": "library",
             "autoload": {
@@ -897,7 +894,7 @@
                 "events handler",
                 "objective php"
             ],
-            "time": "2015-11-26 10:22:27"
+            "time": "2015-11-27 11:25:40"
         },
         {
             "name": "objective-php/html",
@@ -905,22 +902,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/html.git",
-                "reference": "7038aa44e1eeee85e52227e1f22484a044ebf604"
+                "reference": "4c9bd163e2f2e5a3368a0486bc25ea912ed6bb68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/html/zipball/7038aa44e1eeee85e52227e1f22484a044ebf604",
-                "reference": "7038aa44e1eeee85e52227e1f22484a044ebf604",
+                "url": "https://api.github.com/repos/objective-php/html/zipball/4c9bd163e2f2e5a3368a0486bc25ea912ed6bb68",
+                "reference": "4c9bd163e2f2e5a3368a0486bc25ea912ed6bb68",
                 "shasum": ""
             },
             "require": {
                 "erusev/parsedown": "~1.5",
                 "erusev/parsedown-extra": "~0.7",
-                "objective-php/primitives": "dev-master",
-                "php": ">=5.6.0"
+                "objective-php/components": "dev-master",
+                "php": ">=7.0"
             },
             "require-dev": {
-                "objective-php/phpunit-extension": "1.0",
                 "phpunit/phpunit": "4.*"
             },
             "type": "library",
@@ -940,59 +936,13 @@
                     "role": "lead"
                 }
             ],
-            "description": "HTML helper classes for ObjectivePHP",
+            "description": "HTML helper classes for Objective PHP",
             "homepage": "https://github.com/objective-php/html",
             "keywords": [
                 "html",
                 "objective php"
             ],
-            "time": "2015-11-26 11:28:12"
-        },
-        {
-            "name": "objective-php/matcher",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/objective-php/matcher.git",
-                "reference": "df818982e9c12e5742fe5ad3fdb8e67ade3eb9b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/matcher/zipball/df818982e9c12e5742fe5ad3fdb8e67ade3eb9b0",
-                "reference": "df818982e9c12e5742fe5ad3fdb8e67ade3eb9b0",
-                "shasum": ""
-            },
-            "require": {
-                "objective-php/phpunit-extension": "~1.0",
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ObjectivePHP\\Matcher\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Gauthier 'Rusty' Delamarre",
-                    "email": "gauthier@objective-php.org",
-                    "role": "lead"
-                }
-            ],
-            "description": "Generic engine to match identifiers against simple yet powerful patterns",
-            "homepage": "https://github.com/objective-php/matcher",
-            "keywords": [
-                "matcher",
-                "objective php"
-            ],
-            "time": "2015-09-20 15:17:38"
+            "time": "2015-11-27 11:27:26"
         },
         {
             "name": "objective-php/message",
@@ -1000,12 +950,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/message.git",
-                "reference": "393d43c5d56a2d76575c250417beac69e8917198"
+                "reference": "9de71bf462e40366edf1a05b12b7f7abb13745af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/message/zipball/393d43c5d56a2d76575c250417beac69e8917198",
-                "reference": "393d43c5d56a2d76575c250417beac69e8917198",
+                "url": "https://api.github.com/repos/objective-php/message/zipball/9de71bf462e40366edf1a05b12b7f7abb13745af",
+                "reference": "9de71bf462e40366edf1a05b12b7f7abb13745af",
                 "shasum": ""
             },
             "require": {
@@ -1013,8 +963,8 @@
                 "zendframework/zend-diactoros": "~1.0"
             },
             "require-dev": {
-                "objective-php/phpunit-extension": "^1.0",
-                "phpunit/phpunit": "^4.8"
+                "objective-php/components": "dev-master",
+                "phpunit/phpunit": "4.*"
             },
             "type": "library",
             "autoload": {
@@ -1033,106 +983,7 @@
                 }
             ],
             "description": "ObjectivePHP implementation for PSR-7",
-            "time": "2015-10-19 15:20:38"
-        },
-        {
-            "name": "objective-php/phpunit-extension",
-            "version": "v1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/objective-php/phpunit-extension.git",
-                "reference": "e500f79d1afdc3f49237f104b3995916363c1ac8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/phpunit-extension/zipball/e500f79d1afdc3f49237f104b3995916363c1ac8",
-                "reference": "e500f79d1afdc3f49237f104b3995916363c1ac8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.5.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "ObjectivePHP\\PHPUnit": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Gauthier 'Rusty' Delamarre",
-                    "email": "gauthier@objective-php.org",
-                    "role": "lead"
-                }
-            ],
-            "description": "Some add-ons for PHPUnit Unit Test Framework",
-            "homepage": "https://github.com/objective-php/phpunit-extension",
-            "keywords": [
-                "objective php",
-                "phpunit"
-            ],
-            "time": "2015-05-16 15:35:37"
-        },
-        {
-            "name": "objective-php/primitives",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/objective-php/primitives.git",
-                "reference": "e71e1a48d921da7db51ac54bc0042a694875714c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/primitives/zipball/e71e1a48d921da7db51ac54bc0042a694875714c",
-                "reference": "e71e1a48d921da7db51ac54bc0042a694875714c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.0"
-            },
-            "require-dev": {
-                "objective-php/phpunit-extension": "1.0",
-                "phpunit/phpunit": "4.*"
-            },
-            "suggest": {
-                "objective-php/matcher": "~1.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ObjectivePHP\\Primitives\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0"
-            ],
-            "authors": [
-                {
-                    "name": "Gauthier 'Rusty' Delamarre",
-                    "email": "gauthier@objective-php.org",
-                    "role": "lead"
-                },
-                {
-                    "name": "Ronan 'Gloo' Teissier",
-                    "email": "ronan@objective-php.org",
-                    "role": "dev"
-                }
-            ],
-            "description": "Primitives classes for ObjectivePHP",
-            "homepage": "https://github.com/objective-php/primitives",
-            "keywords": [
-                "objective php",
-                "primitives"
-            ],
-            "time": "2015-11-25 16:00:57"
+            "time": "2015-11-27 11:13:50"
         },
         {
             "name": "objective-php/services-factory",
@@ -1140,22 +991,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/services-factory.git",
-                "reference": "a41dd846fb149cf7c83933e1010cc97b4632f9d9"
+                "reference": "04e7c811b6a5bdd4a62603d88716bb11d1b16055"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/a41dd846fb149cf7c83933e1010cc97b4632f9d9",
-                "reference": "a41dd846fb149cf7c83933e1010cc97b4632f9d9",
+                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/04e7c811b6a5bdd4a62603d88716bb11d1b16055",
+                "reference": "04e7c811b6a5bdd4a62603d88716bb11d1b16055",
                 "shasum": ""
             },
             "require": {
+                "objective-php/components": "dev-master",
                 "objective-php/events-handler": "dev-master",
-                "objective-php/matcher": "dev-master",
-                "objective-php/primitives": "dev-master",
-                "php": ">=5.6.0"
+                "php": ">=7.0"
             },
             "require-dev": {
-                "objective-php/phpunit-extension": "1.0",
                 "phpunit/phpunit": "4.*"
             },
             "type": "library",
@@ -1175,14 +1024,14 @@
                     "role": "lead"
                 }
             ],
-            "description": "Services container for ObjectivePHP",
+            "description": "Services container for Objective PHP",
             "homepage": "https://github.com/objective-php/services-factory",
             "keywords": [
                 "dependency injection",
                 "objective php",
                 "services"
             ],
-            "time": "2015-11-26 11:23:53"
+            "time": "2015-11-27 11:25:24"
         },
         {
             "name": "psr/http-message",
@@ -1398,18 +1247,18 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "objective-php/primitives": 20,
+        "objective-php/components": 20,
         "objective-php/services-factory": 20,
         "objective-php/events-handler": 20,
-        "objective-php/config": 20,
         "objective-php/message": 20,
-        "objective-php/matcher": 20,
         "objective-php/application": 20,
         "objective-php/doctrine-package": 20,
         "objective-php/html": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": [],
+    "platform": {
+        "php": ">=7.0"
+    },
     "platform-dev": []
 }
