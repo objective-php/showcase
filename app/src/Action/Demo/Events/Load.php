@@ -4,24 +4,17 @@
 
 	use ObjectivePHP\Application\Action\DefaultAction;
 	use ObjectivePHP\Application\Action\Parameter\NumericParameter;
+	use ObjectivePHP\Application\ApplicationInterface;
 	use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
 	class Load extends DefaultAction
 	{
 
-		public function expects()
-		{
-			return
-				[
-					new NumericParameter('callbacks'),
-					new NumericParameter('triggers')
-				];
-		}
 
-		public function run(WorkflowEvent $event)
+		public function run(ApplicationInterface $app)
 		{
 
-			$eventsHandler = $event->getApplication()->getEventsHandler();
+			$eventsHandler = $app->getEventsHandler();
 
 			// prevent default renderer from triggering
 			// $event->getWorkflow()->unbind('render');
@@ -46,8 +39,11 @@
 			$startedAt = microtime(true);
 			for ($i = 0; $i < $triggers; $i++)
 			{
-				$eventsHandler->trigger('demo.events.' . $this->generateRandomEventName());
+				$eventName = 'demo.events.' . $this->generateRandomEventName();
+				$eventsHandler->trigger($eventName);
 			}
+
+
 			$stoppedAt = microtime(true);
 
 			$elapsedTime = round($stoppedAt - $startedAt, 3) * 1000;
@@ -79,7 +75,6 @@
 					$temp_array[] = $character_set['characters'][rand(0, strlen($character_set['characters']) - 1)];
 				}
 			}
-			shuffle($temp_array);
 
 			return implode('', $temp_array);
 		}

@@ -2,46 +2,51 @@
 
     namespace Showcase\Package\Overrider;
 
-    use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+    use ObjectivePHP\Application\ApplicationInterface;
+    use ObjectivePHP\Application\Middleware\AbstractMiddleware;
     use ObjectivePHP\Config\Config;
+    use Showcase\Application;
 
     /**
      * Class OverriderPackage
      *
      * @package Showcase\Package\Overrider
      */
-    class OverriderPackage
+    class OverriderPackage extends AbstractMiddleware
     {
         /**
-         * @param WorkflowEvent $event
+         * @param Application $app
          */
-        public function __invoke(WorkflowEvent $event)
+        public function run(ApplicationInterface $app)
         {
 
             // setup autoloading for current package
-            $event->getApplication()->getAutoloader()->addPsr4('Showcase\\Package\\Overrider\\', 'packages/Overrider/src');
+            $app->getAutoloader()->addPsr4('Showcase\\Package\\Overrider\\', 'packages/Overrider/src');
 
-            $event->getApplication()->getConfig()->merge($this->getConfig());
+            $app->getConfig()->merge($this->getConfig());
 
         }
 
 
         /**
-         * @return mixed|null|Config
+         * @return Config
          */
         protected function getConfig()
         {
 
             return Config::factory([
-                'actions.namespaces' => ['Showcase\\Package\\Overrider\\Action'],
-                'views.locations' =>
-                [
-                    __DIR__ . '/views'
-                ],
-                'services' =>
-                [
-                    ['id' => 'overrider', 'instance' => new OverriderPackage()]
-                ]
+                'actions.namespaces' =>
+                    [
+                        'Showcase\\Package\\Overrider\\Action'
+                    ],
+                'views.locations'    =>
+                    [
+                        __DIR__ . '/views'
+                    ],
+                'services'           =>
+                    [
+                        ['id' => 'overrider', 'instance' => new OverriderPackage()]
+                    ]
             ]);
 
         }

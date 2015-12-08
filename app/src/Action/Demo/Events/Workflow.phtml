@@ -1,78 +1,64 @@
 <?php
     use ObjectivePHP\Application\View\Helper\Vars;
-    use ObjectivePHP\Application\Workflow\WorkflowInterface;
+    use ObjectivePHP\Html\Tag\Tag;
+    use ObjectivePHP\Primitives\Collection\Collection;
+
 ?>
 
-    Below is the tree of default ObjectivePHP/Application workflow events.
-    <br/><br/>
+Below is the tree of default ObjectivePHP/Application workflow events.
+<br/><br/>
 <?php
-    $workflow = Vars::get('workflowTree');
+    $workflow = Vars::collection('workflow');
 
 ?>
 
-    <div class="panel panel-default">
-        <!-- Default panel contents -->
-        <div class="panel-heading">Workflow steps</div>
-        <div class="panel-body">
-            <p>
-                The steps below are the actual steps of the current workflow. This is a fully dynamic table, generated
-                from the actual workflow running the page.
-            </p>
-        </div>
-
-        <!-- Table -->
-        <table class="table table-striped">
-            <thead>
-            <th>Step</th>
-            <th>Event</th>
-            <th>Description</th>
-            </thead>
-            <tbody>
-            <?php
-                $index = 1;
-                display_workflow($workflow, $workflow->getName(), $index);
-            ?>
-            </tbody>
-        </table>
+<div class="panel panel-default">
+    <!-- Default panel contents -->
+    <div class="panel-heading"><?= Vars::get('page.title') ?></div>
+    <div class="panel-body">
+        <p>
+            The steps below are the actual steps of the current workflow. This is a fully dynamic table, generated
+            from the actual workflow running the page.
+        </p>
     </div>
 
-<?php
+    <!-- Table -->
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Hook</th>
+            <th>MiddleWare</th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php
 
-
-    /**
-     * @param $workflow
-     */
-    function display_workflow($workflow, $prefix, &$index)
-    {
-        if ($workflow->doesAutoTriggerPrePostEvents())
-        {
-            display_event($index++, implode('.', [$prefix, 'pre']), 'Auto-triggered "pre" event');
-        }
-
-        foreach ($workflow->getSteps()->toArray() as $step)
-        {
-            if ($step instanceof WorkflowInterface)
+            $workflow->each(function ($middleWares, $hook)
             {
-                display_workflow($step, $prefix . '.' . $step->getName(), $index);
+                Tag::tr();
+                Tag::td(Tag::strong($hook))->addAttribute('colspan', 2);
+                Tag::tr()->close();
 
 
-            }
-            else
-            {
-                display_event($index++, implode('.', [$prefix, $step->getName()]), $step->getDescription());
-            }
-        }
-        if ($workflow->doesAutoTriggerPrePostEvents())
-        {
-            display_event($index++, implode('.', [$prefix, 'post']), 'Auto-triggered "post" event');
-        }
-    }
+                if (!$middleWares)
+                {
+                    $middleWares[] = 'No Hook has been plugged here';
+                }
 
-    function display_event($index, $event, $description)
-    {
-        echo '<tr>';
-        echo '<td>' . $index . '</td>';
-        echo '<td><a href="/demo/events/step-details?' . $event . '">' . $event . '</a></td>';
-        echo '<td>' . $description . '</td>';
-        echo '</tr>';
-    }
+                Collection::cast($middleWares)->each(function ($middleWare)
+                {
+                    Tag::tr();
+                    Tag::td();
+                    Tag::td($middleWare);
+                    Tag::tr()->close();
+                })
+                ;
+
+            });
+
+
+        ?>
+        </tbody>
+    </table>
+</div>
+

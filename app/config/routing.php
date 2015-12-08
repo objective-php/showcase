@@ -4,6 +4,7 @@
 
         // map paths to action class names
         'router.routes' => [
-            '/' => 'Home'
+            '/' => '/home',
+            '/login' => '/auth/login'
         ]
     ];

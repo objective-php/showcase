@@ -14,28 +14,12 @@
                     'Showcase\\Action'
                 ],
 
-            // views
-            /*
-            'views.locations' =>
-                [
-                    'app/views/actions'
-                ],
-            */
+
             // layouts
             'layouts.locations' =>
                 [
-                    // 'app/views/layouts'
                     'app/layouts'
                 ],
-            'layouts.default'   => 'layout',
-
-            // packages
-             'packages.registered' => [
-               // DebugPackage::class,
-               // OverriderPackage::class,
-               DoctrinePackage::class,
-               ShowSourcePackage::class
-            ],
 
             'doctrine.em.default.entities.locations' => 'app/src/Entity',
 

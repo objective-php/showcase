@@ -4,6 +4,7 @@
 
     use ObjectivePHP\Application\Action\AbstractAction;
     use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use Showcase\Service\HumanResources;
 
@@ -23,7 +24,7 @@
          * @param WorkflowEvent $event
          *
          * @return array
-         */public function run(WorkflowEvent $event)
+         */public function run(ApplicationInterface $app)
         {
             $employees = $this->getHumanResources()->getRandomEmployees(10);
 
@@ -37,7 +38,7 @@
         {
             if (is_null($this->humanResources))
             {
-                $this->humanResources = $this->getService('services.human-resources');
+                $this->humanResources = $this->getService('service.human-resources');
             }
 
             return $this->humanResources;

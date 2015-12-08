@@ -4,10 +4,8 @@
     
     
     use ObjectivePHP\Application\Action\DefaultAction;
-    use ObjectivePHP\Application\Action\Parameter\AbstractParameterProcessor;
-    use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
-    use ObjectivePHP\DoctrinePackage\Parameter\EntityParameterProcessor;
-    use Showcase\Entity\Employee;
+    use ObjectivePHP\Application\ApplicationInterface;
+    use ObjectivePHP\Notification;
     use Showcase\Service\HumanResources;
 
     /**
@@ -24,27 +22,40 @@
 
         public function init()
         {
-
-            $this->setParameterProcessor(
-                (new EntityParameterProcessor('employee', 0))
-                    ->setEntity(Employee::class)
-                    ->setMandatory()
-                    ->setMessage(AbstractParameterProcessor::IS_MISSING, 'Le paramètre :param est manquant')
-            );
-
-        }
-
-        public function run(WorkflowEvent $event)
-        {
-            return ['employee' => $this->getEmployee()];
+            $this->alias(0, 'employeeId');
         }
 
         /**
-         * @codeAssist
-         * @return Employee
+         * @param ApplicationInterface $app
+         *
+         * @return array
          */
-        protected function getEmployee()
+        public function run()
         {
-            return $this->getParam('employee');
+
+            $employee = $this->humanResources->getEmployee($this->getParam('employeeId'));
+
+            return ['employee' => $employee];
         }
+
+        /**
+         * @return HumanResources
+         */
+        public function getHumanResources()
+        {
+            return $this->humanResources;
+        }
+
+        /**
+         * @param HumanResources $humanResources
+         *
+         * @return $this
+         */
+        public function setHumanResources($humanResources)
+        {
+            $this->humanResources = $humanResources;
+
+            return $this;
+        }
+
     }

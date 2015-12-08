@@ -8,9 +8,8 @@
 
     $app = new Application($autoloader);
 
-    $app->setEnv('dev');
+    $app->setEnv(getenv('APPLICATION_ENV') ?: 'production');
 
     $app->loadConfig('app/config');
-
 
     $app->run();

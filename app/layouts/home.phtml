@@ -1,5 +1,8 @@
 <?php
+    use ObjectivePHP\Application\Session\Session;
     use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\Html\Tag\Tag;
+    use ObjectivePHP\Notification\MessageInterface;
 ?>
 
 <!DOCTYPE html>
@@ -12,7 +15,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $config->app->name ?></title>
+    <title><?= Vars::config()->app->name . ' / Showcase' ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -45,9 +48,9 @@
         </h1>
         <p></p>
     </div>
-
+    <?php include __DIR__ . '/partials/notifications.phtml'; ?>
     <div>
-        <?= $content ?>
+        <?= Vars::get('view.output') ?>
     </div>
 </div>
 <!-- /container -->

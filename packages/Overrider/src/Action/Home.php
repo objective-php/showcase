@@ -3,6 +3,7 @@
     namespace Showcase\Package\Overrider\Action;
 
     use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
     /**
@@ -13,14 +14,14 @@
     class Home extends \Showcase\Action\Home
     {
         /**
-         * @param WorkflowEvent $event
+         * @param ApplicationInterface $app
          *
          * @return array
          */
-        public function run(WorkflowEvent $event)
+        public function run(ApplicationInterface $app)
         {
             return [
-                'page.title'    => $event->getApplication()->getConfig()->app->name,
+                'page.title'    => 'Test',
                 'page.subtitle' => 'This is the homepage from Overrider Package!',
             ];
         }

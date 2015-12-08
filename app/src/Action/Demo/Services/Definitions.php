@@ -3,6 +3,7 @@
     namespace Showcase\Action\Demo\Services;
 
     use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
     /**
@@ -17,11 +18,10 @@
          *
          * @return array
          */
-        public function run(WorkflowEvent $event)
+        public function run(ApplicationInterface $app)
         {
 
             $services = $this->getServicesFactory()->getServices();
-
 
             return [
                 'services' => $services

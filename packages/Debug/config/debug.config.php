@@ -3,11 +3,10 @@
     use Showcase\Package\Debug\Dumper;
 
     return [
-        'app.debug'           => true,
         'services' =>
             [
                 [
-                    'id'    => 'dumper',
+                    'id'    => 'debug.dumper',
                     'class' => Dumper::class
                 ]
             ]

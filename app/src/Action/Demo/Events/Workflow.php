@@ -4,7 +4,10 @@
     
     
     use ObjectivePHP\Application\Action\DefaultAction;
-    use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+    use ObjectivePHP\Application\ApplicationInterface;
+    use ObjectivePHP\Application\Workflow\Hook;
+    use ObjectivePHP\Application\Workflow\Step;
+    use Showcase\Application;
 
     /**
      * Class Workflow
@@ -16,17 +19,33 @@
 
         /**
          * Run the action
+         *
+         * @var $app Application
+         *
          */
-        public function run(WorkflowEvent $event)
+        public function run(ApplicationInterface $app)
         {
 
-            $workflow = $event->getApplication()->getWorkflow();
+
+            $hooks = $app->getSteps();
+            $workflow = [];
+            $hooks->each(function (Step $hook) use (&$workflow, $app)
+            {
+                $workflow[$hook->getName()] = [];
+                $currentStep                = &$workflow[$hook->getName()];
+
+                    $hook->each(function (Hook $hook, $alias) use(&$currentStep, $app)
+                {
+                    $currentStep[] = $alias . ': ' . $hook->getMiddleware()->getDetails();
+                });
+
+
+            });
 
             return
                 [
                     'page.title'    => 'Workflow steps',
-                    'page.subtitle' => 'Dynamically displays workflow steps',
-                    'workflowTree'  => $workflow
+                    'workflow'  => $workflow
                 ];
         }
 

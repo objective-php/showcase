@@ -2,10 +2,13 @@
     
     namespace Showcase\Package\Debug;
 
-    use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+    use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Config\Loader\DirectoryLoader;
-    use ObjectivePHP\Events\Callback\AliasedCallback;
     use ObjectivePHP\Events\EventInterface;
+    use ObjectivePHP\Matcher\Matcher;
+    use ObjectivePHP\ServicesFactory\ServicesFactory;
+    use PhpConsole\Connector;
+    use Showcase\Application;
 
     /**
      * Class DebugPackage
@@ -14,52 +17,63 @@
      */
     class DebugPackage
     {
+
         /**
-         * @param WorkflowEvent $event
+         * @param Application $app
          *
          * @throws \ObjectivePHP\Config\Exception
          */
-        public function __invoke(WorkflowEvent $event)
+        public function __invoke(ApplicationInterface $app)
         {
 
             // setup autoloading for current package
-            $event->getApplication()->getAutoloader()->addPsr4('Showcase\\Package\\Debug\\', 'packages/Debug/src');
+            $app->getAutoloader()->addPsr4('Showcase\\Package\\Debug\\', 'packages/Debug/src');
 
 
             // init package here
-            $application = $event->getApplication();
-            $workflow  = $application->getWorkflow();
-
             $configLoader = new DirectoryLoader();
-            $config = $configLoader->load(__DIR__ . '/config');
+            $config       = $configLoader->load(__DIR__ . '/config');
 
-            $application->getConfig()->merge($config);
+            $app->getConfig()->merge($config);
 
-            // $workflow->getEventsHandler()->bind('*', [$this, 'trackEvents']);
-        }
+            $connector = Connector::getInstance();
 
-        /**
-         * @param EventInterface $event
-         */
-        public function trackEvents(EventInterface $event)
-        {
-            echo 'Triggered ' . $event->getName() . '<br />';
-            if (count($event->getResults())) echo "<div style='padding-left:30px'> - Ran " . count($event->getResults()) . ' callbacks</div><br>';
-        }
+            $connector->setSourcesBasePath(getcwd());
+            $matcher = new Matcher();
 
-        /**
-         * Dump residual buffered output
-         */
-        public function __destruct()
-        {
-            ob_start();
-            fpassthru(fopen('php://memory', 'r'));
-            $output = ob_get_clean();
-            if($output)
+            // redirect errors to PhpConsole
+            \PhpConsole\Handler::getInstance()->start();
+
+            $app->getEventsHandler()->bind('*', function (EventInterface $event) use ($app, $connector, $matcher)
             {
-                echo 'Unsent output:<br /><br />';
-                echo $output;
-            }
+
+                /**
+                 * @var $connector \PhpConsole\Connector
+                 */
+                if ($connector->isActiveClient())
+                {
+                    $console = \PhpConsole\Handler::getInstance();
+                    $context = $event->getContext();
+                    $origin = $event->getOrigin();
+
+                    switch (true)
+                    {
+                        case $event->getName() == 'application.workflow.step.run':
+                            $console->debug(sprintf('Starting running step %s', $origin->getName()), 'workflow.step');
+                            break;
+                        case $event->getName() == 'application.workflow.hook.run':
+                            $console->debug(sprintf('Running Middleware %s (%s)', $origin->getMiddleware()->getReference(), $origin->getMiddleware()->getDetails()), 'workflow.hook');
+                            break;
+                        case $matcher->match(ServicesFactory::EVENT_INSTANCE_BUILT . '.*', $event->getName()):
+                            $console->debug(sprintf('Built service %s (%s)', $context['serviceSpecs']->getId(), (is_object($context['instance']) ? get_class($context['instance']) : get_type($context['instance']))), 'services');
+                            break;
+                    }
+                }
+
+            })
+            ;
+
         }
+
 
     }

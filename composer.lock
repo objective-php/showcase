@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "50f7e61b45d02d1df0d3815672589877",
-    "content-hash": "2af73027559d43cc8a3fdd2c2beb8788",
+    "hash": "b935b4617f41d069e204beffc5ea6efc",
+    "content-hash": "e04c6ede7c9f92ccff5858e882d55f9c",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -696,12 +696,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "ba71035c14ee67d397723d0f4648ab864892c52f"
+                "reference": "525177191cd7c5a5fef474a1f6edcfa24d0a7317"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/ba71035c14ee67d397723d0f4648ab864892c52f",
-                "reference": "ba71035c14ee67d397723d0f4648ab864892c52f",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/47270c0ca27ada5ce365906a9ef4df36bf690534",
+                "reference": "525177191cd7c5a5fef474a1f6edcfa24d0a7317",
                 "shasum": ""
             },
             "require": {
@@ -737,7 +737,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-11-27 11:22:10"
+            "time": "2015-11-28 14:19:56"
         },
         {
             "name": "objective-php/components",
@@ -745,12 +745,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/components.git",
-                "reference": "16f66deefb825a4cb56d8928e5e3f47672f1833c"
+                "reference": "089404b5e7fcea1da39808a656d74e90cd96b694"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/components/zipball/16f66deefb825a4cb56d8928e5e3f47672f1833c",
-                "reference": "16f66deefb825a4cb56d8928e5e3f47672f1833c",
+                "url": "https://api.github.com/repos/objective-php/components/zipball/82084846935940a0833627f0904eefc2eca111ed",
+                "reference": "089404b5e7fcea1da39808a656d74e90cd96b694",
                 "shasum": ""
             },
             "require": {
@@ -763,7 +763,7 @@
                 "objective-php/primitives": "*"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "5.*"
             },
             "type": "library",
             "autoload": {
@@ -793,7 +793,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-11-27 11:16:46"
+            "time": "2015-11-28 13:59:55"
         },
         {
             "name": "objective-php/doctrine-package",
@@ -805,7 +805,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/748202465fea073159b5b7064ce4367d7f208769",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/881bbe0f2a11571d4bc2eb002e12a36600a90840",
                 "reference": "748202465fea073159b5b7064ce4367d7f208769",
                 "shasum": ""
             },
@@ -1032,6 +1032,57 @@
                 "services"
             ],
             "time": "2015-11-27 11:25:24"
+        },
+        {
+            "name": "php-console/php-console",
+            "version": "3.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barbushin/php-console.git",
+                "reference": "50236f71d80f983d232683d5d61ba1994d40c3de"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barbushin/php-console/zipball/50236f71d80f983d232683d5d61ba1994d40c3de",
+                "reference": "50236f71d80f983d232683d5d61ba1994d40c3de",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PhpConsole": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Barbushin",
+                    "email": "barbushin@gmail.com",
+                    "homepage": "http://linkedin.com/in/barbushin"
+                }
+            ],
+            "description": "Server side PHP library for Google Chrome extension \"PHP Console\".",
+            "homepage": "https://github.com/barbushin/php-console",
+            "keywords": [
+                "chrome",
+                "debug",
+                "error handler",
+                "errors",
+                "google chrome",
+                "php"
+            ],
+            "time": "2015-10-29 01:31:31"
         },
         {
             "name": "psr/http-message",

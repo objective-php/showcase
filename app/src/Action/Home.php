@@ -3,6 +3,7 @@
     namespace Showcase\Action;
 
     use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
@@ -14,13 +15,14 @@
     class Home extends DefaultAction
     {
         /**
-         * @param WorkflowEvent $event
+         * @param ApplicationInterface
          *
          * @return array
          */
-        public function run(WorkflowEvent $event)
+        public function run(ApplicationInterface $app)
         {
 
+            $app->getConfig()->layouts->layout = 'home';
 
             Vars::set('page.title', 'Objective PHP Showcase');
 

@@ -1,5 +1,6 @@
 <?php
     use ObjectivePHP\Application\View\Helper\Vars;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><?= $config->app->name ?></title>
+    <title><?= Vars::config()->app->name . ' / ' . Vars::get('page.title') ?></title>
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -19,7 +20,7 @@
     <link href="/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/css/theme.css" rel="stylesheet">
+    <link href=y"/css/theme.css" rel="stylesheet">
 
 
     <link rel="stylesheet" href="/vendor/highlight/styles/github.css">
@@ -35,7 +36,7 @@
 <body role="document">
 
 <?php include __DIR__ . '/partials/navbar.phtml'; ?>
-
+<br />
 <div class="container theme-showcase" role="main">
 
     <div class="page-header">
@@ -45,7 +46,9 @@
         </h1>
     </div>
 
-    <div class="bs-example panel" id="source-buttons">
+    <?php include __DIR__ . '/partials/notifications.phtml'; ?>
+
+    <div class="panel" id="source-buttons">
         <p>
             <a class="btn btn-primary" href="#action-source" data-parent="#source-viewers">
                 Show Action
@@ -66,7 +69,7 @@
         </div>
     </div>
     <div>
-        <?= $content  ?>
+        <?= Vars::get('view.output')  ?>
     </div>
 </div>
 <!-- /container -->

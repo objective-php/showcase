@@ -2,11 +2,11 @@
 
     namespace Showcase\Package\ShowSource;
 
-    use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use ObjectivePHP\Html\Tag\Tag;
     use ObjectivePHP\Primitives\String\Str;
-    use ObjectivePHP\ServicesFactory\Reference;
+    use ObjectivePHP\ServicesFactory\ServiceReference;
 
     /**
      * Class ShowSourcePackage
@@ -18,12 +18,9 @@
         /**
          * @param WorkflowEvent $event
          */
-        public function __invoke(WorkflowEvent $event)
+        public function __invoke(ApplicationInterface $app)
         {
-            $workflow = $event->getApplication()->getWorkflow()->getRoot();
-
-            $workflow->bind('response.generate', [$this, 'showSource']);
-
+            $app->on('rendering')->plug([$this, 'showSource']);
         }
 
         /**
@@ -31,20 +28,18 @@
          *
          * @throws \ObjectivePHP\ServicesFactory\Exception
          */
-        public function showSource(WorkflowEvent $event)
+        public function showSource(ApplicationInterface $app)
         {
-            $application = $event->getApplication();
 
-            $event->getApplication()->getResponse()->getBody()->rewind();
-            $output = Str::cast($event->getApplication()->getResponse()->getBody()->getContents());
+            $app->getResponse()->getBody()->rewind();
+            $output = Str::cast($app->getResponse()->getBody()->getContents());
 
-            $actionClass = $application->getWorkflow()->getStep('route')->getEarlierEvent('resolve')
-                                       ->getResults()['action-resolver'];
+            $actionClass = $app->getParam('action');
 
             // handle action which are services reference
-            if ($actionClass instanceof Reference)
+            if ($actionClass instanceof ServiceReference)
             {
-                $action      = $application->getServicesFactory()->get($actionClass->getId());
+                $action      = $app->getServicesFactory()->get($actionClass->getId());
                 $actionClass = get_class($action);
             }
 
@@ -55,14 +50,16 @@
 
             $output->setVariable('action-source', Tag::pre($actionSource));
 
-            $viewScript = Vars::get('view.path');
+            $viewScript = $app->getParam('view.script');
+
 
             $viewSource = Str::cast(show_source($viewScript, true));
             $viewSource->replace('/^<code>|<\/code>$/', '', Str::REGEXP);
             $output->setVariable('view-source', Tag::pre($viewSource));
 
-            $event->getApplication()->getResponse()->getBody()->rewind();
-            $event->getApplication()->getResponse()->getBody()->write($output);
+
+            $app->getResponse()->getBody()->rewind();
+            $app->getResponse()->getBody()->write($output);
         }
 
     }
