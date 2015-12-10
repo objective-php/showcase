@@ -1,10 +1,12 @@
 <?php
 
     use Doctrine\Common\Util\Debug;
+    use ObjectivePHP\Application\Session\Session;
     use ObjectivePHP\Application\View\Helper\Currency;
     use ObjectivePHP\Application\View\Helper\Date;
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Html\Tag\Tag;
+    use ObjectivePHP\Notification\Warning;
     use ObjectivePHP\Primitives\Collection\Collection;
 
     Vars::set('page.title', 'Doctrine simple demo');
@@ -12,6 +14,7 @@
 
     Vars::collection('employees')->each(function($employee)
     {
+
         echo Tag::h2(Tag::a($employee['first_name'] . ' ' . $employee['last_name'])->addAttribute('href', '/demo/doctrine/entity-parameter?' . $employee['employee_no']));
 
         echo
@@ -28,3 +31,9 @@
         echo Tag::hr();
 
     });
+
+    // add a notification
+if(Vars::get('links-warning'))
+{
+    (new Session('notifications'))->set('links.warning', new Warning('By clicking any link on this view, you will go back to the Doctrine version of the demo'));
+}

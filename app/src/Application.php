@@ -15,6 +15,7 @@
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\DoctrinePackage\DoctrinePackage;
     use ObjectivePHP\Notification\Info;
+    use ObjectivePHP\EloquentPackage\EloquentPackage;
     use Showcase\Middleware\LayoutSwitcher;
     use Showcase\Package\Debug\DebugPackage;
     use Showcase\Package\Overrider\OverriderPackage;
@@ -36,6 +37,13 @@
             // define middleware endpoints
             $this->addSteps('init', 'bootstrap', 'route', 'action', 'rendering', 'end');
 
+            // plug the debug package first, so that it can report all Middleware execution
+            $this->on('init')->
+                plug(DebugPackage::class, function ($app)
+                {
+                    return $app->getEnv() == 'development';
+                });
+
 
             // initialize request and response
             $this->on('init')
@@ -43,6 +51,7 @@
                  ->plug(new RequestWrapper())->as('request-wrapper')
                  ->plug(new ResponseInitializer())->as('response-initializer')
             ;
+
 
             $this->importPackages();
 
@@ -98,11 +107,10 @@
                 // load external packages
 
                 // this one for all url below /demo (leading and trailing "/" are ignored)
-                 // ->plug(OverriderPackage::class)
-                 ->plug(DebugPackage::class, function ($app) { return $app->getEnv() == 'development';})
-                 ->plug(ShowSourcePackage::class, '/demo/*')
+                ->plug(ShowSourcePackage::class, '/demo/*')
                 // and this one only for urls under /demo/doctrine
                  ->plug(new DoctrinePackage(), '/demo/doctrine/*')
+                 ->plug(new EloquentPackage(), '/demo/eloquent/*')
             ;
 
         }
