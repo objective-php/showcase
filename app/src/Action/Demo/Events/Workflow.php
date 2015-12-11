@@ -36,7 +36,7 @@
 
                     $hook->each(function (Hook $hook, $alias) use(&$currentStep, $app)
                 {
-                    $currentStep[] = $alias . ': ' . $hook->getMiddleware()->getDetails();
+                    $currentStep[] = $alias . ': ' . $hook->getMiddleware()->getDescription();
                 });
 
 

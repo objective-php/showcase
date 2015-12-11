@@ -13,6 +13,8 @@
     use ObjectivePHP\Application\Operation\Rta\ViewResolver;
     use ObjectivePHP\Application\Session\Session;
     use ObjectivePHP\Application\View\Helper\Vars;
+    use ObjectivePHP\Application\Workflow\Filter\RouteFilter;
+    use ObjectivePHP\Application\Workflow\Filter\UrlFilter;
     use ObjectivePHP\DoctrinePackage\DoctrinePackage;
     use ObjectivePHP\Notification\Info;
     use ObjectivePHP\EloquentPackage\EloquentPackage;
@@ -38,11 +40,11 @@
             $this->addSteps('init', 'bootstrap', 'route', 'action', 'rendering', 'end');
 
             // plug the debug package first, so that it can report all Middleware execution
-            $this->on('init')->
-                plug(DebugPackage::class, function ($app)
-                {
-                    return $app->getEnv() == 'development';
-                });
+            $this->on('init')->plug(DebugPackage::class, function ($app)
+            {
+                return false; // $app->getEnv() == 'development';
+            })
+            ;
 
 
             // initialize request and response
@@ -67,7 +69,11 @@
             $this->on('bootstrap')->plug(ServiceLoader::class)->asDefault('service-loader');
 
             // give access to config everywhere, including views
-            $this->on('bootstrap')->plug(function($app) { Vars::$config = $app->getConfig(); });
+            $this->on('bootstrap')->plug(function ($app)
+            {
+                Vars::set('config', $app->getConfig());
+            })
+            ;
 
             // action runner will catch action return value and inject the in the Vars container
             $this->on('action')->plug(ActionRunner::class)->asDefault('action-runner');
@@ -77,7 +83,7 @@
             {
                 (new Session('notifications'))->set('action.current', (new Info('Rendering action "' . $this->getParam('action') . '"')));
             },
-                '!/')
+                new UrlFilter('!/'))
             ;
 
             // inject a message on home page only, and only on first visit
@@ -86,16 +92,21 @@
                 (new Session('notifications'))->set('hello', (new Info('Welcome on ObjectivePHP demo')));
                 (new Session)->set('greetings.done', true);
 
-            }, '/', [$this, 'assertGreetingsMiddlewareActivation'])
+            }, new UrlFilter('/'), [$this, 'assertGreetingsMiddlewareActivation'])
             ;
 
 
             $this->on('rendering')
-                 ->plug(LayoutSwitcher::class, '/')
+                 ->plug(LayoutSwitcher::class, new UrlFilter('/'))
                  ->plug(new ViewResolver())->as('view-resolver')
                  ->plug(new ViewRenderer())->as('view-renderer')
             ;
 
+
+            /**
+             * Uncomment the line below if you want to return Json
+             */
+            // $this->on('end')->plug(new ResponseSender(), function($app) { return $app->getRequest()->getHeader('Content-Type') == 'application/json';});
             $this->on('end')->plug(new ResponseSender());
 
         }
@@ -107,10 +118,11 @@
                 // load external packages
 
                 // this one for all url below /demo (leading and trailing "/" are ignored)
-                ->plug(ShowSourcePackage::class, '/demo/*')
+                 ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'))
                 // and this one only for urls under /demo/doctrine
-                 ->plug(new DoctrinePackage(), '/demo/doctrine/*')
-                 ->plug(new EloquentPackage(), '/demo/eloquent/*')
+                ->plug(new DoctrinePackage(), new UrlFilter('/demo/doctrine/*'))
+                // same for Eloquent
+                ->plug(new EloquentPackage(), new UrlFilter('/demo/eloquent/*'))
             ;
 
         }
