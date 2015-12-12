@@ -34,7 +34,13 @@
             $app->getResponse()->getBody()->rewind();
             $output = Str::cast($app->getResponse()->getBody()->getContents());
 
-            $actionClass = $app->getParam('action');
+            $actionMiddleware = $app->getParam('runtime.action.middleware');
+
+            $action = $actionMiddleware->getOperation()->getCallable($app);
+            if(is_object($action))
+            {
+                $actionClass = get_class($action);
+
 
             // handle action which are services reference
             if ($actionClass instanceof ServiceReference)
@@ -43,11 +49,15 @@
                 $actionClass = get_class($action);
             }
 
-            $actionFile = (new \ReflectionClass($actionClass))->getFileName();
+                $actionFile = (new \ReflectionClass($actionClass))->getFileName();
 
-            $actionSource = Str::cast(show_source($actionFile, true));
-            $actionSource->replace('/^<code>|<\/code>$/', '', Str::REGEXP);
-
+                $actionSource = Str::cast(show_source($actionFile, true));
+                $actionSource->replace('/^<code>|<\/code>$/', '', Str::REGEXP);
+            }
+            else
+            {
+                $actionSource = "Closure";
+            }
             $output->setVariable('action-source', Tag::pre($actionSource));
 
             $viewScript = $app->getParam('view.script');

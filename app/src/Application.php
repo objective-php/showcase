@@ -51,7 +51,6 @@
             $this->on('init')
                 // handle request and response
                  ->plug(new RequestWrapper())->as('request-wrapper')
-                 ->plug(new ResponseInitializer())->as('response-initializer')
             ;
 
 
@@ -81,7 +80,7 @@
             // inject a message on all pages but home
             $this->on('rendering')->plug(function ()
             {
-                (new Session('notifications'))->set('action.current', (new Info('Rendering action "' . $this->getParam('action') . '"')));
+                (new Session('notifications'))->set('action.current', (new Info('Rendering action "' . $this->getParam('runtime.action.middleware')->getDescription() . '"')));
             },
                 new UrlFilter('!/'))
             ;
@@ -118,7 +117,7 @@
                 // load external packages
 
                 // this one for all url below /demo (leading and trailing "/" are ignored)
-                 ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'))
+                ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'))
                 // and this one only for urls under /demo/doctrine
                 ->plug(new DoctrinePackage(), new UrlFilter('/demo/doctrine/*'))
                 // same for Eloquent

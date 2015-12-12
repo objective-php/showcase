@@ -62,7 +62,7 @@
                             $console->debug(sprintf('Starting running step %s', $origin->getName()), 'workflow.step');
                             break;
                         case $event->getName() == 'application.workflow.hook.run':
-                            $console->debug(sprintf('Running Middleware %s (%s)', $origin->getMiddleware()->getReference(), $origin->getMiddleware()->getDetails()), 'workflow.hook');
+                            $console->debug(sprintf('Running Middleware %s (%s)', $origin->getMiddleware()->getReference(), $origin->getMiddleware()->getDescription()), 'workflow.hook');
                             break;
                         case $matcher->match(ServicesFactory::EVENT_INSTANCE_BUILT . '.*', $event->getName()):
                             $console->debug(sprintf('Built service %s (%s)', $context['serviceSpecs']->getId(), (is_object($context['instance']) ? get_class($context['instance']) : get_type($context['instance']))), 'services');
