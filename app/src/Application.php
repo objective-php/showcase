@@ -42,7 +42,7 @@
             // plug the debug package first, so that it can report all Middleware execution
             $this->on('init')->plug(DebugPackage::class, function ($app)
             {
-                return false; // $app->getEnv() == 'development';
+                return $app->getEnv() == 'development' && isset($_GET['debug']);
             })
             ;
 
@@ -71,7 +71,7 @@
             // give access to config everywhere, including views
             $this->on('bootstrap')->plug(function ($app)
             {
-                Vars::set('config', $app->getConfig());
+                Vars::$config = $app->getConfig();
             })
             ;
 
