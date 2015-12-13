@@ -30,7 +30,7 @@
          *
          * @return array
          */
-        public function run()
+        public function run(ApplicationInterface $app)
         {
 
             $employee = $this->humanResources->getEmployee($this->getParam('employeeId'));

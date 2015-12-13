@@ -1,75 +1,71 @@
 <?php
 
-    namespace Showcase\Package\ShowSource;
+namespace Showcase\Package\ShowSource;
 
-    use ObjectivePHP\Application\ApplicationInterface;
-    use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
-    use ObjectivePHP\Html\Tag\Tag;
-    use ObjectivePHP\Primitives\String\Str;
-    use ObjectivePHP\ServicesFactory\ServiceReference;
+use ObjectivePHP\Application\ApplicationInterface;
+use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
+use ObjectivePHP\Html\Tag\Tag;
+use ObjectivePHP\Primitives\String\Str;
+use ObjectivePHP\ServicesFactory\ServiceReference;
+
+/**
+ * Class ShowSourcePackage
+ *
+ * @package Showcase\Package\ShowSource
+ */
+class ShowSourcePackage
+{
+    /**
+     * @param WorkflowEvent $event
+     */
+    public function __invoke(ApplicationInterface $app)
+    {
+        $app->getStep('rendering')->plug([$this, 'showSource']);
+    }
 
     /**
-     * Class ShowSourcePackage
+     * @param WorkflowEvent $event
      *
-     * @package Showcase\Package\ShowSource
+     * @throws \ObjectivePHP\ServicesFactory\Exception
      */
-    class ShowSourcePackage
+    public function showSource(ApplicationInterface $app)
     {
-        /**
-         * @param WorkflowEvent $event
-         */
-        public function __invoke(ApplicationInterface $app)
-        {
-            $app->on('rendering')->plug([$this, 'showSource']);
-        }
 
-        /**
-         * @param WorkflowEvent $event
-         *
-         * @throws \ObjectivePHP\ServicesFactory\Exception
-         */
-        public function showSource(ApplicationInterface $app)
-        {
+        $app->getResponse()->getBody()->rewind();
+        $output = Str::cast($app->getResponse()->getBody()->getContents());
 
-            $app->getResponse()->getBody()->rewind();
-            $output = Str::cast($app->getResponse()->getBody()->getContents());
+        $actionMiddleware = $app->getParam('runtime.action.middleware');
 
-            $actionMiddleware = $app->getParam('runtime.action.middleware');
+        $action = $actionMiddleware->getOperation()->getCallable($app);
 
-            $action = $actionMiddleware->getOperation()->getCallable($app);
-            if(is_object($action))
-            {
-                $actionClass = get_class($action);
-
+        if (is_object($action)) {
+            $actionClass = get_class($action);
 
             // handle action which are services reference
-            if ($actionClass instanceof ServiceReference)
-            {
-                $action      = $app->getServicesFactory()->get($actionClass->getId());
+            if ($actionClass instanceof ServiceReference) {
+                $action = $app->getServicesFactory()->get($actionClass->getId());
                 $actionClass = get_class($action);
             }
 
-                $actionFile = (new \ReflectionClass($actionClass))->getFileName();
+            $actionFile = (new \ReflectionClass($actionClass))->getFileName();
 
-                $actionSource = Str::cast(show_source($actionFile, true));
-                $actionSource->replace('/^<code>|<\/code>$/', '', Str::REGEXP);
-            }
-            else
-            {
-                $actionSource = "Closure";
-            }
-            $output->setVariable('action-source', Tag::pre($actionSource));
-
-            $viewScript = $app->getParam('view.script');
-
-
-            $viewSource = Str::cast(show_source($viewScript, true));
-            $viewSource->replace('/^<code>|<\/code>$/', '', Str::REGEXP);
-            $output->setVariable('view-source', Tag::pre($viewSource));
-
-
-            $app->getResponse()->getBody()->rewind();
-            $app->getResponse()->getBody()->write($output);
+            $actionSource = Tag::pre(Tag::code(htmlentities(file_get_contents($actionFile)), 'hljs', 'php'));
         }
+        else
+        {
+            $actionSource = "Closure";
+        }
+        $output->setVariable('action-source', $actionSource);
 
+        $viewScript = $app->getParam('view.script');
+
+
+        $viewSource = Tag::pre(Tag::code(htmlentities(file_get_contents($viewScript)), 'hljs', 'php'));
+        $output->setVariable('view-source', $viewSource);
+
+
+        $app->getResponse()->getBody()->rewind();
+        $app->getResponse()->getBody()->write($output);
     }
+
+}
