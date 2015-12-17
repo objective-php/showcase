@@ -18,7 +18,7 @@
     use ObjectivePHP\Package\Eloquent\EloquentPackage;
     use ObjectivePHP\Notification\Info;
     use Showcase\Middleware\LayoutSwitcher;
-    use Showcase\Package\Devtools\DevtoolsPackage;
+    use ObjectivePHP\Package\Devtools\DevtoolsPackage;
     use Showcase\Package\ShowSource\ShowSourcePackage;
 
     /**

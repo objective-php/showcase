@@ -1025,12 +1025,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "08c5400dbbea81aa16dace5e4e13d3a71b8c62de"
+                "reference": "d6f6f5600547fd71e6e9e1771de87911d79f7242"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/08c5400dbbea81aa16dace5e4e13d3a71b8c62de",
-                "reference": "08c5400dbbea81aa16dace5e4e13d3a71b8c62de",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/d6f6f5600547fd71e6e9e1771de87911d79f7242",
+                "reference": "d6f6f5600547fd71e6e9e1771de87911d79f7242",
                 "shasum": ""
             },
             "require": {
@@ -1066,7 +1066,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-12-15 08:05:01"
+            "time": "2015-12-17 16:27:14"
         },
         {
             "name": "objective-php/components",
@@ -1074,12 +1074,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/components.git",
-                "reference": "a745e332a366d1130bbe930535fddca82cb7dab4"
+                "reference": "3ecf0d79598d27116435899964ca8a91bc31d36b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/components/zipball/a745e332a366d1130bbe930535fddca82cb7dab4",
-                "reference": "a745e332a366d1130bbe930535fddca82cb7dab4",
+                "url": "https://api.github.com/repos/objective-php/components/zipball/3ecf0d79598d27116435899964ca8a91bc31d36b",
+                "reference": "3ecf0d79598d27116435899964ca8a91bc31d36b",
                 "shasum": ""
             },
             "require": {
@@ -1122,7 +1122,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-12-15 16:05:48"
+            "time": "2015-12-17 16:45:01"
         },
         {
             "name": "objective-php/devtools-package",
@@ -1130,7 +1130,7 @@
             "source": {
                 "type": "git",
                 "url": "/Users/gauthier/projects/objective-php/packages/devtools-package",
-                "reference": "46db53364a40f456d0826174a0685859fe63bce8"
+                "reference": "ef77f7d8329787593e02d59767b75ff0b54de061"
             },
             "require": {
                 "objective-php/application": "dev-master",
@@ -1138,14 +1138,17 @@
                 "php": ">=7.0",
                 "php-console/php-console": "~3.0"
             },
+            "require-dev": {
+                "phpunit/phpunit": "5.*"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "ObjectivePHP\\Package\\DevtoolsPackage\\": "app/src"
+                    "ObjectivePHP\\Package\\Devtools\\": "src/"
                 }
             },
             "description": "Development tools and monitoring facilities for Objective PHP applications",
-            "time": "2015-12-15 08:46:24"
+            "time": "2015-12-17 16:42:38"
         },
         {
             "name": "objective-php/doctrine-package",
@@ -1870,16 +1873,16 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.2.0",
+            "version": "1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "edfda00b9831630c19c411f85f50a47bb66af457"
+                "reference": "9d760c8db53d2fb2cfc4a33d0bfbef4fae4ed797"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/edfda00b9831630c19c411f85f50a47bb66af457",
-                "reference": "edfda00b9831630c19c411f85f50a47bb66af457",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/9d760c8db53d2fb2cfc4a33d0bfbef4fae4ed797",
+                "reference": "9d760c8db53d2fb2cfc4a33d0bfbef4fae4ed797",
                 "shasum": ""
             },
             "require": {
@@ -1896,8 +1899,8 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2-dev",
-                    "dev-develop": "1.3-dev"
+                    "dev-master": "1.3-dev",
+                    "dev-develop": "1.4-dev"
                 }
             },
             "autoload": {
@@ -1916,7 +1919,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2015-11-24 19:16:22"
+            "time": "2015-12-16 16:29:46"
         }
     ],
     "packages-dev": [],
