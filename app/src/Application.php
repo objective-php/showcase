@@ -4,7 +4,6 @@
 
     use ObjectivePHP\Application\AbstractApplication;
     use ObjectivePHP\Application\Operation\Common\RequestWrapper;
-    use ObjectivePHP\Application\Operation\Common\ResponseInitializer;
     use ObjectivePHP\Application\Operation\Common\ResponseSender;
     use ObjectivePHP\Application\Operation\Common\ServiceLoader;
     use ObjectivePHP\Application\Operation\Common\SimpleRouter;
@@ -14,14 +13,12 @@
     use ObjectivePHP\Application\Session\Session;
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Application\Workflow\Filter\ContentTypeFilter;
-    use ObjectivePHP\Application\Workflow\Filter\RouteFilter;
     use ObjectivePHP\Application\Workflow\Filter\UrlFilter;
-    use ObjectivePHP\DoctrinePackage\DoctrinePackage;
+    use ObjectivePHP\Package\Doctrine\DoctrinePackage;
+    use ObjectivePHP\Package\Eloquent\EloquentPackage;
     use ObjectivePHP\Notification\Info;
-    use ObjectivePHP\EloquentPackage\EloquentPackage;
     use Showcase\Middleware\LayoutSwitcher;
-    use Showcase\Package\Debug\DebugPackage;
-    use Showcase\Package\Overrider\OverriderPackage;
+    use Showcase\Package\Devtools\DevtoolsPackage;
     use Showcase\Package\ShowSource\ShowSourcePackage;
 
     /**
@@ -41,7 +38,7 @@
             $this->addSteps('init', 'bootstrap', 'route', 'action', 'rendering', 'end');
 
             // plug the debug package first, so that it can report all Middleware execution
-            $this->getStep('init')->plug(DebugPackage::class, function ($app)
+            $this->getStep('init')->plug(DevtoolsPackage::class, function ($app)
             {
                 return $app->getEnv() == 'development' && isset($_GET['debug']);
             })
@@ -59,14 +56,15 @@
 
             $this->getStep('bootstrap')
                 // and this one only for urls under /demo/doctrine
-                ->plug(new DoctrinePackage(), new UrlFilter('/demo/doctrine/*'))
+                 ->plug(new DoctrinePackage(), new UrlFilter('/demo/doctrine/*'))
                 // same for Eloquent
-                ->plug(new EloquentPackage(), new UrlFilter('/demo/eloquent/*'))
+                 ->plug(new EloquentPackage(), new UrlFilter('/demo/eloquent/*'))
             ;
 
             $this->getStep('rendering')
                 // this one for all HTML pages rendered by actions from "demo" namespace
-                ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'), new ContentTypeFilter('text/html'));
+                 ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'), new ContentTypeFilter('text/html'))
+            ;
 
 
             // route request (this is done after packages have been loaded)
@@ -99,7 +97,8 @@
             // inject a message on all pages but home
             $this->getStep('rendering')->plug(function ()
             {
-                (new Session('notifications'))->set('action.current', (new Info('Rendering action "' . $this->getParam('runtime.action.middleware')->getDescription() . '"')));
+                (new Session('notifications'))->set('action.current', (new Info('Rendering action "' . $this->getParam('runtime.action.middleware')
+                                                                                                            ->getDescription() . '"')));
             },
                 new UrlFilter('!/')) // "!/" means "does not match URL matching '/'"
             ;

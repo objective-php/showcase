@@ -21,9 +21,11 @@
         protected $humanResources;
 
         /**
-         * @param WorkflowEvent $event
+         * @param ApplicationInterface $app
          *
          * @return array
+         * @internal param WorkflowEvent $event
+         *
          */public function run(ApplicationInterface $app)
         {
             $employees = $this->getHumanResources()->getRandomEmployees(10);

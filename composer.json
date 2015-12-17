@@ -7,6 +7,7 @@
     "objective-php/message": "dev-master",
     "objective-php/application": "dev-master",
     "objective-php/doctrine-package": "dev-master",
+    "objective-php/devtools-package": "dev-master",
     "doctrine/orm": ">=2.5",
     "objective-php/html": "dev-master",
     "twbs/bootstrap": "^3.3",

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "72e9a69db9ab0950cc5198dbabb7e6c8",
-    "content-hash": "e6116e5c11c73ac3937624050ca2724f",
+    "hash": "2d522dc43269dff220d7a619d2588e08",
+    "content-hash": "db742b46424b1ff9e366b99b12e5747f",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -1025,12 +1025,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "7ffa0046060143c6b96ce24191be08ab9852c96f"
+                "reference": "08c5400dbbea81aa16dace5e4e13d3a71b8c62de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/7ffa0046060143c6b96ce24191be08ab9852c96f",
-                "reference": "7ffa0046060143c6b96ce24191be08ab9852c96f",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/08c5400dbbea81aa16dace5e4e13d3a71b8c62de",
+                "reference": "08c5400dbbea81aa16dace5e4e13d3a71b8c62de",
                 "shasum": ""
             },
             "require": {
@@ -1066,7 +1066,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2015-12-08 22:02:10"
+            "time": "2015-12-15 08:05:01"
         },
         {
             "name": "objective-php/components",
@@ -1074,12 +1074,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/components.git",
-                "reference": "82084846935940a0833627f0904eefc2eca111ed"
+                "reference": "a745e332a366d1130bbe930535fddca82cb7dab4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/components/zipball/82084846935940a0833627f0904eefc2eca111ed",
-                "reference": "82084846935940a0833627f0904eefc2eca111ed",
+                "url": "https://api.github.com/repos/objective-php/components/zipball/a745e332a366d1130bbe930535fddca82cb7dab4",
+                "reference": "a745e332a366d1130bbe930535fddca82cb7dab4",
                 "shasum": ""
             },
             "require": {
@@ -1122,7 +1122,30 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2015-12-07 08:18:37"
+            "time": "2015-12-15 16:05:48"
+        },
+        {
+            "name": "objective-php/devtools-package",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "/Users/gauthier/projects/objective-php/packages/devtools-package",
+                "reference": "46db53364a40f456d0826174a0685859fe63bce8"
+            },
+            "require": {
+                "objective-php/application": "dev-master",
+                "objective-php/html": "dev-master",
+                "php": ">=7.0",
+                "php-console/php-console": "~3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ObjectivePHP\\Package\\DevtoolsPackage\\": "app/src"
+                }
+            },
+            "description": "Development tools and monitoring facilities for Objective PHP applications",
+            "time": "2015-12-15 08:46:24"
         },
         {
             "name": "objective-php/doctrine-package",
@@ -1130,12 +1153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "dfdd782c1954756184f142703e79b96822010819"
+                "reference": "ddb70c2b587054121f98d06a39ac3804f414b658"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/dfdd782c1954756184f142703e79b96822010819",
-                "reference": "dfdd782c1954756184f142703e79b96822010819",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/ddb70c2b587054121f98d06a39ac3804f414b658",
+                "reference": "ddb70c2b587054121f98d06a39ac3804f414b658",
                 "shasum": ""
             },
             "require": {
@@ -1156,7 +1179,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "ObjectivePHP\\DoctrinePackage\\": "src/"
+                    "ObjectivePHP\\Package\\Doctrine\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1176,7 +1199,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2015-12-08 21:41:36"
+            "time": "2015-12-14 17:19:47"
         },
         {
             "name": "objective-php/eloquent-package",
@@ -1184,12 +1207,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/eloquent-package.git",
-                "reference": "e2ab1809644c38d9d7ca4c6b11e8478e1d3408ba"
+                "reference": "d1d4c398591b6fe660fe67f924f4b821956e1725"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/eloquent-package/zipball/e2ab1809644c38d9d7ca4c6b11e8478e1d3408ba",
-                "reference": "e2ab1809644c38d9d7ca4c6b11e8478e1d3408ba",
+                "url": "https://api.github.com/repos/objective-php/eloquent-package/zipball/d1d4c398591b6fe660fe67f924f4b821956e1725",
+                "reference": "d1d4c398591b6fe660fe67f924f4b821956e1725",
                 "shasum": ""
             },
             "require": {
@@ -1204,7 +1227,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "ObjectivePHP\\EloquentPackage\\": "src/"
+                    "ObjectivePHP\\Package\\Eloquent\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1225,7 +1248,7 @@
                 "illuminate",
                 "objective php"
             ],
-            "time": "2015-12-10 09:56:59"
+            "time": "2015-12-15 10:40:32"
         },
         {
             "name": "objective-php/events-handler",
@@ -1906,6 +1929,7 @@
         "objective-php/message": 20,
         "objective-php/application": 20,
         "objective-php/doctrine-package": 20,
+        "objective-php/devtools-package": 20,
         "objective-php/html": 20,
         "objective-php/eloquent-package": 20,
         "sofa/eloquence": 20

@@ -3,8 +3,11 @@
     return [
 
         // map paths to action class names
-        'router.routes' => [
-            '/' => '/home',
-            '/login' => '/auth/login'
+        'router' => [
+            'routes' =>
+                [
+                    '/'      => '/home',
+                    '/login' => '/auth/login'
+                ]
         ]
     ];
