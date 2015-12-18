@@ -1129,8 +1129,14 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "/Users/gauthier/projects/objective-php/packages/devtools-package",
-                "reference": "ef77f7d8329787593e02d59767b75ff0b54de061"
+                "url": "https://github.com/objective-php/devtools-package.git",
+                "reference": "73b521e6bb86a002362a30f5cc1de94c0468ef3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/objective-php/devtools-package/zipball/73b521e6bb86a002362a30f5cc1de94c0468ef3d",
+                "reference": "73b521e6bb86a002362a30f5cc1de94c0468ef3d",
+                "shasum": ""
             },
             "require": {
                 "objective-php/application": "dev-master",
@@ -1147,8 +1153,9 @@
                     "ObjectivePHP\\Package\\Devtools\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "description": "Development tools and monitoring facilities for Objective PHP applications",
-            "time": "2015-12-17 16:42:38"
+            "time": "2015-12-17 17:04:01"
         },
         {
             "name": "objective-php/doctrine-package",
