@@ -22,7 +22,7 @@
         public function run(ApplicationInterface $app)
         {
 
-            $app->getConfig()->layouts->layout = 'home';
+            $app->setParam('layout.name', 'home');
 
             Vars::set('page.title', 'Objective PHP Showcase');
 

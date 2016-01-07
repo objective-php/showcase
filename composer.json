@@ -13,7 +13,7 @@
     "twbs/bootstrap": "^3.3",
     "php-console/php-console": "^3.1",
     "objective-php/eloquent-package": "dev-master",
-    "sofa/eloquence": "~5.1@dev"
+    "sofa/eloquence": "5.1.5@dev"
   },
   "autoload": {
     "psr-4": {

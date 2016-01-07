@@ -1,17 +1,24 @@
 <?php
-
     /**
-     * @var $config ObjectivePHP\Config\Config
+     * This file is part of the Objective PHP project
+     *
+     * More info about Objective PHP on www.objective-php.org
+     *
+     * @license http://opensource.org/licenses/GPL-3.0 GNU GPL License 3.0
      */
 
-    $dbConfig = $config->doctrine->em->default->db;
+    use ObjectivePHP\Package\Doctrine\Config\EntityManager;
 
-    $dbConfig->driver        = 'pdo_mysql'; // $config->set('doctrine.em.default.db.driver', 'pdo_mysql');
-    $dbConfig->host          = '127.0.0.1';
-    $dbConfig->port          = 3306;
-    $dbConfig->user          = 'demo';
-    $dbConfig->password      = '';
-    $dbConfig->dbname          = 'employees';
-    $dbConfig->mapping_types = ['enum' => 'string']; // $config->set('doctrine.em.default.db.mapping_types', [...]);
+    return [
+        new EntityManager('default', ['db' => [
+            'driver'        => 'pdo_mysql',
+            'host'          => '127.0.0.1',
+            'port'          => 3306,
+            'user'          => 'demo',
+            'password'      => '',
+            'dbname'        => 'employees',
+            'mapping_types' => ['enum' => 'string']
+        ]])
+    ];
 
-    $config->doctrine->debug = true;
+

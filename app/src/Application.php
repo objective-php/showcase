@@ -3,6 +3,7 @@
     namespace Showcase;
 
     use ObjectivePHP\Application\AbstractApplication;
+    use ObjectivePHP\Application\Config\ApplicationName;
     use ObjectivePHP\Application\Operation\Common\RequestWrapper;
     use ObjectivePHP\Application\Operation\Common\ResponseSender;
     use ObjectivePHP\Application\Operation\Common\ServiceLoader;
@@ -65,6 +66,8 @@
                 // this one for all HTML pages rendered by actions from "demo" namespace
                  ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'), new ContentTypeFilter('text/html'))
             ;
+
+           // $this->getStep('bootstrap')->plug(function($app) { var_dump($app->getConfig()->get('layouts.locations'));});
 
 
             // route request (this is done after packages have been loaded)

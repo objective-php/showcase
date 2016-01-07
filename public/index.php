@@ -12,4 +12,6 @@
 
     $app->loadConfig('app/config');
 
+
+    //var_dump($app->getConfig()->toArray());
     $app->run();
