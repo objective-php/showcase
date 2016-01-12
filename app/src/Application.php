@@ -119,7 +119,7 @@
             $this->getStep('rendering')
                  ->plug(LayoutSwitcher::class, new UrlFilter('/'))
                  ->plug(new ViewResolver(), new ContentTypeFilter('text/html'))->asDefault('view-resolver')
-                 ->plug(new ViewRenderer(), new ContentTypeFilter('text/html'))->asDEfault('view-renderer')
+                 ->plug(new ViewRenderer(), new ContentTypeFilter('text/html'))->asDefault('view-renderer')
             ;
 
 
