@@ -133,7 +133,7 @@ Tag::div()->close();
 
     Tag::h3('Multiple usage of a single Tag instance');
     Tag::pre(Tag::code('
-// instantiate the Tag with some content
+// instantiate the Tag without content
 $template = Tag::div()[\'class\'] = \'any\';
 
 $template->dump(\'Hello\');
