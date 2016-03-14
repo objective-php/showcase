@@ -3,6 +3,7 @@
     namespace Showcase;
 
     use ObjectivePHP\Application\AbstractApplication;
+    use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Config\ApplicationName;
     use ObjectivePHP\Application\Operation\Common\RequestWrapper;
     use ObjectivePHP\Application\Operation\Common\ResponseSender;
@@ -20,6 +21,7 @@
     use ObjectivePHP\Notification\Info;
     use Showcase\Middleware\LayoutSwitcher;
     use ObjectivePHP\Package\Devtools\DevtoolsPackage;
+    use Showcase\Package\Overrider\OverriderPackage;
     use Showcase\Package\ShowSource\ShowSourcePackage;
 
     /**
@@ -39,7 +41,7 @@
             $this->addSteps('init', 'bootstrap', 'route', 'action', 'rendering', 'end');
 
             // plug the debug package first, so that it can report all Middleware execution
-            $this->getStep('init')->plug(DevtoolsPackage::class, function ($app)
+            $this->getStep('init')->plug(DevtoolsPackage::class, function (ApplicationInterface $app)
             {
                 return $app->getEnv() == 'development' && isset($_GET['debug']);
             })
@@ -54,12 +56,13 @@
 
 
             // load external packages
-
             $this->getStep('bootstrap')
                 // and this one only for urls under /demo/doctrine
                  ->plug(new DoctrinePackage(), new UrlFilter('/demo/doctrine/*'))
                 // same for Eloquent
                  ->plug(new EloquentPackage(), new UrlFilter('/demo/eloquent/*'))
+                // activate Overrirder package
+                ->plug(new OverriderPackage(), function($app) { return !empty($_GET['override']);})
             ;
 
             $this->getStep('rendering')

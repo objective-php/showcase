@@ -35,9 +35,7 @@ Below is the tree of default ObjectivePHP/Application workflow events.
 
             $workflow->each(function ($middleWares, $hook)
             {
-                Tag::tr();
-                Tag::td(Tag::strong($hook))->addAttribute('colspan', 2);
-                Tag::tr()->close();
+                Tag::tr(Tag::td(Tag::strong($hook))->addAttribute('colspan', 2));
 
 
                 if (!$middleWares)
@@ -47,10 +45,8 @@ Below is the tree of default ObjectivePHP/Application workflow events.
 
                 Collection::cast($middleWares)->each(function ($middleWare)
                 {
-                    Tag::tr();
-                    Tag::td();
-                    Tag::td($middleWare);
-                    Tag::tr()->close();
+                    Tag::tr([Tag::td(), Tag::td($middleWare)]);
+
                 })
                 ;
 

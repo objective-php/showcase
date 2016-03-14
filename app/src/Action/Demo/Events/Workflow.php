@@ -36,6 +36,7 @@
 
                     $hook->each(function (Hook $hook, $alias) use(&$currentStep, $app)
                 {
+                    if(is_int($alias)) $alias = 'unaliased';
                     $currentStep[] = $alias . ': ' . $hook->getMiddleware()->getDescription();
                 });
 

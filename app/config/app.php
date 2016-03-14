@@ -12,7 +12,8 @@
     use ObjectivePHP\Application\Config\LayoutsLocation;
     use ObjectivePHP\Package\Doctrine\Config\EntityManager;
 
-    return [
+    return
+        [
         new ApplicationName('Objective PHP Framework'),
         new ActionNamespace('Showcase\\Action'),
         new LayoutsLocation('app/layouts'),

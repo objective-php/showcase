@@ -36,7 +36,7 @@ class ShowSourcePackage
 
         $actionMiddleware = $app->getParam('runtime.action.middleware');
 
-        $action = $actionMiddleware->getOperation()->getCallable($app);
+        $action = $actionMiddleware->getInvokable()->getCallable($app);
 
         if (is_object($action)) {
             $actionClass = get_class($action);
