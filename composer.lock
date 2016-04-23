@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "adc7cd08b0b9311c420764338290d2f3",
-    "content-hash": "21512cca7a3f59c35939ab370bf8fd58",
+    "hash": "5f11f7520c5390891b033a0f8d916b51",
+    "content-hash": "e868b5e7f93ebcded705a95c8ca139c1",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -718,16 +718,16 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.2.7",
+            "version": "v5.2.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
-                "reference": "afd2e874e034707c6bb9436f5a897ce29dce501a"
+                "reference": "1e156f8017490f5583ab161030bf839c77c95e54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/container/zipball/afd2e874e034707c6bb9436f5a897ce29dce501a",
-                "reference": "afd2e874e034707c6bb9436f5a897ce29dce501a",
+                "url": "https://api.github.com/repos/illuminate/container/zipball/1e156f8017490f5583ab161030bf839c77c95e54",
+                "reference": "1e156f8017490f5583ab161030bf839c77c95e54",
                 "shasum": ""
             },
             "require": {
@@ -757,20 +757,20 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "http://laravel.com",
-            "time": "2016-01-06 14:42:17"
+            "time": "2016-03-16 17:19:17"
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.2.7",
+            "version": "v5.2.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
-                "reference": "51b3acf96a12f5a10d767d5f2a534fed6f304235"
+                "reference": "411b851962c211078ade7664a6976e77a78cd2a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/contracts/zipball/51b3acf96a12f5a10d767d5f2a534fed6f304235",
-                "reference": "51b3acf96a12f5a10d767d5f2a534fed6f304235",
+                "url": "https://api.github.com/repos/illuminate/contracts/zipball/411b851962c211078ade7664a6976e77a78cd2a5",
+                "reference": "411b851962c211078ade7664a6976e77a78cd2a5",
                 "shasum": ""
             },
             "require": {
@@ -799,20 +799,20 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "http://laravel.com",
-            "time": "2015-12-19 14:25:38"
+            "time": "2016-03-07 20:37:17"
         },
         {
             "name": "illuminate/database",
-            "version": "v5.2.7",
+            "version": "v5.2.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "7072548f8a2933230e7f3e7199b78496fda964b5"
+                "reference": "1ea9f36cef011a80b1623ea3566d57017e7913bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/7072548f8a2933230e7f3e7199b78496fda964b5",
-                "reference": "7072548f8a2933230e7f3e7199b78496fda964b5",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/1ea9f36cef011a80b1623ea3566d57017e7913bc",
+                "reference": "1ea9f36cef011a80b1623ea3566d57017e7913bc",
                 "shasum": ""
             },
             "require": {
@@ -859,32 +859,32 @@
                 "orm",
                 "sql"
             ],
-            "time": "2016-01-06 16:20:30"
+            "time": "2016-04-01 18:17:22"
         },
         {
             "name": "illuminate/support",
-            "version": "v5.2.7",
+            "version": "v5.2.28",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "6d8dec02825299b0ad47712564e9d33104e148c4"
+                "reference": "e4aa03c5f26db752e838354a7d71b85e6138f4ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/6d8dec02825299b0ad47712564e9d33104e148c4",
-                "reference": "6d8dec02825299b0ad47712564e9d33104e148c4",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/e4aa03c5f26db752e838354a7d71b85e6138f4ec",
+                "reference": "e4aa03c5f26db752e838354a7d71b85e6138f4ec",
                 "shasum": ""
             },
             "require": {
                 "doctrine/inflector": "~1.0",
                 "ext-mbstring": "*",
                 "illuminate/contracts": "5.2.*",
+                "paragonie/random_compat": "~1.4",
                 "php": ">=5.5.9"
             },
             "suggest": {
                 "illuminate/filesystem": "Required to use the composer class (5.2.*).",
                 "jeremeamia/superclosure": "Required to be able to serialize closures (~2.2).",
-                "paragonie/random_compat": "Provides a compatible interface like PHP7's random_bytes() in PHP 5 projects (~1.1).",
                 "symfony/polyfill-php56": "Required to use the hash_equals function on PHP 5.5 (~1.0).",
                 "symfony/process": "Required to use the composer class (2.8.*|3.0.*).",
                 "symfony/var-dumper": "Improves the dd function (2.8.*|3.0.*)."
@@ -915,7 +915,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2016-01-07 11:02:28"
+            "time": "2016-03-30 18:18:45"
         },
         {
             "name": "nesbot/carbon",
@@ -965,17 +965,60 @@
             "time": "2015-11-04 20:07:17"
         },
         {
+            "name": "nikic/fast-route",
+            "version": "v0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nikic/FastRoute.git",
+                "reference": "5e1f431ed2afe2be5d2bd97fa69b0e99b9ba45e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nikic/FastRoute/zipball/5e1f431ed2afe2be5d2bd97fa69b0e99b9ba45e6",
+                "reference": "5e1f431ed2afe2be5d2bd97fa69b0e99b9ba45e6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FastRoute\\": "src/"
+                },
+                "files": [
+                    "src/functions.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Nikita Popov",
+                    "email": "nikic@php.net"
+                }
+            ],
+            "description": "Fast request router for PHP",
+            "keywords": [
+                "router",
+                "routing"
+            ],
+            "time": "2016-03-25 23:46:52"
+        },
+        {
             "name": "objective-php/application",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "19bab189432e6035c08dc61ba2cba7429a9e59f5"
+                "reference": "88e2acc223de89c339228fc0184dbc18f79de0ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/19bab189432e6035c08dc61ba2cba7429a9e59f5",
-                "reference": "19bab189432e6035c08dc61ba2cba7429a9e59f5",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/88e2acc223de89c339228fc0184dbc18f79de0ab",
+                "reference": "88e2acc223de89c339228fc0184dbc18f79de0ab",
                 "shasum": ""
             },
             "require": {
@@ -1011,7 +1054,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2016-02-11 13:08:49"
+            "time": "2016-04-23 09:23:19"
         },
         {
             "name": "objective-php/components",
@@ -1019,12 +1062,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/components.git",
-                "reference": "17910f367da99203284071e7bec39792cf9c1552"
+                "reference": "19a798ee71cf652014d7f6ed6f1d494e34d2eea5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/components/zipball/17910f367da99203284071e7bec39792cf9c1552",
-                "reference": "17910f367da99203284071e7bec39792cf9c1552",
+                "url": "https://api.github.com/repos/objective-php/components/zipball/19a798ee71cf652014d7f6ed6f1d494e34d2eea5",
+                "reference": "19a798ee71cf652014d7f6ed6f1d494e34d2eea5",
                 "shasum": ""
             },
             "require": {
@@ -1071,7 +1114,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2016-02-11 12:07:10"
+            "time": "2016-04-23 09:19:02"
         },
         {
             "name": "objective-php/devtools-package",
@@ -1079,12 +1122,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/devtools-package.git",
-                "reference": "73b521e6bb86a002362a30f5cc1de94c0468ef3d"
+                "reference": "f56643b16837273ccbca3f6432caa6eb5dfc003a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/devtools-package/zipball/73b521e6bb86a002362a30f5cc1de94c0468ef3d",
-                "reference": "73b521e6bb86a002362a30f5cc1de94c0468ef3d",
+                "url": "https://api.github.com/repos/objective-php/devtools-package/zipball/f56643b16837273ccbca3f6432caa6eb5dfc003a",
+                "reference": "f56643b16837273ccbca3f6432caa6eb5dfc003a",
                 "shasum": ""
             },
             "require": {
@@ -1104,7 +1147,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "description": "Development tools and monitoring facilities for Objective PHP applications",
-            "time": "2015-12-17 17:04:01"
+            "time": "2016-03-14 16:23:09"
         },
         {
             "name": "objective-php/doctrine-package",
@@ -1112,12 +1155,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "af5f48b2d277489a3cfa840d21cea778958be017"
+                "reference": "3047f0a8fdb4a580299fe195301a3543726a5638"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/af5f48b2d277489a3cfa840d21cea778958be017",
-                "reference": "af5f48b2d277489a3cfa840d21cea778958be017",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/3047f0a8fdb4a580299fe195301a3543726a5638",
+                "reference": "3047f0a8fdb4a580299fe195301a3543726a5638",
                 "shasum": ""
             },
             "require": {
@@ -1158,7 +1201,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2016-01-28 08:44:56"
+            "time": "2016-04-18 12:12:46"
         },
         {
             "name": "objective-php/eloquent-package",
@@ -1166,12 +1209,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/eloquent-package.git",
-                "reference": "623b1f28639a3e46f856d726445af1b14591d060"
+                "reference": "41701c38280e5666d8b323a464d926f9c8d0366e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/eloquent-package/zipball/623b1f28639a3e46f856d726445af1b14591d060",
-                "reference": "623b1f28639a3e46f856d726445af1b14591d060",
+                "url": "https://api.github.com/repos/objective-php/eloquent-package/zipball/41701c38280e5666d8b323a464d926f9c8d0366e",
+                "reference": "41701c38280e5666d8b323a464d926f9c8d0366e",
                 "shasum": ""
             },
             "require": {
@@ -1207,7 +1250,7 @@
                 "illuminate",
                 "objective php"
             ],
-            "time": "2016-01-07 14:28:24"
+            "time": "2016-03-14 16:23:53"
         },
         {
             "name": "objective-php/events-handler",
@@ -1257,17 +1300,72 @@
             "time": "2015-11-27 11:25:40"
         },
         {
+            "name": "objective-php/fastroute-package",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/objective-php/fastroute-package.git",
+                "reference": "ac7e4dce29f87cca0701b865f1fde186255ec1ed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/objective-php/fastroute-package/zipball/ac7e4dce29f87cca0701b865f1fde186255ec1ed",
+                "reference": "ac7e4dce29f87cca0701b865f1fde186255ec1ed",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": ">=2.5",
+                "nikic/fast-route": "0.8.*",
+                "objective-php/application": "dev-master",
+                "objective-php/components": "dev-master",
+                "objective-php/events-handler": "dev-master",
+                "objective-php/message": "dev-master",
+                "objective-php/services-factory": "dev-master",
+                "php": ">=7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "suggest": {
+                "objective-php/matcher": "~1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ObjectivePHP\\Package\\FastRoute\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gauthier 'Rusty' Delamarre",
+                    "email": "gauthier@objective-php.org",
+                    "role": "lead"
+                }
+            ],
+            "description": "FAstRoute integration for Objective PHP",
+            "homepage": "https://github.com/objective-php/fastroute-package",
+            "keywords": [
+                "FastRoute",
+                "objective php"
+            ],
+            "time": "2016-04-18 20:30:38"
+        },
+        {
             "name": "objective-php/html",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/html.git",
-                "reference": "4c9bd163e2f2e5a3368a0486bc25ea912ed6bb68"
+                "reference": "4b55899b36e64bf1c698a02b87ecd5b99f14b406"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/html/zipball/4c9bd163e2f2e5a3368a0486bc25ea912ed6bb68",
-                "reference": "4c9bd163e2f2e5a3368a0486bc25ea912ed6bb68",
+                "url": "https://api.github.com/repos/objective-php/html/zipball/4b55899b36e64bf1c698a02b87ecd5b99f14b406",
+                "reference": "4b55899b36e64bf1c698a02b87ecd5b99f14b406",
                 "shasum": ""
             },
             "require": {
@@ -1302,7 +1400,7 @@
                 "html",
                 "objective php"
             ],
-            "time": "2015-11-27 11:27:26"
+            "time": "2016-02-26 13:02:39"
         },
         {
             "name": "objective-php/message",
@@ -1310,12 +1408,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/message.git",
-                "reference": "a276efe80bc322ef44493e391653cfc6393a1739"
+                "reference": "7ded8071fc97480453eada9ffadeb72f040fe2e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/message/zipball/a276efe80bc322ef44493e391653cfc6393a1739",
-                "reference": "a276efe80bc322ef44493e391653cfc6393a1739",
+                "url": "https://api.github.com/repos/objective-php/message/zipball/7ded8071fc97480453eada9ffadeb72f040fe2e5",
+                "reference": "7ded8071fc97480453eada9ffadeb72f040fe2e5",
                 "shasum": ""
             },
             "require": {
@@ -1343,7 +1441,7 @@
                 }
             ],
             "description": "ObjectivePHP implementation for PSR-7",
-            "time": "2015-12-08 21:42:39"
+            "time": "2016-04-23 09:04:59"
         },
         {
             "name": "objective-php/services-factory",
@@ -1351,12 +1449,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/services-factory.git",
-                "reference": "060f3818a1396a27c7ad608f3a8e9aba9feee1fb"
+                "reference": "05d32b7c75f6598729deec020d43bf0cb9910de6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/060f3818a1396a27c7ad608f3a8e9aba9feee1fb",
-                "reference": "060f3818a1396a27c7ad608f3a8e9aba9feee1fb",
+                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/05d32b7c75f6598729deec020d43bf0cb9910de6",
+                "reference": "05d32b7c75f6598729deec020d43bf0cb9910de6",
                 "shasum": ""
             },
             "require": {
@@ -1391,20 +1489,68 @@
                 "objective php",
                 "services"
             ],
-            "time": "2016-02-11 10:30:14"
+            "time": "2016-02-11 15:20:39"
         },
         {
-            "name": "php-console/php-console",
-            "version": "3.1.5",
+            "name": "paragonie/random_compat",
+            "version": "v1.4.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/barbushin/php-console.git",
-                "reference": "50236f71d80f983d232683d5d61ba1994d40c3de"
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/barbushin/php-console/zipball/50236f71d80f983d232683d5d61ba1994d40c3de",
-                "reference": "50236f71d80f983d232683d5d61ba1994d40c3de",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/c7e26a21ba357863de030f0b9e701c7d04593774",
+                "reference": "c7e26a21ba357863de030f0b9e701c7d04593774",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*|5.*"
+            },
+            "suggest": {
+                "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "lib/random.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https://paragonie.com"
+                }
+            ],
+            "description": "PHP 5.x polyfill for random_bytes() and random_int() from PHP 7",
+            "keywords": [
+                "csprng",
+                "pseudorandom",
+                "random"
+            ],
+            "time": "2016-03-18 20:34:03"
+        },
+        {
+            "name": "php-console/php-console",
+            "version": "3.1.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/barbushin/php-console.git",
+                "reference": "07801c32ea32e4d57ddf1c6b9cf98ff7f2982542"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/barbushin/php-console/zipball/07801c32ea32e4d57ddf1c6b9cf98ff7f2982542",
+                "reference": "07801c32ea32e4d57ddf1c6b9cf98ff7f2982542",
                 "shasum": ""
             },
             "require": {
@@ -1442,7 +1588,7 @@
                 "google chrome",
                 "php"
             ],
-            "time": "2015-10-29 01:31:31"
+            "time": "2016-02-19 16:00:24"
         },
         {
             "name": "psr/http-message",
@@ -1597,16 +1743,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v3.0.2",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "5a02eaadaa285e2bb727eb6bbdfb8201fcd971b0"
+                "reference": "6b1175135bc2a74c08a28d89761272de8beed8cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/5a02eaadaa285e2bb727eb6bbdfb8201fcd971b0",
-                "reference": "5a02eaadaa285e2bb727eb6bbdfb8201fcd971b0",
+                "url": "https://api.github.com/repos/symfony/console/zipball/6b1175135bc2a74c08a28d89761272de8beed8cd",
+                "reference": "6b1175135bc2a74c08a28d89761272de8beed8cd",
                 "shasum": ""
             },
             "require": {
@@ -1653,11 +1799,11 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-02 13:44:19"
+            "time": "2016-03-16 17:00:50"
         },
         {
             "name": "symfony/polyfill-mbstring",
-            "version": "v1.1.0",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
@@ -1716,16 +1862,16 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v3.0.2",
+            "version": "v3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "2de0b6f7ebe43cffd8a06996ebec6aab79ea9e91"
+                "reference": "f7a07af51ea067745a521dab1e3152044a2fb1f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/2de0b6f7ebe43cffd8a06996ebec6aab79ea9e91",
-                "reference": "2de0b6f7ebe43cffd8a06996ebec6aab79ea9e91",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/f7a07af51ea067745a521dab1e3152044a2fb1f2",
+                "reference": "f7a07af51ea067745a521dab1e3152044a2fb1f2",
                 "shasum": ""
             },
             "require": {
@@ -1776,7 +1922,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-02-02 13:44:19"
+            "time": "2016-03-25 01:41:20"
         },
         {
             "name": "twbs/bootstrap",
@@ -1831,20 +1977,20 @@
         },
         {
             "name": "zendframework/zend-diactoros",
-            "version": "1.3.3",
+            "version": "1.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-diactoros.git",
-                "reference": "4d54fde709664562eb63356f0250d527824d05de"
+                "reference": "b1d59735b672865dbeb930805029c24f226e3e77"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/4d54fde709664562eb63356f0250d527824d05de",
-                "reference": "4d54fde709664562eb63356f0250d527824d05de",
+                "url": "https://api.github.com/repos/zendframework/zend-diactoros/zipball/b1d59735b672865dbeb930805029c24f226e3e77",
+                "reference": "b1d59735b672865dbeb930805029c24f226e3e77",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4",
+                "php": "^5.4 || ^7.0",
                 "psr/http-message": "~1.0"
             },
             "provide": {
@@ -1877,7 +2023,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2016-01-04 21:37:32"
+            "time": "2016-03-17 18:02:05"
         }
     ],
     "packages-dev": [],
@@ -1890,6 +2036,7 @@
         "objective-php/message": 20,
         "objective-php/application": 20,
         "objective-php/doctrine-package": 20,
+        "objective-php/fastroute-package": 20,
         "objective-php/devtools-package": 20,
         "objective-php/html": 20,
         "objective-php/eloquent-package": 20,

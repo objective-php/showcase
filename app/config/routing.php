@@ -10,11 +10,16 @@
 use ObjectivePHP\Application;
 use ObjectivePHP\Application\Config\SimpleRoute;
 use ObjectivePHP\Application\Config\UrlAlias;
+use ObjectivePHP\Package\FastRoute\Config\FastRoute;
 use Showcase\Action\Demo\Html;
+use Showcase\Action\Home;
 
 return [
-    new UrlAlias('/', '/home'),
-    new UrlAlias('/login', '/auth/login'),
-    new SimpleRoute('html-demo', '/html', Html\HtmlTag::class)
+
+    new FastRoute('home', '/', Home::class),
+    new FastRoute('demo/html-tag', '/demo/html/html-tag', Html\HtmlTag::class),
+    //new UrlAlias('/', '/home'),
+    //new UrlAlias('/login', '/auth/login'),
+    //new SimpleRoute('html-demo', '/html', Html\HtmlTag::class)
 
 ];

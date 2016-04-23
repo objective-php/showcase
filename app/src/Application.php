@@ -19,6 +19,7 @@
     use ObjectivePHP\Package\Doctrine\DoctrinePackage;
     use ObjectivePHP\Package\Eloquent\EloquentPackage;
     use ObjectivePHP\Notification\Info;
+    use ObjectivePHP\Package\FastRoute\FastRoutePackage;
     use Showcase\Middleware\LayoutSwitcher;
     use ObjectivePHP\Package\Devtools\DevtoolsPackage;
     use Showcase\Package\Overrider\OverriderPackage;
@@ -44,14 +45,17 @@
             $this->getStep('init')->plug(DevtoolsPackage::class, function (ApplicationInterface $app)
             {
                 return $app->getEnv() == 'development' && isset($_GET['debug']);
-            })
+            })->as('devtools')
             ;
 
 
             // initialize request
+            $this->getStep('init')// handle request
+            ->plug(new RequestWrapper())->as('request-wrapper');
+
             $this->getStep('init')
-                // handle request
-                 ->plug(new RequestWrapper())->as('request-wrapper')
+                // load FastRoute router
+                ->plug(new FastRoutePackage())
             ;
 
 
@@ -61,7 +65,7 @@
                  ->plug(new DoctrinePackage(), new UrlFilter('/demo/doctrine/*'))
                 // same for Eloquent
                  ->plug(new EloquentPackage(), new UrlFilter('/demo/eloquent/*'))
-                // activate Overrirder package
+                // activate Overrider package
                 ->plug(new OverriderPackage(), function($app) { return !empty($_GET['override']);})
             ;
 
@@ -98,7 +102,7 @@
             ;
 
             // action runner will catch action return value and inject the in the Vars container
-            $this->getStep('route')->plug(ActionPlugger::class)->asDefault('action-plugger');
+            // $this->getStep('route')->plug(ActionPlugger::class)->asDefault('action-plugger');
 
             // inject a message on all pages but home
             $this->getStep('rendering')->plug(function ()
