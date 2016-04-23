@@ -3,6 +3,7 @@
 namespace Showcase\Api\Employee;
 
 use ObjectivePHP\Application\Middleware\VersionnedApiMiddleware;
+use Showcase\Api\Employee\v1\EmployeeApi;
 
 /**
  * Created by PhpStorm.
@@ -14,6 +15,7 @@ class EmployeeEndpoint extends VersionnedApiMiddleware
 {
     public function init()
     {
+        $this->registerMiddleware('1.0', new EmployeeApi());
     }
 
 }

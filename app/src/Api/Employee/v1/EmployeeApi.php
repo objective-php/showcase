@@ -1,4 +1,8 @@
 <?php
+
+namespace Showcase\Api\Employee\v1;
+
+use ObjectivePHP\Application\ApplicationInterface;
 use ObjectivePHP\Application\Middleware\AbstractRestfulMiddleware;
 
 /**
@@ -9,8 +13,16 @@ use ObjectivePHP\Application\Middleware\AbstractRestfulMiddleware;
  */
 class EmployeeApi extends AbstractRestfulMiddleware
 {
-    public function get()
+    public function get(ApplicationInterface $app)
     {
-        
+
+        if($id = $app->getRequest()->getParameters()->fromRoute('id'))
+        {
+            return ['employee' => $id];
+        }
+        else
+        {
+            return ['employees' => [rand(), rand()]];
+        }
     }
 }

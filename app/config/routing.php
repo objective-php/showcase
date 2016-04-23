@@ -30,7 +30,7 @@ return [
     new FastRoute('demo/doctrine/listing', '/demo/doctrine/listing', DoctrineListing::class),
     new FastRoute('demo/doctrine/entity-parameter', '/demo/doctrine/entity-parameter/{id}', new ServiceReference('action.demo.doctrine.entity-parameter')),
     new FastRoute('demo/json', '/demo/json', Json::class),
-    new FastRoute('api/employees', '/api/employees', EmployeeEndpoint::class)
+    new FastRoute('api/employees', '/api/employees[/{id}]', EmployeeEndpoint::class, FastRoute::RESTFUL)
     //new UrlAlias('/', '/home'),
     //new UrlAlias('/login', '/auth/login'),
     //new SimpleRoute('html-demo', '/html', Html\HtmlTag::class)
