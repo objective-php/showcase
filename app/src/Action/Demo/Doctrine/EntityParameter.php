@@ -3,7 +3,7 @@
     namespace Showcase\Action\Demo\Doctrine;
     
     
-    use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\Action\RenderableAction;
     use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Notification;
     use Showcase\Service\HumanResources;
@@ -13,7 +13,7 @@
      *
      * @package Showcase\Action\Demo\Doctrine
      */
-    class EntityParameter extends DefaultAction
+    class EntityParameter extends RenderableAction
     {
         /**
          * @var HumanResources
@@ -22,7 +22,7 @@
 
         public function init()
         {
-            $this->alias(0, 'employeeId');
+            // $this->alias(0, 'employeeId');
         }
 
         /**
@@ -33,7 +33,8 @@
         public function run(ApplicationInterface $app)
         {
 
-            $employee = $this->humanResources->getEmployee($this->getParam('employeeId'));
+            $id = $app->getRequest()->getParameters()->fromRoute('id');
+            $employee = $this->humanResources->getEmployee($id);
 
             return ['employee' => $employee];
         }

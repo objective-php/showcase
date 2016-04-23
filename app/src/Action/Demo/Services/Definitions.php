@@ -2,7 +2,7 @@
 
     namespace Showcase\Action\Demo\Services;
 
-    use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\Action\RenderableAction;
     use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
@@ -11,7 +11,7 @@
      *
      * @package Showcase\Action\Demo\Services
      */
-    class Definitions extends DefaultAction
+    class Definitions extends RenderableAction
     {
         /**
          * @param WorkflowEvent $event

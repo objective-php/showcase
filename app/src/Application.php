@@ -110,7 +110,9 @@
                 (new Session('notifications'))->set('action.current', (new Info('Rendering action "' . $this->getParam('runtime.action.middleware')
                                                                                                             ->getDescription() . '"')));
             },
-                new UrlFilter('!/')) // "!/" means "does not match URL matching '/'"
+                new UrlFilter('!/'), // "!/" means "does not match URL matching '/'",
+                function($app) { return $app->getParam('runtime.action.middleware');} // this won't be executed if no action middleware was set
+            )
             ;
 
             // inject a message on home page only, and only on first visit

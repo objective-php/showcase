@@ -3,7 +3,7 @@
     namespace Showcase\Action\Demo\Html;
     
     
-    use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\Action\RenderableAction;
     use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use Showcase\Application;
@@ -13,7 +13,7 @@
      *
      * @package Showcase\Action\Demo\Html
      */
-    class HtmlTag extends DefaultAction
+    class HtmlTag extends RenderableAction
     {
         /**
          * @param Application $app

@@ -10,7 +10,7 @@
     use ObjectivePHP\Package\Doctrine\Config\EntityManager;
 
     return [
-        new EntityManager('default', ['db' => [
+        new EntityManager('default', [
             'driver'        => 'pdo_mysql',
             'host'          => '127.0.0.1',
             'port'          => 3306,
@@ -18,7 +18,7 @@
             'password'      => '',
             'dbname'        => 'employees',
             'mapping_types' => ['enum' => 'string']
-        ]])
+        ])
     ];
 
 

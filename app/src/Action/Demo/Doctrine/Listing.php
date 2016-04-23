@@ -2,8 +2,8 @@
 
     namespace Showcase\Action\Demo\Doctrine;
 
-    use ObjectivePHP\Application\Action\AbstractAction;
-    use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\Action\HttpAction;
+    use ObjectivePHP\Application\Action\RenderableAction;
     use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
     use Showcase\Service\HumanResources;
@@ -13,7 +13,7 @@
      *
      * @package Showcase\Action\Demo\Doctrine
      */
-    class Listing extends DefaultAction
+    class Listing extends RenderableAction
     {
         /**
          * @var HumanResources

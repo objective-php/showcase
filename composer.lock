@@ -1013,12 +1013,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "88e2acc223de89c339228fc0184dbc18f79de0ab"
+                "reference": "5221e79da427432a95f23b318ce9ac68ee28f5d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/88e2acc223de89c339228fc0184dbc18f79de0ab",
-                "reference": "88e2acc223de89c339228fc0184dbc18f79de0ab",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/5221e79da427432a95f23b318ce9ac68ee28f5d8",
+                "reference": "5221e79da427432a95f23b318ce9ac68ee28f5d8",
                 "shasum": ""
             },
             "require": {
@@ -1054,7 +1054,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2016-04-23 09:23:19"
+            "time": "2016-04-23 14:36:34"
         },
         {
             "name": "objective-php/components",
@@ -1062,12 +1062,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/components.git",
-                "reference": "19a798ee71cf652014d7f6ed6f1d494e34d2eea5"
+                "reference": "55b13951d0ce0584d6022950f6d32b3a09be19d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/components/zipball/19a798ee71cf652014d7f6ed6f1d494e34d2eea5",
-                "reference": "19a798ee71cf652014d7f6ed6f1d494e34d2eea5",
+                "url": "https://api.github.com/repos/objective-php/components/zipball/55b13951d0ce0584d6022950f6d32b3a09be19d5",
+                "reference": "55b13951d0ce0584d6022950f6d32b3a09be19d5",
                 "shasum": ""
             },
             "require": {
@@ -1114,7 +1114,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2016-04-23 09:19:02"
+            "time": "2016-04-23 09:24:30"
         },
         {
             "name": "objective-php/devtools-package",
@@ -1155,12 +1155,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "3047f0a8fdb4a580299fe195301a3543726a5638"
+                "reference": "bec9b78fcfea9c6063b0cc2e549c9f2f39291d00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/3047f0a8fdb4a580299fe195301a3543726a5638",
-                "reference": "3047f0a8fdb4a580299fe195301a3543726a5638",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/bec9b78fcfea9c6063b0cc2e549c9f2f39291d00",
+                "reference": "bec9b78fcfea9c6063b0cc2e549c9f2f39291d00",
                 "shasum": ""
             },
             "require": {
@@ -1201,7 +1201,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2016-04-18 12:12:46"
+            "time": "2016-04-23 14:38:00"
         },
         {
             "name": "objective-php/eloquent-package",

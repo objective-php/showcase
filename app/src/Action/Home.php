@@ -2,7 +2,7 @@
     
     namespace Showcase\Action;
 
-    use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\Action\RenderableAction;
     use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\View\Helper\Vars;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
@@ -12,7 +12,7 @@
      *
      * @package Showcase\Action
      */
-    class Home extends DefaultAction
+    class Home extends RenderableAction
     {
         /**
          * @param ApplicationInterface

@@ -2,12 +2,12 @@
 
 	namespace Showcase\Action\Demo\Events;
 
-	use ObjectivePHP\Application\Action\DefaultAction;
+	use ObjectivePHP\Application\Action\RenderableAction;
 	use ObjectivePHP\Application\Action\Parameter\NumericParameter;
 	use ObjectivePHP\Application\ApplicationInterface;
 	use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
-	class Load extends DefaultAction
+	class Load extends RenderableAction
 	{
 
 
@@ -16,10 +16,7 @@
 
 			$eventsHandler = $app->getEventsHandler();
 
-			// prevent default renderer from triggering
-			// $event->getWorkflow()->unbind('render');
-
-			// bind 1000 callbacks
+			// bind callbacks
 			$callback = function ($event) use (&$count)
 			{
 				$count++;
@@ -27,7 +24,6 @@
 
 
 			$callbacks = $this->getParam('callbacks', 100);
-			$triggers  = $this->getParam('triggers', 100);
 
 			for ($i = 0; $i < $callbacks; $i++)
 			{
@@ -35,7 +31,8 @@
 			}
 
 
-			// trigger 100 events
+			// trigger events
+			$triggers  = $this->getParam('triggers', 100);
 			$startedAt = microtime(true);
 			for ($i = 0; $i < $triggers; $i++)
 			{

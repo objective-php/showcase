@@ -3,7 +3,7 @@
     namespace Showcase\Action\Demo\Events;
     
     
-    use ObjectivePHP\Application\Action\DefaultAction;
+    use ObjectivePHP\Application\Action\RenderableAction;
     use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Hook;
     use ObjectivePHP\Application\Workflow\Step;
@@ -14,7 +14,7 @@
      *
      * @package Showcase\Action\Demo\Events
      */
-    class Workflow extends DefaultAction
+    class Workflow extends RenderableAction
     {
 
         /**

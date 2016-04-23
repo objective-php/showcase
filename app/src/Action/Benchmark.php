@@ -3,11 +3,11 @@
     namespace Showcase\Action;
     
     
-    use ObjectivePHP\Application\Action\AbstractAction;
+    use ObjectivePHP\Application\Action\HttpAction;
     use ObjectivePHP\Application\ApplicationInterface;
     use ObjectivePHP\Application\Workflow\Event\WorkflowEvent;
 
-    class Benchmark extends AbstractAction
+    class Benchmark extends HttpAction
     {
         public function run(ApplicationInterface $app)
         {
