@@ -12,6 +12,7 @@ use ObjectivePHP\Package\FastRoute\Config\FastRoute;
 use ObjectivePHP\ServicesFactory\ServiceReference;
 use Showcase\Action\Demo\Doctrine\EntityParameter;
 use Showcase\Action\Demo\Doctrine\Listing as DoctrineListing;
+use Showcase\Action\Demo\Eloquent\Listing;
 use Showcase\Action\Demo\Events\Load;
 use Showcase\Action\Demo\Events\Workflow;
 use Showcase\Action\Demo\Html;
@@ -29,8 +30,12 @@ return [
     new FastRoute('demo/services/definitions', '/demo/services/definitions', Definitions::class),
     new FastRoute('demo/doctrine/listing', '/demo/doctrine/listing', DoctrineListing::class),
     new FastRoute('demo/doctrine/entity-parameter', '/demo/doctrine/entity-parameter/{id}', new ServiceReference('action.demo.doctrine.entity-parameter')),
+    new FastRoute('demo/eloquent/listing', '/demo/eloquent/listing', Listing::class),
     new FastRoute('demo/json', '/demo/json', Json::class),
     new FastRoute('api/employees', '/api/employees[/{id}]', EmployeeEndpoint::class, FastRoute::RESTFUL)
+
+    // SimpleRoute default router aliases
+    //
     //new UrlAlias('/', '/home'),
     //new UrlAlias('/login', '/auth/login'),
     //new SimpleRoute('html-demo', '/html', Html\HtmlTag::class)

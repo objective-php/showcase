@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5f11f7520c5390891b033a0f8d916b51",
-    "content-hash": "e868b5e7f93ebcded705a95c8ca139c1",
+    "hash": "98160ca4959fd31ff4136a2b452605e5",
+    "content-hash": "53012140f8e8d8cb132ee8153da86c74",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -718,7 +718,7 @@
         },
         {
             "name": "illuminate/container",
-            "version": "v5.2.28",
+            "version": "v5.2.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/container.git",
@@ -761,7 +761,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v5.2.28",
+            "version": "v5.2.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -803,16 +803,16 @@
         },
         {
             "name": "illuminate/database",
-            "version": "v5.2.28",
+            "version": "v5.2.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/database.git",
-                "reference": "1ea9f36cef011a80b1623ea3566d57017e7913bc"
+                "reference": "becc003759a0b028a237a8c5d2aeb550077d42fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/database/zipball/1ea9f36cef011a80b1623ea3566d57017e7913bc",
-                "reference": "1ea9f36cef011a80b1623ea3566d57017e7913bc",
+                "url": "https://api.github.com/repos/illuminate/database/zipball/becc003759a0b028a237a8c5d2aeb550077d42fd",
+                "reference": "becc003759a0b028a237a8c5d2aeb550077d42fd",
                 "shasum": ""
             },
             "require": {
@@ -859,20 +859,20 @@
                 "orm",
                 "sql"
             ],
-            "time": "2016-04-01 18:17:22"
+            "time": "2016-04-27 12:59:09"
         },
         {
             "name": "illuminate/support",
-            "version": "v5.2.28",
+            "version": "v5.2.31",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "e4aa03c5f26db752e838354a7d71b85e6138f4ec"
+                "reference": "cb5b004610baabe6b4bf532e6e4ff9eaca5eb25b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/e4aa03c5f26db752e838354a7d71b85e6138f4ec",
-                "reference": "e4aa03c5f26db752e838354a7d71b85e6138f4ec",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/cb5b004610baabe6b4bf532e6e4ff9eaca5eb25b",
+                "reference": "cb5b004610baabe6b4bf532e6e4ff9eaca5eb25b",
                 "shasum": ""
             },
             "require": {
@@ -915,7 +915,7 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "http://laravel.com",
-            "time": "2016-03-30 18:18:45"
+            "time": "2016-04-21 13:28:36"
         },
         {
             "name": "nesbot/carbon",
@@ -1013,19 +1013,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "5221e79da427432a95f23b318ce9ac68ee28f5d8"
+                "reference": "7942c3054776cafab44f70687ce773afc9229340"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/5221e79da427432a95f23b318ce9ac68ee28f5d8",
-                "reference": "5221e79da427432a95f23b318ce9ac68ee28f5d8",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/7942c3054776cafab44f70687ce773afc9229340",
+                "reference": "7942c3054776cafab44f70687ce773afc9229340",
                 "shasum": ""
             },
             "require": {
                 "objective-php/components": "dev-master",
-                "objective-php/events-handler": "dev-master",
-                "objective-php/message": "dev-master",
-                "objective-php/services-factory": "dev-master",
+                "objective-php/events-handler": "~1.0.0@dev",
+                "objective-php/message": "0.9.*",
+                "objective-php/services-factory": "~1.0.0@dev",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -1054,7 +1054,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2016-04-23 14:36:34"
+            "time": "2016-05-01 14:18:53"
         },
         {
             "name": "objective-php/components",
@@ -1117,63 +1117,30 @@
             "time": "2016-04-23 09:24:30"
         },
         {
-            "name": "objective-php/devtools-package",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/objective-php/devtools-package.git",
-                "reference": "f56643b16837273ccbca3f6432caa6eb5dfc003a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/devtools-package/zipball/f56643b16837273ccbca3f6432caa6eb5dfc003a",
-                "reference": "f56643b16837273ccbca3f6432caa6eb5dfc003a",
-                "shasum": ""
-            },
-            "require": {
-                "objective-php/application": "dev-master",
-                "objective-php/html": "dev-master",
-                "php": ">=7.0",
-                "php-console/php-console": "~3.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "5.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "ObjectivePHP\\Package\\Devtools\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Development tools and monitoring facilities for Objective PHP applications",
-            "time": "2016-03-14 16:23:09"
-        },
-        {
             "name": "objective-php/doctrine-package",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "bec9b78fcfea9c6063b0cc2e549c9f2f39291d00"
+                "reference": "98c2c990ced8f6886a6c91591334374f543fb3e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/bec9b78fcfea9c6063b0cc2e549c9f2f39291d00",
-                "reference": "bec9b78fcfea9c6063b0cc2e549c9f2f39291d00",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/98c2c990ced8f6886a6c91591334374f543fb3e7",
+                "reference": "98c2c990ced8f6886a6c91591334374f543fb3e7",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": ">=2.5",
                 "objective-php/application": "dev-master",
                 "objective-php/components": "dev-master",
-                "objective-php/events-handler": "dev-master",
-                "objective-php/message": "dev-master",
-                "objective-php/services-factory": "dev-master",
+                "objective-php/events-handler": "~1.0.0@dev",
+                "objective-php/message": "0.9.*",
+                "objective-php/services-factory": "~1.0.0@dev",
                 "php": ">=7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "5.*"
             },
             "suggest": {
                 "objective-php/matcher": "~1.1"
@@ -1201,7 +1168,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2016-04-23 14:38:00"
+            "time": "2016-05-01 14:25:15"
         },
         {
             "name": "objective-php/eloquent-package",
@@ -1209,18 +1176,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/eloquent-package.git",
-                "reference": "41701c38280e5666d8b323a464d926f9c8d0366e"
+                "reference": "3360802e752831858b2f09b4879b368c8a05ce12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/eloquent-package/zipball/41701c38280e5666d8b323a464d926f9c8d0366e",
-                "reference": "41701c38280e5666d8b323a464d926f9c8d0366e",
+                "url": "https://api.github.com/repos/objective-php/eloquent-package/zipball/3360802e752831858b2f09b4879b368c8a05ce12",
+                "reference": "3360802e752831858b2f09b4879b368c8a05ce12",
                 "shasum": ""
             },
             "require": {
                 "illuminate/database": "5.*",
                 "objective-php/components": "dev-master",
-                "objective-php/services-factory": "dev-master",
+                "objective-php/services-factory": "~1.0.0@dev",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -1250,11 +1217,11 @@
                 "illuminate",
                 "objective php"
             ],
-            "time": "2016-03-14 16:23:53"
+            "time": "2016-05-01 14:27:06"
         },
         {
             "name": "objective-php/events-handler",
-            "version": "dev-master",
+            "version": "v1.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/events-handler.git",
@@ -1305,12 +1272,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/fastroute-package.git",
-                "reference": "13b73de505e7ea14db1023a3a40175ad72a5dbe0"
+                "reference": "e91920da6990fa4578695f23b301a0d121c2a683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/fastroute-package/zipball/13b73de505e7ea14db1023a3a40175ad72a5dbe0",
-                "reference": "13b73de505e7ea14db1023a3a40175ad72a5dbe0",
+                "url": "https://api.github.com/repos/objective-php/fastroute-package/zipball/e91920da6990fa4578695f23b301a0d121c2a683",
+                "reference": "e91920da6990fa4578695f23b301a0d121c2a683",
                 "shasum": ""
             },
             "require": {
@@ -1318,13 +1285,13 @@
                 "nikic/fast-route": "0.8.*",
                 "objective-php/application": "dev-master",
                 "objective-php/components": "dev-master",
-                "objective-php/events-handler": "dev-master",
-                "objective-php/message": "dev-master",
-                "objective-php/services-factory": "dev-master",
+                "objective-php/events-handler": "~1.0.0@dev",
+                "objective-php/message": "0.9.*",
+                "objective-php/services-factory": "~1.0.0@dev",
                 "php": ">=7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "5.*"
             },
             "suggest": {
                 "objective-php/matcher": "~1.1"
@@ -1352,20 +1319,20 @@
                 "FastRoute",
                 "objective php"
             ],
-            "time": "2016-04-23 15:16:21"
+            "time": "2016-05-01 14:21:33"
         },
         {
             "name": "objective-php/html",
-            "version": "dev-master",
+            "version": "v1.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/html.git",
-                "reference": "4b55899b36e64bf1c698a02b87ecd5b99f14b406"
+                "reference": "83a148b0d42e73fb0bf352cfbe5b76e452f019c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/html/zipball/4b55899b36e64bf1c698a02b87ecd5b99f14b406",
-                "reference": "4b55899b36e64bf1c698a02b87ecd5b99f14b406",
+                "url": "https://api.github.com/repos/objective-php/html/zipball/83a148b0d42e73fb0bf352cfbe5b76e452f019c9",
+                "reference": "83a148b0d42e73fb0bf352cfbe5b76e452f019c9",
                 "shasum": ""
             },
             "require": {
@@ -1375,7 +1342,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.*"
+                "phpunit/phpunit": "5.*"
             },
             "type": "library",
             "autoload": {
@@ -1400,20 +1367,20 @@
                 "html",
                 "objective php"
             ],
-            "time": "2016-02-26 13:02:39"
+            "time": "2016-04-30 19:15:45"
         },
         {
             "name": "objective-php/message",
-            "version": "dev-master",
+            "version": "v0.9.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/message.git",
-                "reference": "cb6915c8e09ee443169de4893b1f7a3724ed9270"
+                "reference": "b7756df8f5e8f195eafafd10ef616b7f4ac3dbee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/message/zipball/cb6915c8e09ee443169de4893b1f7a3724ed9270",
-                "reference": "cb6915c8e09ee443169de4893b1f7a3724ed9270",
+                "url": "https://api.github.com/repos/objective-php/message/zipball/b7756df8f5e8f195eafafd10ef616b7f4ac3dbee",
+                "reference": "b7756df8f5e8f195eafafd10ef616b7f4ac3dbee",
                 "shasum": ""
             },
             "require": {
@@ -1441,20 +1408,20 @@
                 }
             ],
             "description": "ObjectivePHP implementation for PSR-7",
-            "time": "2016-04-23 14:39:27"
+            "time": "2016-05-01 14:08:15"
         },
         {
             "name": "objective-php/services-factory",
-            "version": "dev-master",
+            "version": "v1.0.0-beta1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/services-factory.git",
-                "reference": "05d32b7c75f6598729deec020d43bf0cb9910de6"
+                "reference": "5b61e1d1424e54c75ad9666eb59c2e26c79ff683"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/05d32b7c75f6598729deec020d43bf0cb9910de6",
-                "reference": "05d32b7c75f6598729deec020d43bf0cb9910de6",
+                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/5b61e1d1424e54c75ad9666eb59c2e26c79ff683",
+                "reference": "5b61e1d1424e54c75ad9666eb59c2e26c79ff683",
                 "shasum": ""
             },
             "require": {
@@ -1489,7 +1456,7 @@
                 "objective php",
                 "services"
             ],
-            "time": "2016-02-11 15:20:39"
+            "time": "2016-04-30 18:01:33"
         },
         {
             "name": "paragonie/random_compat",
@@ -2031,13 +1998,11 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "objective-php/components": 20,
+        "objective-php/application": 20,
         "objective-php/services-factory": 20,
         "objective-php/events-handler": 20,
-        "objective-php/message": 20,
-        "objective-php/application": 20,
         "objective-php/doctrine-package": 20,
         "objective-php/fastroute-package": 20,
-        "objective-php/devtools-package": 20,
         "objective-php/html": 20,
         "objective-php/eloquent-package": 20,
         "sofa/eloquence": 20
