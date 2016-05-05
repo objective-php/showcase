@@ -3,13 +3,12 @@
 namespace Showcase;
 
 use ObjectivePHP\Application\AbstractApplication;
-use ObjectivePHP\Application\ApplicationInterface;
-use ObjectivePHP\Application\Operation\Common\RequestWrapper;
-use ObjectivePHP\Application\Operation\Common\ResponseSender;
-use ObjectivePHP\Application\Operation\Common\ServiceLoader;
-use ObjectivePHP\Application\Operation\Common\SimpleRouter;
-use ObjectivePHP\Application\Operation\Common\ViewRenderer;
-use ObjectivePHP\Application\Operation\Rta\ViewResolver;
+use ObjectivePHP\Application\Operation\RequestWrapper;
+use ObjectivePHP\Application\Operation\ResponseSender;
+use ObjectivePHP\Application\Operation\ServiceLoader;
+use ObjectivePHP\Application\Operation\SimpleRouter;
+use ObjectivePHP\Application\Operation\ViewRenderer;
+use ObjectivePHP\Application\Operation\ViewResolver;
 use ObjectivePHP\Application\Session\Session;
 use ObjectivePHP\Application\View\Helper\Vars;
 use ObjectivePHP\Application\Workflow\Filter\ContentTypeFilter;

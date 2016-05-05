@@ -10,7 +10,6 @@
 use ObjectivePHP\Application;
 use ObjectivePHP\Package\FastRoute\Config\FastRoute;
 use ObjectivePHP\ServicesFactory\ServiceReference;
-use Showcase\Action\Demo\Doctrine\EntityParameter;
 use Showcase\Action\Demo\Doctrine\Listing as DoctrineListing;
 use Showcase\Action\Demo\Eloquent\Listing;
 use Showcase\Action\Demo\Events\Load;
