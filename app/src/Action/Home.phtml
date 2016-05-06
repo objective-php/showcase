@@ -1,29 +1,32 @@
 <?php
-    // change layout
-    use ObjectivePHP\Html\Tag\Tag;
+// change layout
+use ObjectivePHP\Html\Tag\Tag;
 
-    $this->getApplication()->setParam('layout.name', 'home');
+$this->getApplication()->setParam('layout.name', 'home');
 ?>
 
 
 <?php
 
-    /*
-     * Tag helper calls below will produce this html code:
-     *
-     * <div class="page-header">
-     *      <h1>What will you find here?</h1>
-     *  </div>
-     */
+/*
+ * Tag helper calls below will produce this html code:
+ *
+ * <div class="page-header">
+ *      <h1>What will you find here?</h1>
+ *  </div>
+ */
 
-    Tag::div(Tag::h1('What will you find here?'), 'page-header');
+Tag::h1('Breaking news! :)');
+Tag::p('Most packages from Objective are now versioned.');
 
 
+Tag::div(Tag::h1('What will you find here?'), 'page-header');
 
-    Tag::p('This project provides developers with demos of the Objective PHP framework and components.');
-    Tag::p('To access the demos, use the ' . Tag::i('Demos') . ' menu entry on top of this page.');
+Tag::p('This project provides developers with demos of the Objective PHP framework and components.');
+Tag::p('To access the demos, use the ' . Tag::i('Demos') . ' menu entry on top of this page.');
 
-    Tag::div(Tag::h1('Want to go further?'));
-    Tag::p('The best thing to do is to get the code and play around with it by yourself :)');
-    Tag::p('You can get this entire website source code and installation instruction from GitHub at ' . Tag::a('objective-php/showcase', 'http://github.com/objective-php/showcase') . '.');
-    Tag::p('Other Objective PHP repositories are accessible from our ' . Tag::a('organization page', 'http://github.com/objective-php') . '.');
+
+Tag::div(Tag::h1('Want to go further?'));
+Tag::p('The best thing to do is to get the code and play around with it by yourself :)');
+Tag::p('You can get this entire website source code and installation instruction from GitHub at ' . Tag::a('objective-php/showcase', 'http://github.com/objective-php/showcase') . '.');
+Tag::p('Other Objective PHP repositories are accessible from our ' . Tag::a('organization page', 'http://github.com/objective-php') . '.');
