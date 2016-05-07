@@ -8,6 +8,8 @@ This is the place to start until we provide an actual documentation.
 
 ## How to make it work
 
+First, note that Objective PH needs **PHP 7** to run. It's also meant to run under a Unix like system (GNU/Linux, OS X..).
+
 A few simple steps are needed to get this application up and running:
 
 ```
@@ -16,7 +18,7 @@ cd showcase
 
 # the next step assumes that composer is available in your PATH
 composer install
-php -S 0.0.0.0:8001 -t public 
+./serve.sh
 ```
 
 You can then open http://localhost:8001 to access live demo of Objective PHP Framework. Note that the frmaework will show itself much more efficient when using a production grade web server (as Apache or Nginx), while the PHP built-in server will allow you to make the demo running within seconds.
@@ -30,8 +32,8 @@ You can download our copy of this database from [objective-php.org](http://objec
 After importing the "employees" (default name) database, you can either create a "demo" user with no password and access to "employees" database, or alter the default configuration located in "app/config/doctrine.php":
 
 ```
-    $dbConfig->user          = 'demo'; // update user name here
-    $dbConfig->password      = ''; // and password here
+    'user'          => 'demo',
+    'password'      => '',
 ```
 
 
