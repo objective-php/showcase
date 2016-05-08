@@ -1013,18 +1013,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "51815cf5063594583adedfefbc2cd844f38664f9"
+                "reference": "8a3b29a3de65ad1ae6eec44a3a3a912f1811257a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/51815cf5063594583adedfefbc2cd844f38664f9",
-                "reference": "51815cf5063594583adedfefbc2cd844f38664f9",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/8a3b29a3de65ad1ae6eec44a3a3a912f1811257a",
+                "reference": "8a3b29a3de65ad1ae6eec44a3a3a912f1811257a",
                 "shasum": ""
             },
             "require": {
                 "objective-php/components": "1.*",
                 "objective-php/data-processor": "1.0.*",
                 "objective-php/events-handler": "1.0.*",
+                "objective-php/html": "1.*",
                 "objective-php/message": "0.9.*",
                 "objective-php/services-factory": "1.0.*",
                 "php": ">=7.0"
@@ -1055,7 +1056,7 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2016-05-05 15:34:44"
+            "time": "2016-05-08 09:27:48"
         },
         {
             "name": "objective-php/components",
@@ -1107,16 +1108,16 @@
         },
         {
             "name": "objective-php/config",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/config.git",
-                "reference": "727a3f320792fbd046bd4f86ac59b587dc8ecaac"
+                "reference": "7010747796465a1a3e836cdba6816a355a94fadb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/config/zipball/727a3f320792fbd046bd4f86ac59b587dc8ecaac",
-                "reference": "727a3f320792fbd046bd4f86ac59b587dc8ecaac",
+                "url": "https://api.github.com/repos/objective-php/config/zipball/7010747796465a1a3e836cdba6816a355a94fadb",
+                "reference": "7010747796465a1a3e836cdba6816a355a94fadb",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1152,7 @@
                 "config",
                 "objective-php"
             ],
-            "time": "2016-05-05 13:50:33"
+            "time": "2016-05-08 09:15:05"
         },
         {
             "name": "objective-php/data-processor",
@@ -1745,24 +1746,26 @@
         },
         {
             "name": "objective-php/services-factory",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/services-factory.git",
-                "reference": "881c94006a247afcb75702f04e504a43f2e3dab2"
+                "reference": "0d7e6e95befcb3417825c7ad17445cfa429e3658"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/881c94006a247afcb75702f04e504a43f2e3dab2",
-                "reference": "881c94006a247afcb75702f04e504a43f2e3dab2",
+                "url": "https://api.github.com/repos/objective-php/services-factory/zipball/0d7e6e95befcb3417825c7ad17445cfa429e3658",
+                "reference": "0d7e6e95befcb3417825c7ad17445cfa429e3658",
                 "shasum": ""
             },
             "require": {
                 "container-interop/container-interop": "^1.1",
+                "doctrine/annotations": "*",
                 "objective-php/config": "1.0.*",
                 "objective-php/matcher": "1.0.*",
                 "objective-php/primitives": "1.3.*",
-                "php": ">=7.0"
+                "php": ">=7.0",
+                "phpdocumentor/reflection-docblock": "*"
             },
             "require-dev": {
                 "objective-php/events-handler": "1.0.*",
@@ -1794,7 +1797,7 @@
                 "objective php",
                 "services"
             ],
-            "time": "2016-05-06 15:53:18"
+            "time": "2016-05-07 12:11:20"
         },
         {
             "name": "paragonie/random_compat",
@@ -1894,6 +1897,152 @@
                 "php"
             ],
             "time": "2016-02-19 16:00:24"
+        },
+        {
+            "name": "phpdocumentor/reflection-common",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionCommon.git",
+                "reference": "144c307535e82c8fdcaacbcfc1d6d8eeb896687c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionCommon/zipball/144c307535e82c8fdcaacbcfc1d6d8eeb896687c",
+                "reference": "144c307535e82c8fdcaacbcfc1d6d8eeb896687c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
+                        "src"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jaap van Otterdijk",
+                    "email": "opensource@ijaap.nl"
+                }
+            ],
+            "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
+            "homepage": "http://www.phpdoc.org",
+            "keywords": [
+                "FQSEN",
+                "phpDocumentor",
+                "phpdoc",
+                "reflection",
+                "static analysis"
+            ],
+            "time": "2015-12-27 11:43:31"
+        },
+        {
+            "name": "phpdocumentor/reflection-docblock",
+            "version": "3.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/ReflectionDocBlock.git",
+                "reference": "52723f0fb83d053be05c3f6b58ec45e5851c0e99"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/ReflectionDocBlock/zipball/52723f0fb83d053be05c3f6b58ec45e5851c0e99",
+                "reference": "52723f0fb83d053be05c3f6b58ec45e5851c0e99",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "phpdocumentor/reflection-common": "^1.0@dev",
+                "phpdocumentor/type-resolver": "^0.1.5",
+                "webmozart/assert": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                }
+            ],
+            "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
+            "time": "2016-02-26 20:44:16"
+        },
+        {
+            "name": "phpdocumentor/type-resolver",
+            "version": "0.1.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/phpDocumentor/TypeResolver.git",
+                "reference": "9891754231e55d42f0d16988ffb799af39f31a12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/phpDocumentor/TypeResolver/zipball/9891754231e55d42f0d16988ffb799af39f31a12",
+                "reference": "9891754231e55d42f0d16988ffb799af39f31a12",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5",
+                "phpdocumentor/reflection-common": "^1.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^0.9.4",
+                "phpunit/phpunit": "^5.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "phpDocumentor\\Reflection\\": [
+                        "src/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mike van Riel",
+                    "email": "me@mikevanriel.com"
+                }
+            ],
+            "time": "2016-03-28 10:02:29"
         },
         {
             "name": "psr/http-message",
@@ -2279,6 +2428,55 @@
                 "web"
             ],
             "time": "2015-11-24 19:37:05"
+        },
+        {
+            "name": "webmozart/assert",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webmozart/assert.git",
+                "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
+                "reference": "30eed06dd6bc88410a4ff7f77b6d22f3ce13dbde",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.6"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Webmozart\\Assert\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bernhard Schussek",
+                    "email": "bschussek@gmail.com"
+                }
+            ],
+            "description": "Assertions to validate method input/output with nice error messages.",
+            "keywords": [
+                "assert",
+                "check",
+                "validate"
+            ],
+            "time": "2015-08-24 13:29:44"
         },
         {
             "name": "zendframework/zend-diactoros",
