@@ -73,7 +73,6 @@ class Application extends AbstractApplication
             // this one for all HTML pages rendered by actions from "demo" namespace
             ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'), new ContentTypeFilter('text/html'));
 
-        // $this->getStep('bootstrap')->plug(function($app) { var_dump($app->getConfig()->get('layouts.locations'));});
 
 
         // route request (this is done after packages have been loaded)
