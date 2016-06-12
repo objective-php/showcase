@@ -33,7 +33,7 @@ success:
         username: "PHPCI"
         icon: ":ghost:"
         message: "%PROJECT_TITLE% - build %BUILD% succeeded! :smiley:"
-        show_status: true
+        show_status: false
 
 complete:
     slack_notify:
