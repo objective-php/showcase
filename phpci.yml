@@ -7,6 +7,13 @@ setup:
         action: "install"
 
 success:
-    package_build:
-        directory: "showcase/"
-        format: "tar"
+    OpCoding\Courier\Courier:
+        env-mapping:
+          "master": production
+          "*": development
+        targets:
+          production:
+            objective-php.org:
+              host: objective-php.org
+              path: /var/www/showcase
+        operator: automate
