@@ -7,7 +7,7 @@ setup:
         action: "install"
 
 success:
-    OpCoding\Courier\Courier:
+    courier:
         env-mapping:
           "master": production
           "*": development
