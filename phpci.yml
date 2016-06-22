@@ -6,7 +6,7 @@ setup:
     composer:
         action: "install"
 
-success:
+deploy:
     courier:
         env-mapping:
           "master": production
