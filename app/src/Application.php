@@ -4,9 +4,9 @@ namespace Showcase;
 
 use ObjectivePHP\Application\AbstractApplication;
 use ObjectivePHP\Application\Operation\RequestWrapper;
+use ObjectivePHP\Application\Operation\ResponseInitializer;
 use ObjectivePHP\Application\Operation\ResponseSender;
 use ObjectivePHP\Application\Operation\ServiceLoader;
-use ObjectivePHP\Application\Operation\SimpleRouter;
 use ObjectivePHP\Application\Operation\ViewRenderer;
 use ObjectivePHP\Application\Operation\ViewResolver;
 use ObjectivePHP\Application\Session\Session;
@@ -14,11 +14,12 @@ use ObjectivePHP\Application\View\Helper\Vars;
 use ObjectivePHP\Application\Workflow\Filter\ContentTypeFilter;
 use ObjectivePHP\Application\Workflow\Filter\UrlFilter;
 use ObjectivePHP\Notification\Info;
-use ObjectivePHP\Package\Doctrine\DoctrinePackage;
-use ObjectivePHP\Package\Eloquent\EloquentPackage;
 use ObjectivePHP\Package\FastRoute\FastRoutePackage;
+use ObjectivePHP\Package\FastRoute\FastRouteRouter;
+use ObjectivePHP\Router\Dispatcher;
+use ObjectivePHP\Router\MetaRouter;
+use ObjectivePHP\Router\PathMapperRouter;
 use Showcase\Middleware\LayoutSwitcher;
-use Showcase\Package\Overrider\OverriderPackage;
 use Showcase\Package\ShowSource\ShowSourcePackage;
 
 /**
@@ -30,113 +31,62 @@ class Application extends AbstractApplication
 {
     public function init()
     {
-
+        
         // register packages autoloading
         $this->getAutoloader()->addPsr4('Showcase\\Package\\', 'packages/');
-
+        
         // define middleware endpoints
         $this->addSteps('init', 'bootstrap', 'route', 'action', 'rendering', 'end');
-
-        // plug the debug package first, so that it can report all Middleware execution
-        /*
-            NOTE: This is temporarily disabled because of heavy dev on devtools package
-
-
-        $this->getStep('init')->plug(DevtoolsPackage::class, function (ApplicationInterface $app)
-        {
-            return $app->getEnv() == 'development' && isset($_GET['debug']);
-        })->as('devtools');*/
-
-
-        // initialize request
-        $this->getStep('init')// handle request
-        ->plug(new RequestWrapper())->as('request-wrapper');
-
+        // initialize request and response
         $this->getStep('init')
-            // load FastRoute router
-            ->plug(new FastRoutePackage());
-
-
-        // load external packages
-        $this->getStep('bootstrap')
-            // and this one only for urls under /demo/doctrine
-            ->plug(new DoctrinePackage(), new UrlFilter('/demo/doctrine/*'))
-            // same for Eloquent
-            ->plug(new EloquentPackage(), new UrlFilter('/demo/eloquent/*'))
-            // activate Overrider package
-            ->plug(new OverriderPackage(), function ($app)
-            {
-                return !empty($_GET['override']);
-            });
-
-        $this->getStep('rendering')
-            // this one for all HTML pages rendered by actions from "demo" namespace
-            ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'), new ContentTypeFilter('text/html'));
-
-
-
+            // handle request and response
+             ->plug(new RequestWrapper())->as('request-wrapper')
+             ->plug(new ResponseInitializer())->as('response-initializer')
+        ;
+        
+        
         // route request (this is done after packages have been loaded)
         //
         // NOTE: using asDefault() make this middleware optional - if
         // another one with the same reference has been plugged earlier,
         // this call has no effect on the actual middleware stack
-        $this->getStep('route')->plug(SimpleRouter::class)->asDefault('router');
-
-
+        $router = new MetaRouter([new PathMapperRouter(), new FastRouteRouter()]);
+        $this->getStep('route')->plug($router)->asDefault('router');
+        
         // load framework native middleware
         $this->getStep('bootstrap')->plug(ServiceLoader::class)->asDefault('service-loader');
-
         // give access to config everywhere, including views
-        $this->getStep('bootstrap')->plug(function (Application $app)
-        {
-            // inject application config in Vars
-            //
-            // we use here a public variable to prevent code assist from exposing
-            // methods as setConfig()
-            //
-            // From now on, you can get the config by using Vars::config()
-            Vars::$config = $app->getConfig();
-        });
-
-        // action runner will catch action return value and inject the in the Vars container
-        // $this->getStep('route')->plug(ActionPlugger::class)->asDefault('action-plugger');
-
-        // inject a message on all pages but home
-        $this->getStep('rendering')->plug(function ()
-        {
-            (new Session('notifications'))->set('action.current', (new Info('Rendering action "' . $this->getParam('runtime.action.middleware')
-                    ->getDescription() . '"')));
-        },
-            new UrlFilter('!/'), // "!/" means "does not match URL matching '/'",
+        //
+        // Note: this is used by default layouts
+        $this->getStep('bootstrap')->plug(
             function ($app)
             {
-                return $app->getParam('runtime.action.middleware');
-            } // this won't be executed if no action middleware was set
-        );
-
-        // inject a message on home page only, and only on first visit
-        $this->getStep('rendering')->plug(function ()
-        {
-            (new Session('notifications'))->set('hello', (new Info('Welcome on ObjectivePHP demo')));
-            (new Session)->set('greetings.done', true);
-
-        }, new UrlFilter('/'), [$this, 'filterGreetingsMiddlewareActivation']);
-
-
+                Vars::$config = $app->getConfig();
+            }
+        )
+        ;
+        
+        // actually executes action
+        $this->getStep('action')->plug(new Dispatcher());
+        
+        // handle view rendering
         $this->getStep('rendering')
-            ->plug(LayoutSwitcher::class, new UrlFilter('/'))
-            ->plug(new ViewResolver(), new ContentTypeFilter('text/html'))->asDefault('view-resolver')
-            ->plug(new ViewRenderer(), new ContentTypeFilter('text/html'))->asDefault('view-renderer');
-
-
-        /**
-         * Uncomment the line below if you want to return Json
-         */
-        // $this->on('end')->plug(new ResponseSender(), function($app) { return $app->getRequest()->getHeader('Content-Type') == 'application/json';});
+             ->plug(LayoutSwitcher::class, new UrlFilter('/'))
+             ->plug(function ()
+             {
+                 (new Session('notifications'))->set('hello', (new Info('Welcome on ObjectivePHP demo')));
+                 (new Session)->set('greetings.done', true);
+             }, new UrlFilter('/'), [$this, 'filterGreetingsMiddlewareActivation'])
+            // this one for all HTML pages rendered by actions from "demo" namespace
+             ->plug(ShowSourcePackage::class, new UrlFilter('/demo/*'), new ContentTypeFilter('text/html'))
+             ->plug(new ViewResolver())->as('view-resolver')
+             ->plug(new ViewRenderer())->as('view-renderer')
+        ;
+        
+        
         $this->getStep('end')->plug(new ResponseSender());
-
     }
-
+    
     /**
      *
      * Tells the application whether a given middleware should be executed or not
@@ -147,7 +97,7 @@ class Application extends AbstractApplication
     {
         return !((new Session)->get('greetings.done'));
     }
-
+    
 }
 
 

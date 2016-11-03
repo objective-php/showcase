@@ -1,0 +1,19 @@
+{
+  "name": "showcase",
+  "homepage": "https://github.com/objective-php/showcase",
+  "authors": [
+    "Gauthier Delamarre <gauthier@objective-php.org>"
+  ],
+  "license": "GPL-3.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "highlightjs": "^9.8.0"
+  }
+}

@@ -18,6 +18,11 @@ cd showcase
 
 # the next step assumes that composer is available in your PATH
 composer install
+
+# and this one requires [Bower](https://bowerjs.io)
+bower install
+
+# finally, lauch PHP's embedded web server 
 ./serve.sh
 ```
 
