@@ -4,7 +4,6 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f49faade43e77575e2c02a8f7437501e",
     "content-hash": "0a9a7149ad303900da6d69bf62bf4c0d",
     "packages": [
         {
@@ -32,7 +31,7 @@
                 "MIT"
             ],
             "description": "Promoting the interoperability of container objects (DIC, SL, etc.)",
-            "time": "2014-12-30 15:22:37"
+            "time": "2014-12-30T15:22:37+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -100,7 +99,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-10-24 11:45:47"
+            "time": "2016-10-24T11:45:47+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -170,7 +169,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29 11:16:17"
+            "time": "2016-10-29T11:16:17+00:00"
         },
         {
             "name": "doctrine/collections",
@@ -236,7 +235,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14 22:21:58"
+            "time": "2015-04-14T22:21:58+00:00"
         },
         {
             "name": "doctrine/common",
@@ -309,7 +308,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2015-12-25 13:18:31"
+            "time": "2015-12-25T13:18:31+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -380,7 +379,7 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2016-09-09 19:13:33"
+            "time": "2016-09-09T19:13:33+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -447,7 +446,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06 14:35:42"
+            "time": "2015-11-06T14:35:42+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -501,7 +500,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14 21:17:01"
+            "time": "2015-06-14T21:17:01+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -555,7 +554,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-09-09T13:34:57+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -631,7 +630,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-09-10 18:51:13"
+            "time": "2016-09-10T18:51:13+00:00"
         },
         {
             "name": "erusev/parsedown",
@@ -670,7 +669,7 @@
                 "markdown",
                 "parser"
             ],
-            "time": "2015-10-04 16:44:32"
+            "time": "2015-10-04T16:44:32+00:00"
         },
         {
             "name": "erusev/parsedown-extra",
@@ -714,7 +713,7 @@
                 "parsedown",
                 "parser"
             ],
-            "time": "2015-11-01 10:19:22"
+            "time": "2015-11-01T10:19:22+00:00"
         },
         {
             "name": "illuminate/container",
@@ -757,7 +756,7 @@
             ],
             "description": "The Illuminate Container package.",
             "homepage": "https://laravel.com",
-            "time": "2016-10-02 01:14:30"
+            "time": "2016-10-02T01:14:30+00:00"
         },
         {
             "name": "illuminate/contracts",
@@ -799,7 +798,7 @@
             ],
             "description": "The Illuminate Contracts package.",
             "homepage": "https://laravel.com",
-            "time": "2016-09-26 20:36:27"
+            "time": "2016-09-26T20:36:27+00:00"
         },
         {
             "name": "illuminate/database",
@@ -859,7 +858,7 @@
                 "orm",
                 "sql"
             ],
-            "time": "2016-10-04 01:41:20"
+            "time": "2016-10-04T01:41:20+00:00"
         },
         {
             "name": "illuminate/support",
@@ -916,7 +915,58 @@
             ],
             "description": "The Illuminate Support package.",
             "homepage": "https://laravel.com",
-            "time": "2016-10-02 01:14:47"
+            "time": "2016-10-02T01:14:47+00:00"
+        },
+        {
+            "name": "league/climate",
+            "version": "3.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/climate.git",
+                "reference": "b103fc8faa3780c802cc507d5f0ff534ecc94fb5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/climate/zipball/b103fc8faa3780c802cc507d5f0ff534ecc94fb5",
+                "reference": "b103fc8faa3780c802cc507d5f0ff534ecc94fb5",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0",
+                "seld/cli-prompt": "~1.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.4",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\CLImate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Tannenbaum",
+                    "email": "hey@joe.codes",
+                    "homepage": "http://joe.codes/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP's best friend for the terminal. CLImate allows you to easily output colored text, special formats, and more.",
+            "keywords": [
+                "cli",
+                "colors",
+                "command",
+                "php",
+                "terminal"
+            ],
+            "time": "2016-04-04T20:24:59+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -963,7 +1013,7 @@
                 "datetime",
                 "time"
             ],
-            "time": "2015-11-04 20:07:17"
+            "time": "2015-11-04T20:07:17+00:00"
         },
         {
             "name": "nikic/fast-route",
@@ -1006,24 +1056,24 @@
                 "router",
                 "routing"
             ],
-            "time": "2016-03-25 23:46:52"
+            "time": "2016-03-25T23:46:52+00:00"
         },
         {
             "name": "objective-php/application",
-            "version": "v1.0.5",
+            "version": "v1.0.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/application.git",
-                "reference": "00d44119f2f703f992e20fab4842cf3b746a7bbd"
+                "reference": "15f8810a445b52f14adddf0eff8d4319e3a3597d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/application/zipball/00d44119f2f703f992e20fab4842cf3b746a7bbd",
-                "reference": "00d44119f2f703f992e20fab4842cf3b746a7bbd",
+                "url": "https://api.github.com/repos/objective-php/application/zipball/15f8810a445b52f14adddf0eff8d4319e3a3597d",
+                "reference": "15f8810a445b52f14adddf0eff8d4319e3a3597d",
                 "shasum": ""
             },
             "require": {
-                "objective-php/components": "1.*",
+                "objective-php/components": "~1.0.0",
                 "objective-php/data-processor": "1.0.*",
                 "objective-php/events-handler": "1.0.*",
                 "objective-php/html": "1.*",
@@ -1057,7 +1107,55 @@
                 "framework",
                 "objective php"
             ],
-            "time": "2016-09-16 13:59:25"
+            "time": "2017-03-24T14:44:13+00:00"
+        },
+        {
+            "name": "objective-php/cli",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/objective-php/cli.git",
+                "reference": "48022f155a9f4d40ea5fa5c511dbe05e08e3f558"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/objective-php/cli/zipball/48022f155a9f4d40ea5fa5c511dbe05e08e3f558",
+                "reference": "48022f155a9f4d40ea5fa5c511dbe05e08e3f558",
+                "shasum": ""
+            },
+            "require": {
+                "league/climate": "^3.2"
+            },
+            "require-dev": {
+                "objective-php/application": "~1.1.0",
+                "objective-php/router": "~1.0.0",
+                "phpunit/phpunit": "^5.0"
+            },
+            "bin": [
+                "bin/op"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ObjectivePHP\\Cli\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Gauthier 'Rusty' Delamarre",
+                    "email": "gauthier@objective-php.org"
+                }
+            ],
+            "description": "Cli commands handling library",
+            "keywords": [
+                "cli",
+                "objective php"
+            ],
+            "time": "2017-06-28T12:10:06+00:00"
         },
         {
             "name": "objective-php/components",
@@ -1105,7 +1203,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2016-05-05 15:59:19"
+            "time": "2016-05-05T15:59:19+00:00"
         },
         {
             "name": "objective-php/config",
@@ -1153,7 +1251,7 @@
                 "config",
                 "objective-php"
             ],
-            "time": "2016-07-05 12:38:51"
+            "time": "2016-07-05T12:38:51+00:00"
         },
         {
             "name": "objective-php/data-processor",
@@ -1205,27 +1303,26 @@
                 "data procesosr",
                 "objective php"
             ],
-            "time": "2016-05-05 15:32:33"
+            "time": "2016-05-05T15:32:33+00:00"
         },
         {
             "name": "objective-php/doctrine-package",
-            "version": "v1.0.2",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/doctrine-package.git",
-                "reference": "385097527587606e447f684c5451b061b1b483a6"
+                "reference": "4d3fccaec8f3c92d1bc2a7c112c9fbdbad609f2d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/385097527587606e447f684c5451b061b1b483a6",
-                "reference": "385097527587606e447f684c5451b061b1b483a6",
+                "url": "https://api.github.com/repos/objective-php/doctrine-package/zipball/4d3fccaec8f3c92d1bc2a7c112c9fbdbad609f2d",
+                "reference": "4d3fccaec8f3c92d1bc2a7c112c9fbdbad609f2d",
                 "shasum": ""
             },
             "require": {
                 "doctrine/orm": ">=2.5",
-                "objective-php/application": "1.0.*",
-                "objective-php/components": "1.0.*",
-                "objective-php/message": "0.9.*",
+                "objective-php/application": "^1.0.6",
+                "objective-php/cli": "^1.0.4",
                 "php": ">=7.0"
             },
             "require-dev": {
@@ -1257,7 +1354,7 @@
                 "doctrine",
                 "objective php"
             ],
-            "time": "2016-08-16 15:23:12"
+            "time": "2017-06-28T13:38:21+00:00"
         },
         {
             "name": "objective-php/eloquent-package",
@@ -1355,20 +1452,20 @@
                 "events handler",
                 "objective php"
             ],
-            "time": "2016-05-06 15:58:36"
+            "time": "2016-05-06T15:58:36+00:00"
         },
         {
             "name": "objective-php/fastroute-package",
-            "version": "v1.0.1",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/objective-php/fastroute-package.git",
-                "reference": "c7e0f9d9a7afc3605036f5b6fb311cf279b31bca"
+                "reference": "7177f82f8c3e97f2227ae19305de841618643b6e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/objective-php/fastroute-package/zipball/c7e0f9d9a7afc3605036f5b6fb311cf279b31bca",
-                "reference": "c7e0f9d9a7afc3605036f5b6fb311cf279b31bca",
+                "url": "https://api.github.com/repos/objective-php/fastroute-package/zipball/7177f82f8c3e97f2227ae19305de841618643b6e",
+                "reference": "7177f82f8c3e97f2227ae19305de841618643b6e",
                 "shasum": ""
             },
             "require": {
@@ -1408,7 +1505,7 @@
                 "FastRoute",
                 "objective php"
             ],
-            "time": "2016-09-16 13:56:33"
+            "time": "2016-12-22T14:16:20+00:00"
         },
         {
             "name": "objective-php/html",
@@ -1456,7 +1553,7 @@
                 "html",
                 "objective php"
             ],
-            "time": "2016-05-06 22:22:14"
+            "time": "2016-05-06T22:22:14+00:00"
         },
         {
             "name": "objective-php/invokable",
@@ -1504,7 +1601,7 @@
                 "invokable",
                 "objective php"
             ],
-            "time": "2016-06-02 17:33:19"
+            "time": "2016-06-02T17:33:19+00:00"
         },
         {
             "name": "objective-php/matcher",
@@ -1550,7 +1647,7 @@
                 "matcher",
                 "objective php"
             ],
-            "time": "2016-05-05 13:13:34"
+            "time": "2016-05-05T13:13:34+00:00"
         },
         {
             "name": "objective-php/message",
@@ -1592,7 +1689,7 @@
                 }
             ],
             "description": "ObjectivePHP implementation for PSR-7",
-            "time": "2016-06-26 15:39:48"
+            "time": "2016-06-26T15:39:48+00:00"
         },
         {
             "name": "objective-php/notification",
@@ -1645,7 +1742,7 @@
                 "components",
                 "objective php"
             ],
-            "time": "2016-05-05 14:02:15"
+            "time": "2016-05-05T14:02:15+00:00"
         },
         {
             "name": "objective-php/phpunit-extension",
@@ -1690,7 +1787,7 @@
                 "objective php",
                 "phpunit"
             ],
-            "time": "2016-05-05 12:55:53"
+            "time": "2016-05-05T12:55:53+00:00"
         },
         {
             "name": "objective-php/primitives",
@@ -1744,7 +1841,7 @@
                 "objective php",
                 "primitives"
             ],
-            "time": "2016-09-10 09:16:53"
+            "time": "2016-09-10T09:16:53+00:00"
         },
         {
             "name": "objective-php/router",
@@ -1792,7 +1889,7 @@
                 "objective php",
                 "router"
             ],
-            "time": "2016-06-02 17:23:41"
+            "time": "2016-06-02T17:23:41+00:00"
         },
         {
             "name": "objective-php/services-factory",
@@ -1847,7 +1944,7 @@
                 "objective php",
                 "services"
             ],
-            "time": "2016-05-08 13:28:26"
+            "time": "2016-05-08T13:28:26+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1895,7 +1992,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-10-17 15:23:22"
+            "time": "2016-10-17T15:23:22+00:00"
         },
         {
             "name": "php-console/php-console",
@@ -1946,7 +2043,7 @@
                 "google chrome",
                 "php"
             ],
-            "time": "2016-02-19 16:00:24"
+            "time": "2016-02-19T16:00:24+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -2000,7 +2097,7 @@
                 "reflection",
                 "static analysis"
             ],
-            "time": "2015-12-27 11:43:31"
+            "time": "2015-12-27T11:43:31+00:00"
         },
         {
             "name": "phpdocumentor/reflection-docblock",
@@ -2045,7 +2142,7 @@
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
-            "time": "2016-09-30 07:12:33"
+            "time": "2016-09-30T07:12:33+00:00"
         },
         {
             "name": "phpdocumentor/type-resolver",
@@ -2092,7 +2189,7 @@
                     "email": "me@mikevanriel.com"
                 }
             ],
-            "time": "2016-06-10 07:14:17"
+            "time": "2016-06-10T07:14:17+00:00"
         },
         {
             "name": "psr/http-message",
@@ -2142,7 +2239,7 @@
                 "request",
                 "response"
             ],
-            "time": "2016-08-06 14:39:51"
+            "time": "2016-08-06T14:39:51+00:00"
         },
         {
             "name": "psr/log",
@@ -2189,7 +2286,55 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
+        },
+        {
+            "name": "seld/cli-prompt",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Seldaek/cli-prompt.git",
+                "reference": "a19a7376a4689d4d94cab66ab4f3c816019ba8dd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Seldaek/cli-prompt/zipball/a19a7376a4689d4d94cab66ab4f3c816019ba8dd",
+                "reference": "a19a7376a4689d4d94cab66ab4f3c816019ba8dd",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Seld\\CliPrompt\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be"
+                }
+            ],
+            "description": "Allows you to prompt for user input on the command line, and optionally hide the characters they type",
+            "keywords": [
+                "cli",
+                "console",
+                "hidden",
+                "input",
+                "prompt"
+            ],
+            "time": "2017-03-18T11:32:45+00:00"
         },
         {
             "name": "sofa/eloquence",
@@ -2246,7 +2391,7 @@
                 "mutable",
                 "searchable"
             ],
-            "time": "2015-11-21 12:09:56"
+            "time": "2015-11-21T12:09:56+00:00"
         },
         {
             "name": "sofa/hookable",
@@ -2291,7 +2436,7 @@
                 "eloquent",
                 "laravel"
             ],
-            "time": "2015-11-17 15:31:14"
+            "time": "2015-11-17T15:31:14+00:00"
         },
         {
             "name": "symfony/console",
@@ -2352,7 +2497,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-06 01:44:51"
+            "time": "2016-10-06T01:44:51+00:00"
         },
         {
             "name": "symfony/debug",
@@ -2409,7 +2554,7 @@
             ],
             "description": "Symfony Debug Component",
             "homepage": "https://symfony.com",
-            "time": "2016-09-06 11:02:40"
+            "time": "2016-09-06T11:02:40+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2468,7 +2613,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-05-18 14:26:46"
+            "time": "2016-05-18T14:26:46+00:00"
         },
         {
             "name": "symfony/translation",
@@ -2532,7 +2677,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2016-10-18 04:30:12"
+            "time": "2016-10-18T04:30:12+00:00"
         },
         {
             "name": "twbs/bootstrap",
@@ -2583,7 +2728,7 @@
                 "responsive",
                 "web"
             ],
-            "time": "2016-07-25 15:51:55"
+            "time": "2016-07-25T15:51:55+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -2633,7 +2778,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2016-08-09 15:02:57"
+            "time": "2016-08-09T15:02:57+00:00"
         },
         {
             "name": "zendframework/zend-diactoros",
@@ -2683,7 +2828,7 @@
                 "psr",
                 "psr-7"
             ],
-            "time": "2016-10-11 13:25:21"
+            "time": "2016-10-11T13:25:21+00:00"
         }
     ],
     "packages-dev": [],
